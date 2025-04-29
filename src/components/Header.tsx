@@ -10,7 +10,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-black text-white shadow-md">
+    <header className="sticky top-0 z-50 w-full bg-secondary text-white shadow-md">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link to="/" className="font-semibold text-lg md:text-xl text-primary">
@@ -27,10 +27,10 @@ const Header = () => {
             Mes expériences
           </Link>
           <Link to="/projects" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Projets
+            Mes projets
           </Link>
           <Link to="/skills" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Compétences
+            Mes compétences
           </Link>
           <Link to="/entreprise" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Entreprise & École
@@ -55,7 +55,7 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <nav className="container flex flex-col space-y-4 py-4 bg-black">
+          <nav className="container flex flex-col space-y-4 py-4 bg-secondary">
             <Link 
               to="/" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
@@ -75,14 +75,14 @@ const Header = () => {
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Projets
+              Mes projets
             </Link>
             <Link 
               to="/skills" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Compétences
+              Mes compétences
             </Link>
             <Link 
               to="/entreprise" 

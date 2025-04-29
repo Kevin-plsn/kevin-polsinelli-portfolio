@@ -4,7 +4,6 @@ import ProfileSection from "@/components/ProfileSection";
 import PreviewSection from "@/components/PreviewSection";
 import ContactPreviewSection from "@/components/ContactPreviewSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import ProjectSection from "@/components/ProjectSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,7 +14,6 @@ const Index = () => {
         <ProfileSection />
         <PreviewSection />
         <ExperienceSection />
-        <ProjectSection />
         <ContactPreviewSection />
       </main>
       <Footer />
