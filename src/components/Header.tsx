@@ -9,7 +9,7 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b">
+    <header className="sticky top-0 z-50 w-full bg-black text-white shadow-md">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <a href="/" className="font-semibold text-lg md:text-xl text-primary">
@@ -19,13 +19,13 @@ const Header = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#profile" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="#profile" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Accueil
           </a>
-          <a href="#experience" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="#experience" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Expérience
           </a>
-          <a href="#project" className="text-sm font-medium hover:text-primary transition-colors">
+          <a href="#project" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Projet
           </a>
         </nav>
@@ -34,7 +34,7 @@ const Header = () => {
         <Button 
           variant="ghost" 
           size="icon" 
-          className="md:hidden"
+          className="md:hidden text-white hover:bg-gray-900"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
@@ -45,24 +45,24 @@ const Header = () => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <nav className="container flex flex-col space-y-4 py-4 bg-background">
+          <nav className="container flex flex-col space-y-4 py-4 bg-black">
             <a 
               href="#profile" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Accueil
             </a>
             <a 
               href="#experience" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Expérience
             </a>
             <a 
               href="#project" 
-              className="text-sm font-medium hover:text-primary transition-colors"
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Projet
