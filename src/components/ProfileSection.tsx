@@ -52,11 +52,20 @@ const ProfileSection = () => {
               </Card>
               
               <Card className="bg-white shadow-md">
-                <CardContent className="p-6">
+                <CardContent className="p-6 space-y-4">
+                  <div className="flex flex-col md:flex-row items-center gap-6">
+                    <img 
+                      src="/lovable-uploads/bfa81c47-4311-4559-aecf-d8fb211021c0.png" 
+                      alt="Logo APRR" 
+                      className="h-16 object-contain"
+                    />
+                    <div>
+                      <p className="text-gray-700 leading-relaxed">
+                        APRR (Autoroutes Paris-Rhin-Rhône) est un acteur majeur du secteur autoroutier en France et en Europe. Filiale du groupe Eiffage, APRR est spécialisée dans la construction, l'exploitation et la maintenance d'un réseau autoroutier de plus de 2 300 kilomètres, couvrant un vaste territoire allant de Paris à la frontière suisse.
+                      </p>
+                    </div>
+                  </div>
                   <p className="text-gray-700 leading-relaxed">
-                    APRR (Autoroutes Paris-Rhin-Rhône) est un acteur majeur du secteur autoroutier en France et en Europe. Filiale du groupe Eiffage, APRR est spécialisée dans la construction, l'exploitation et la maintenance d'un réseau autoroutier de plus de 2 300 kilomètres, couvrant un vaste territoire allant de Paris à la frontière suisse.
-                  </p>
-                  <p className="text-gray-700 leading-relaxed mt-4">
                     Engagée dans une démarche d'innovation et de transition énergétique, l'entreprise investit dans les solutions numériques, la mobilité durable et la sécurité routière, tout en mettant en œuvre des projets technologiques d'envergure pour moderniser son infrastructure et améliorer l'expérience des usagers.
                   </p>
                 </CardContent>
