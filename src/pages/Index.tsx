@@ -1,6 +1,8 @@
 
 import Header from "@/components/Header";
 import ProfileSection from "@/components/ProfileSection";
+import PreviewSection from "@/components/PreviewSection";
+import ContactPreviewSection from "@/components/ContactPreviewSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ProjectSection from "@/components/ProjectSection";
 import Footer from "@/components/Footer";
@@ -11,8 +13,10 @@ const Index = () => {
       <Header />
       <main className="flex-1">
         <ProfileSection />
+        <PreviewSection />
         <ExperienceSection />
         <ProjectSection />
+        <ContactPreviewSection />
       </main>
       <Footer />
     </div>

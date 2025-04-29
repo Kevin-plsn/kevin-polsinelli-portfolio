@@ -23,15 +23,21 @@ const Header = () => {
           <Link to="/" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Accueil
           </Link>
+          <Link to="/experiences" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+            Mes expériences
+          </Link>
+          <Link to="/projects" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+            Projets
+          </Link>
+          <Link to="/skills" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+            Compétences
+          </Link>
           <Link to="/entreprise" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Entreprise & École
           </Link>
-          <a href="#experience" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Expérience
-          </a>
-          <a href="#project" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Projet
-          </a>
+          <Link to="/contact" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+            Contact
+          </Link>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -58,26 +64,40 @@ const Header = () => {
               Accueil
             </Link>
             <Link 
+              to="/experiences" 
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Mes expériences
+            </Link>
+            <Link 
+              to="/projects" 
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projets
+            </Link>
+            <Link 
+              to="/skills" 
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Compétences
+            </Link>
+            <Link 
               to="/entreprise" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Entreprise & École
             </Link>
-            <a 
-              href="#experience" 
+            <Link 
+              to="/contact" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Expérience
-            </a>
-            <a 
-              href="#project" 
-              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Projet
-            </a>
+              Contact
+            </Link>
           </nav>
         </div>
       )}
