@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,16 +13,19 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full bg-black text-white shadow-md">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <a href="/" className="font-semibold text-lg md:text-xl text-primary">
+          <Link to="/" className="font-semibold text-lg md:text-xl text-primary">
             POLSINELLI Kevin
-          </a>
+          </Link>
         </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          <a href="#profile" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+          <Link to="/" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Accueil
-          </a>
+          </Link>
+          <Link to="/entreprise" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+            Entreprise & École
+          </Link>
           <a href="#experience" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
             Expérience
           </a>
@@ -46,13 +50,20 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden">
           <nav className="container flex flex-col space-y-4 py-4 bg-black">
-            <a 
-              href="#profile" 
+            <Link 
+              to="/" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Accueil
-            </a>
+            </Link>
+            <Link 
+              to="/entreprise" 
+              className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Entreprise & École
+            </Link>
             <a 
               href="#experience" 
               className="text-sm font-medium text-gray-200 hover:text-primary transition-colors"
