@@ -16,9 +16,10 @@ const ExperiencesPage = () => {
           
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-muted-foreground">
-              Découvrez les entreprises dans lesquelles j'ai évolué au cours de mes années d'alternance. 
-              Chaque expérience m'a permis d'acquérir de nouvelles compétences, de relever des défis 
-              et d'affiner mon expertise dans le domaine de l'IT.
+              Parcourez les entreprises au sein desquelles j'ai évolué tout au long de mes années d'alternance. 
+              Chacune de ces expériences a enrichi mon parcours, en me confrontant à des environnements variés, 
+              des projets ambitieux et des défis concrets, contribuant ainsi à renforcer mon expertise dans le 
+              domaine de l'informatique et de la gestion de projets.
             </p>
           </div>
           
@@ -55,12 +56,12 @@ const ExperiencesPage = () => {
               <CardHeader className="flex items-center">
                 <div className="w-full h-40 flex justify-center items-center p-4">
                   <img 
-                    src="/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png" 
+                    src="/lovable-uploads/893ea8e3-6378-426c-8b04-c9a14d103aa5.png" 
                     alt="Skyepharma Logo" 
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <CardTitle className="text-xl text-center mt-4">Skyepharma</CardTitle>
+                <CardTitle className="text-xl text-center mt-4">SKYEPHARMA</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-center text-muted-foreground">

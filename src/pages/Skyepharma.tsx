@@ -24,7 +24,7 @@ const SkyepharmaPage = () => {
             <div className="md:w-1/3">
               <div className="border border-primary/20 rounded-lg p-6 flex justify-center">
                 <img 
-                  src="/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png" 
+                  src="/lovable-uploads/893ea8e3-6378-426c-8b04-c9a14d103aa5.png" 
                   alt="Skyepharma Logo" 
                   className="max-w-full h-auto max-h-60"
                 />
@@ -32,7 +32,7 @@ const SkyepharmaPage = () => {
             </div>
             
             <div className="md:w-2/3">
-              <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4">Skyepharma</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-primary mb-4 uppercase">SKYEPHARMA</h1>
               
               <div className="space-y-6 text-gray-700">
                 <p>

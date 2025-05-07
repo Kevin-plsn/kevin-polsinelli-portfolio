@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 
 const ContactPage = () => {
   return (
@@ -25,7 +25,7 @@ const ContactPage = () => {
               <CardHeader className="text-center">
                 <div className="w-24 h-24 mx-auto overflow-hidden rounded-full border-2 border-primary shadow-lg mb-4">
                   <img 
-                    src="/lovable-uploads/b7ea56a5-46c6-4306-81b8-89970e8d4c89.png" 
+                    src="/lovable-uploads/c3802892-3e40-4f7e-b6b8-45c04bc32af9.png" 
                     alt="Kevin POLSINELLI" 
                     className="w-full h-full object-cover"
                   />
@@ -37,7 +37,7 @@ const ContactPage = () => {
                 <div className="space-y-4">
                   <div className="flex justify-center gap-4">
                     <Button asChild variant="outline" className="flex gap-2">
-                      <a href="mailto:contact@example.com">
+                      <a href="mailto:polsinellikevin@gmail.com">
                         <Mail className="h-5 w-5" />
                         Email
                       </a>
@@ -51,6 +51,15 @@ const ContactPage = () => {
                       >
                         <Linkedin className="h-5 w-5" />
                         LinkedIn
+                      </a>
+                    </Button>
+                  </div>
+                  
+                  <div className="flex justify-center pt-4">
+                    <Button asChild variant="ghost" className="flex gap-2">
+                      <a href="tel:+33621598292">
+                        <Phone className="h-5 w-5" />
+                        06 21 59 82 92
                       </a>
                     </Button>
                   </div>
