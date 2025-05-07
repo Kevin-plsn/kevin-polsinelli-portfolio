@@ -1,8 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 const ProfileSection = () => {
   return (
@@ -30,11 +29,15 @@ const ProfileSection = () => {
             </p>
             
             <div className="pt-6">
-              <Button size="lg" asChild className="group text-base">
-                <Link to="/entreprise">
-                  Découvrir mon portfolio
-                  <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
+              <Button 
+                size="lg" 
+                className="group text-base flex items-center gap-3"
+                asChild
+              >
+                <a href="https://www.linkedin.com/in/kevin-polsinelli-a69198218/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-6 w-6" />
+                  <span>LinkedIn</span>
+                </a>
               </Button>
             </div>
           </div>
