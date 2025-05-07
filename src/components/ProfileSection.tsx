@@ -29,16 +29,15 @@ const ProfileSection = () => {
             </p>
             
             <div className="pt-6">
-              <Button 
-                size="lg" 
-                className="group text-base flex items-center gap-3"
-                asChild
+              <a 
+                href="https://www.linkedin.com/in/kevin-polsinelli-a69198218/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary hover:bg-primary/80 transition-colors text-white"
+                aria-label="LinkedIn Profile"
               >
-                <a href="https://www.linkedin.com/in/kevin-polsinelli-a69198218/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-6 w-6" />
-                  <span>LinkedIn</span>
-                </a>
-              </Button>
+                <Linkedin className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
