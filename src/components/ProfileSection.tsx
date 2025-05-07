@@ -13,7 +13,7 @@ const ProfileSection = () => {
           <div className="md:col-span-5 flex justify-center md:justify-end">
             <div className="w-64 h-64 md:w-80 md:h-80 relative overflow-hidden rounded-xl shadow-2xl border-4 border-primary/20">
               <img 
-                src="/lovable-uploads/bfa81c47-4311-4559-aecf-d8fb211021c0.png" 
+                src="/lovable-uploads/d3d15554-9c66-419e-a9cf-c79c7acce826.png" 
                 alt="Kevin POLSINELLI" 
                 className="object-cover w-full h-full"
               />
@@ -26,7 +26,7 @@ const ProfileSection = () => {
               POLSINELLI Kevin
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-light">
-              Passionné de gestion de projets et de nouvelles technologies
+              Expert en Ingénierie Informatique
             </p>
             
             <div className="pt-6">
