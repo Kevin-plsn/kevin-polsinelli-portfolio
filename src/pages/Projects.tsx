@@ -1,10 +1,30 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bookmark, CheckCircle2, Compass, Target, Wrench } from "lucide-react";
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Code, Database, MessageSquare, Monitor, Shield, Briefcase, Layers, Target, Tool, AlertTriangle, Users } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ProjectsPage = () => {
+  const [activeTab, setActiveTab] = useState("all");
+  const location = useLocation();
+  
+  // Handle anchor links for direct navigation to specific skill sections
+  useEffect(() => {
+    if (location.hash) {
+      const hash = location.hash.substring(1);
+      if (hash === "gestion-projet-sae") setActiveTab("gestion-projet-sae");
+      else if (hash === "support-technique") setActiveTab("support-technique");
+      else if (hash === "automatisation-securisation") setActiveTab("automatisation-securisation");
+      else if (hash === "administration-securite") setActiveTab("administration-securite");
+      else if (hash === "supervision-infrastructure") setActiveTab("supervision-infrastructure");
+      else if (hash === "communication-accompagnement") setActiveTab("communication-accompagnement");
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -12,262 +32,428 @@ const ProjectsPage = () => {
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
           
-          <div className="max-w-3xl mx-auto mb-12">
+          <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg text-muted-foreground">
-              Découvrez les différents projets sur lesquels j'ai travaillé dans le cadre de mes expériences 
-              professionnelles et académiques.
+              Cette page présente les projets majeurs que j'ai réalisés durant mes années d'alternance. 
+              Chaque projet est associé à une compétence développée dans un contexte réel, et témoigne 
+              de ma capacité à répondre à des besoins concrets dans différents environnements professionnels.
             </p>
           </div>
           
-          <section className="py-8">
-            <div className="container max-w-4xl">
-              <h2 className="text-3xl font-bold mb-8 text-primary">Projet MAGELLAN</h2>
-              
-              <Card className="mb-8 shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
-                  <div className="bg-primary/10 p-2 rounded-full">
-                    <Compass className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Contexte du projet</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 prose max-w-none text-gray-700">
-                  <p>
-                    Le projet MAGELLAN s'inscrit dans une démarche globale de modernisation des systèmes d'information chez APRR. Face à des infrastructures vieillissantes, une complexité croissante des processus métiers et un besoin de fiabilité renforcée, APRR a initié ce projet pour refondre et optimiser ses outils internes.
-                  </p>
-                  <p>
-                    MAGELLAN vise à proposer une solution intégrée, évolutive et sécurisée, capable de répondre aux nouveaux enjeux opérationnels et stratégiques de l'entreprise, tout en accompagnant les équipes dans une transformation numérique progressive.
-                  </p>
-                  <p>
-                    Le projet réunit plusieurs expertises techniques (architecture logicielle, infrastructure, sécurité, data…) et implique différents départements métier, illustrant l'importance de la collaboration entre l'IT et les directions fonctionnelles.
-                  </p>
-                  <p>
-                    Dans ce cadre, Intégré à cette équipe, mon rôle consiste à contribuer activement au paramétrage du système MAGELLAN, à participer à l'analyse des besoins métiers, et à accompagner les utilisateurs dans l'appropriation de l'outil.
-                  </p>
-                </CardContent>
-              </Card>
-              
-              <Card className="mb-8 shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
-                  <div className="bg-primary/10 p-2 rounded-full">
-                    <Target className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Objectifs</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4">
-                  <ul className="space-y-3">
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700">Paramétrer et adapter le système aux spécificités des métiers d'APRR, en garantissant sa cohérence avec les besoins fonctionnels.</p>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700">Améliorer l'ergonomie et l'expérience utilisateur pour les collaborateurs internes.</p>
-                    </li>
-                    <li className="flex gap-3 items-start">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700">Accompagner le changement, à travers un travail de configuration, de documentation et de support fonctionnel aux utilisateurs.</p>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              
-              <Card className="mb-8 shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
-                  <div className="bg-primary/10 p-2 rounded-full">
-                    <Wrench className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Réalisations</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-6">
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Paramétrage fonctionnel du système</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai configuré le système MAGELLAN selon les règles de gestion internes spécifiques à APRR, en travaillant étroitement avec les référents métiers. Ce paramétrage a nécessité une compréhension approfondie des processus d'affaires et des exigences opérationnelles de l'entreprise. J'ai adapté les fonctionnalités du système pour qu'elles répondent précisément aux besoins des différents départements tout en maintenant la cohérence globale de l'outil.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Adaptation de l'outil aux cas d'usage spécifiques</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai personnalisé MAGELLAN pour répondre aux cas d'usage particuliers identifiés par les équipes opérationnelles d'APRR. Cette adaptation a impliqué la création de workflows personnalisés, la configuration de règles métier complexes et la mise en place de formulaires spécifiques. Tout ce travail a été réalisé en veillant constamment à la cohérence globale de la solution et à sa conformité avec les processus établis au sein de l'entreprise.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Amélioration de l'ergonomie de l'interface utilisateur</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai contribué à optimiser l'expérience utilisateur en proposant et en implémentant des ajustements dans l'interface de MAGELLAN. Ces modifications ont simplifié la navigation dans l'application, clarifié l'organisation des écrans et facilité la compréhension des fonctionnalités par les utilisateurs finaux. Les améliorations ergonomiques ont été basées sur les retours directs des utilisateurs et sur l'observation de leurs interactions avec le système.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Création et mise à jour de la documentation fonctionnelle</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai développé une documentation complète et accessible pour faciliter l'utilisation de MAGELLAN. Cette documentation comprend des guides d'utilisation, des manuels de procédures, des tutoriels vidéo et des FAQ détaillées. L'objectif était de fournir aux utilisateurs des ressources claires et pratiques pour les aider à s'approprier l'outil efficacement et à résoudre leurs problèmes courants de manière autonome.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Support fonctionnel</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai assuré un accompagnement personnalisé des utilisateurs durant les phases critiques du déploiement de MAGELLAN. Ce support comprenait des sessions de formation individuelles et en groupe, une assistance en temps réel pour résoudre les problèmes rencontrés et un suivi régulier pour recueillir les retours d'expérience. Cette présence constante auprès des équipes a contribué à fluidifier l'adoption de l'outil et à limiter les résistances au changement.
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-primary/30 pl-4 py-1">
-                    <h4 className="font-semibold text-lg">Contribution à l'accompagnement au changement</h4>
-                    <p className="text-gray-700 mt-1">
-                      J'ai joué un rôle d'interface entre les utilisateurs métiers et les équipes techniques du projet, facilitant la communication et la compréhension mutuelle des enjeux. Cette position de relais m'a permis de traduire les besoins fonctionnels en spécifications techniques et, inversement, d'expliquer les contraintes techniques aux utilisateurs de manière accessible. Cette médiation a été essentielle pour aligner les attentes des différentes parties prenantes et favoriser l'acceptation du nouvel outil.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-md">
-                <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
-                  <div className="bg-primary/10 p-2 rounded-full">
-                    <Bookmark className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle>Compétences mobilisées</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-4 space-y-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-primary mb-4">Aptitudes intellectuelles et comportementales</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Esprit d'analyse</h5>
-                        <p className="text-sm text-gray-600">Compréhension des besoins métiers et traduction en paramétrage fonctionnel adapté.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Autonomie</h5>
-                        <p className="text-sm text-gray-600">Prise en charge de tâches de configuration et de support avec peu de supervision directe.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Rigueur</h5>
-                        <p className="text-sm text-gray-600">Respect des processus de validation, des règles de gestion et des contraintes liées aux données métiers.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Pédagogie</h5>
-                        <p className="text-sm text-gray-600">Capacité à expliquer des éléments techniques à des interlocuteurs non techniques lors de l'accompagnement au changement.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-primary mb-4">Savoir-faire généraux</h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Communication écrite et orale</h5>
-                        <p className="text-sm text-gray-600">Rédaction de documentation fonctionnelle, participation aux réunions d'équipe et échanges réguliers avec les utilisateurs métiers.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Organisation personnelle</h5>
-                        <p className="text-sm text-gray-600">Planification des tâches de paramétrage, gestion des demandes utilisateurs et suivi des retours dans les délais impartis.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Travail en équipe</h5>
-                        <p className="text-sm text-gray-600">Collaboration quotidienne avec les membres de l'équipe d'administration fonctionnelle, les référents métiers et les équipes techniques.</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                        <h5 className="font-medium mb-1">Support utilisateur</h5>
-                        <p className="text-sm text-gray-600">Prise en charge des demandes et incidents fonctionnels, aide à la résolution de problèmes, accompagnement post-déploiement.</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-primary mb-4">Savoir-faire techniques</h4>
-                    
-                    <div className="mb-6">
-                      <h5 className="font-medium mb-3 text-primary/80">Systèmes d'information</h5>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Compréhension des processus métiers et de leur transcription dans un outil SI intégré.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Gestion des droits et des habilitations utilisateurs.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Paramétrage de modules fonctionnels (workflow, formulaires, règles de gestion).</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Contribution à la cohérence globale du système dans une logique d'intégration.</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h5 className="font-medium mb-3 text-primary/80">Méthodologie et gestion de projet</h5>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Participation aux phases de recette et de validation des évolutions fonctionnelles.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Collaboration avec les équipes techniques et métiers en méthode agile ou cycle en V.</p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">Rédaction de livrables fonctionnels (guides, procédures, manuels utilisateurs).</p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <h5 className="font-medium mb-3 text-primary/80">Outils utilisés</h5>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">MAGELLAN :</span> Système d'information interne déployé par APRR, incluant le paramétrage, la configuration et le suivi des performances de l'outil.
-                          </p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">ORUS :</span> Outil de gestion des tickets, documentation et suivi des évolutions, permettant la traçabilité des interventions et la gestion des demandes utilisateurs.
-                          </p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">Pack Office / Google Workspace :</span> Utilisation avancée pour la rédaction de documentation technique, la création de reportings détaillés et l'élaboration de supports de formation adaptés.
-                          </p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">Supervision :</span> Surveillance des performances système, analyse des métriques et détection proactive des anomalies pour garantir la disponibilité de l'outil.
-                          </p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">Support :</span> Utilisation d'outils de ticketing, de gestion des connaissances et de partage d'écran pour l'assistance aux utilisateurs.
-                          </p>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                          <p className="text-sm text-gray-600">
-                            <span className="font-medium">Outils de recette / test :</span> Utilisation avancée des plateformes internes pour la validation rigoureuse des paramétrages, incluant la création de scénarios de test et l'analyse des résultats.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-semibold text-primary mb-4">Conclusion du projet</h4>
-                    <p className="text-gray-700">
-                      Ma contribution au projet MAGELLAN m'a permis de développer une expertise pointue dans le paramétrage et l'adaptation de systèmes d'information complexes. J'ai acquis des compétences solides en analyse fonctionnelle, en support utilisateur et en gestion du changement, tout en renforçant mes capacités de communication et de pédagogie.
-                    </p>
-                    <p className="text-gray-700 mt-3">
-                      L'environnement exigeant d'APRR m'a appris à travailler avec rigueur et méthode, en respectant des processus stricts tout en faisant preuve de créativité pour résoudre des problèmes techniques complexes. J'ai particulièrement apprécié le travail d'interface entre les équipes techniques et les utilisateurs métiers, qui m'a permis de développer une vision globale des enjeux SI dans une grande entreprise.
-                    </p>
-                    <p className="text-gray-700 mt-3">
-                      Ce projet a renforcé ma passion pour l'amélioration continue des systèmes d'information et m'a conforté dans mon souhait de poursuivre ma carrière dans ce domaine, à l'intersection entre la technique et les besoins métiers des organisations.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto flex-wrap">
+              <TabsTrigger 
+                value="all" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                Tous les projets
+              </TabsTrigger>
+              <TabsTrigger 
+                value="gestion-projet-sae" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Monitor className="h-4 w-4" />
+                  <span className="hidden sm:inline">Gestion de projet SAE</span>
+                  <span className="sm:hidden">SAE</span>
+                </span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="support-technique" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Code className="h-4 w-4" />
+                  <span className="hidden sm:inline">Support technique</span>
+                  <span className="sm:hidden">Support</span>
+                </span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="automatisation-securisation" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Shield className="h-4 w-4" />
+                  <span className="hidden sm:inline">Automatisation & Sécurisation</span>
+                  <span className="sm:hidden">Auto & Sécu</span>
+                </span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="administration-securite" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Database className="h-4 w-4" />
+                  <span className="hidden sm:inline">Administration SI</span>
+                  <span className="sm:hidden">Admin SI</span>
+                </span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="supervision-infrastructure" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <Monitor className="h-4 w-4" />
+                  <span className="hidden sm:inline">Supervision Infrastructure</span>
+                  <span className="sm:hidden">Supervision</span>
+                </span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="communication-accompagnement" 
+                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <span className="flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4" />
+                  <span className="hidden sm:inline">Communication & Accompagnement</span>
+                  <span className="sm:hidden">Comm & Acc</span>
+                </span>
+              </TabsTrigger>
+            </TabsList>
+           
+            <TabsContent value="all" className="space-y-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ProjectCard 
+                  title="METEOR – APRR"
+                  icon={<Monitor className="h-12 w-12 text-primary" />}
+                  category="Gestion de projet SAE"
+                  context="Projet national déjà déployé avant mon arrivée. J'ai été intégré à l'équipe fonctionnelle pour contribuer à son évolution."
+                  objectives={["Améliorer l'affichage des données météo et trafic par zones dans les Postes de Commandement."]}
+                  actions={["Paramétrage des contextes visuels selon les régions (Nord, Sud, Est, Ouest)", "Tests", "Documentation", "Accompagnement des utilisateurs"]}
+                  results={["Meilleure réactivité des opérateurs", "Affichage plus lisible", "Adoption rapide par les équipes"]}
+                  competenceLink="Coordination fonctionnelle, adaptation aux besoins terrain, conduite du changement."
+                />
+                
+                <ProjectCard 
+                  title="Reprise de l'informatique industrielle – Skyepharma"
+                  icon={<Code className="h-12 w-12 text-primary" />}
+                  category="Support technique & informatique industrielle"
+                  context="Départ de l'informaticien industriel sans passation."
+                  objectives={["Assurer la continuité du support", "Maintenir les équipements de production", "Garantir la réactivité en atelier"]}
+                  actions={["Support N1/N2", "Gestion des incidents", "Maintenance des postes industriels", "Mise à jour de l'AD (intérimaires)"]}
+                  results={["Réduction des temps d'intervention", "Continuité assurée sans rupture de production", "Confiance des utilisateurs"]}
+                  competenceLink="Intervention sur le terrain, autonomie, lien direct avec la production."
+                />
+                
+                <ProjectCard 
+                  title="GHABIL – APRR"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Besoin d'optimiser la gestion des comptes utilisateurs."
+                  objectives={["Automatiser la création des comptes utilisateurs dans l'Active Directory"]}
+                  actions={["Paramétrage fonctionnel", "Validation des règles", "Simplification du processus RH-DSI"]}
+                  results={["Processus standardisé", "Réduction des erreurs", "Gain de temps pour les équipes IT"]}
+                  competenceLink="Automatisation, standardisation, optimisation des processus IT."
+                />
+                
+                <ProjectCard 
+                  title="BitLocker & BIOS – Skyepharma"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Renforcement nécessaire suite à un audit de sécurité."
+                  objectives={["Renforcer la sécurité post-audit Pentest"]}
+                  actions={["Déploiement BitLocker via GPO", "Ajout de mot de passe BIOS", "Rédaction de procédure"]}
+                  results={["Protection des données sensibles", "Conformité aux recommandations d'audit", "Réduction des risques de fuite"]}
+                  competenceLink="Sécurisation, conformité, protection des données."
+                />
+                
+                <ProjectCard 
+                  title="MDM – Skyepharma"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Déploiement d'une nouvelle flotte de smartphones professionnels."
+                  objectives={["Gérer une nouvelle flotte de 15 smartphones professionnels"]}
+                  actions={["Mise en place de l'outil MDM", "Configuration", "Sécurité", "Gestion à distance"]}
+                  results={["Contrôle centralisé des appareils", "Sécurisation des données d'entreprise", "Facilité de déploiement d'applications"]}
+                  competenceLink="Gestion de flotte mobile, sécurité des terminaux, centralisation."
+                />
+                
+                <ProjectCard 
+                  title="Active Directory – Skyepharma"
+                  icon={<Database className="h-12 w-12 text-primary" />}
+                  category="Administration et sécurité des systèmes d'information"
+                  context="Gestion d'un environnement Active Directory en entreprise pharmaceutique."
+                  objectives={["Maintenir un annuaire utilisateur propre et sécurisé"]}
+                  actions={["Création/suppression de comptes", "Gestion des groupes", "Affectation de droits"]}
+                  results={["Structure organisationnelle claire", "Contrôle d'accès efficace", "Réduction des risques de sécurité"]}
+                  competenceLink="Gestion des identités, contrôle d'accès, sécurisation des ressources."
+                />
+                
+                <ProjectCard 
+                  title="Sécurisation des postes – Skyepharma"
+                  icon={<Database className="h-12 w-12 text-primary" />}
+                  category="Administration et sécurité des systèmes d'information"
+                  context="Besoins de renforcement de la sécurité physique et logique des postes de travail."
+                  objectives={["Limiter les risques liés aux accès physiques et aux données sensibles"]}
+                  actions={["Déploiement BitLocker", "Politique GPO", "Protection BIOS"]}
+                  results={["Protection contre les accès non autorisés", "Conformité aux standards de sécurité", "Protection en cas de vol de matériel"]}
+                  competenceLink="Défense en profondeur, protection des endpoints, conformité."
+                />
+                
+                <ProjectCard 
+                  title="Centreon – Skyepharma"
+                  icon={<Monitor className="h-12 w-12 text-primary" />}
+                  category="Supervision et gestion d'infrastructure"
+                  context="Besoin de monitoring proactif des équipements critiques."
+                  objectives={["Surveiller les équipements critiques et anticiper les incidents"]}
+                  actions={["Déploiement de Centreon", "Ajout de capteurs", "Paramétrage des alertes", "Création de tableaux de bord"]}
+                  results={["Détection précoce des anomalies", "Réduction des temps d'indisponibilité", "Vue consolidée de l'infrastructure"]}
+                  competenceLink="Monitoring, détection proactive, tableaux de bord."
+                />
+                
+                <ProjectCard 
+                  title="METEOR (supervision visuelle) – APRR"
+                  icon={<Monitor className="h-12 w-12 text-primary" />}
+                  category="Supervision et gestion d'infrastructure"
+                  context="Optimisation de la visualisation du trafic et des conditions météo."
+                  objectives={["Améliorer la lisibilité en temps réel des conditions d'exploitation"]}
+                  actions={["Paramétrage des vues", "Filtres", "Tests d'affichage en conditions réelles"]}
+                  results={["Meilleure lisibilité", "Prise de décision facilitée", "Supervision optimisée par zone"]}
+                  competenceLink="Visualisation de données, ergonomie, adaptation aux besoins opérationnels."
+                />
+                
+                <ProjectCard 
+                  title="Téléphonie IP – Skyepharma"
+                  icon={<MessageSquare className="h-12 w-12 text-primary" />}
+                  category="Communication et accompagnement des utilisateurs"
+                  context="Migration vers un nouveau système de téléphonie IP."
+                  objectives={["Faciliter la transition vers une nouvelle infrastructure télécom"]}
+                  actions={["Rédaction de procédures claires", "Accompagnement des utilisateurs", "Gestion des demandes"]}
+                  results={["Adoption réussie par les utilisateurs", "Réduction des demandes d'assistance", "Autonomie dans l'utilisation"]}
+                  competenceLink="Documentation utilisateur, pédagogie, accompagnement au changement."
+                />
+                
+                <ProjectCard 
+                  title="Formation METEOR – APRR"
+                  icon={<MessageSquare className="h-12 w-12 text-primary" />}
+                  category="Communication et accompagnement des utilisateurs"
+                  context="Déploiement de nouveaux contextes de visualisation pour les opérateurs."
+                  objectives={["Assurer la prise en main rapide de l'outil"]}
+                  actions={["Présentation des nouveaux contextes aux opérateurs", "Réponses aux questions terrain", "Documentation synthétique"]}
+                  results={["Adoption rapide des nouvelles fonctionnalités", "Autonomie des opérateurs", "Réduction des erreurs d'utilisation"]}
+                  competenceLink="Formation utilisateur, assistance de proximité, documentation adaptée."
+                />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="gestion-projet-sae" className="space-y-6">
+              <ProjectCard 
+                title="METEOR – APRR"
+                icon={<Monitor className="h-12 w-12 text-primary" />}
+                category="Gestion de projet SAE"
+                context="Projet national déjà déployé avant mon arrivée. J'ai été intégré à l'équipe fonctionnelle pour contribuer à son évolution."
+                objectives={["Améliorer l'affichage des données météo et trafic par zones dans les Postes de Commandement."]}
+                actions={["Paramétrage des contextes visuels selon les régions (Nord, Sud, Est, Ouest)", "Tests", "Documentation", "Accompagnement des utilisateurs"]}
+                results={["Meilleure réactivité des opérateurs", "Affichage plus lisible", "Adoption rapide par les équipes"]}
+                competenceLink="Coordination fonctionnelle, adaptation aux besoins terrain, conduite du changement."
+              />
+            </TabsContent>
+            
+            <TabsContent value="support-technique" className="space-y-6">
+              <ProjectCard 
+                title="Reprise de l'informatique industrielle – Skyepharma"
+                icon={<Code className="h-12 w-12 text-primary" />}
+                category="Support technique & informatique industrielle"
+                context="Départ de l'informaticien industriel sans passation."
+                objectives={["Assurer la continuité du support", "Maintenir les équipements de production", "Garantir la réactivité en atelier"]}
+                actions={["Support N1/N2", "Gestion des incidents", "Maintenance des postes industriels", "Mise à jour de l'AD (intérimaires)"]}
+                results={["Réduction des temps d'intervention", "Continuité assurée sans rupture de production", "Confiance des utilisateurs"]}
+                competenceLink="Intervention sur le terrain, autonomie, lien direct avec la production."
+              />
+            </TabsContent>
+            
+            <TabsContent value="automatisation-securisation" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ProjectCard 
+                  title="GHABIL – APRR"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Besoin d'optimiser la gestion des comptes utilisateurs."
+                  objectives={["Automatiser la création des comptes utilisateurs dans l'Active Directory"]}
+                  actions={["Paramétrage fonctionnel", "Validation des règles", "Simplification du processus RH-DSI"]}
+                  results={["Processus standardisé", "Réduction des erreurs", "Gain de temps pour les équipes IT"]}
+                  competenceLink="Automatisation, standardisation, optimisation des processus IT."
+                />
+                
+                <ProjectCard 
+                  title="BitLocker & BIOS – Skyepharma"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Renforcement nécessaire suite à un audit de sécurité."
+                  objectives={["Renforcer la sécurité post-audit Pentest"]}
+                  actions={["Déploiement BitLocker via GPO", "Ajout de mot de passe BIOS", "Rédaction de procédure"]}
+                  results={["Protection des données sensibles", "Conformité aux recommandations d'audit", "Réduction des risques de fuite"]}
+                  competenceLink="Sécurisation, conformité, protection des données."
+                />
+                
+                <ProjectCard 
+                  title="MDM – Skyepharma"
+                  icon={<Shield className="h-12 w-12 text-primary" />}
+                  category="Automatisation et sécurisation des environnements IT"
+                  context="Déploiement d'une nouvelle flotte de smartphones professionnels."
+                  objectives={["Gérer une nouvelle flotte de 15 smartphones professionnels"]}
+                  actions={["Mise en place de l'outil MDM", "Configuration", "Sécurité", "Gestion à distance"]}
+                  results={["Contrôle centralisé des appareils", "Sécurisation des données d'entreprise", "Facilité de déploiement d'applications"]}
+                  competenceLink="Gestion de flotte mobile, sécurité des terminaux, centralisation."
+                />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="administration-securite" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ProjectCard 
+                  title="Active Directory – Skyepharma"
+                  icon={<Database className="h-12 w-12 text-primary" />}
+                  category="Administration et sécurité des systèmes d'information"
+                  context="Gestion d'un environnement Active Directory en entreprise pharmaceutique."
+                  objectives={["Maintenir un annuaire utilisateur propre et sécurisé"]}
+                  actions={["Création/suppression de comptes", "Gestion des groupes", "Affectation de droits"]}
+                  results={["Structure organisationnelle claire", "Contrôle d'accès efficace", "Réduction des risques de sécurité"]}
+                  competenceLink="Gestion des identités, contrôle d'accès, sécurisation des ressources."
+                />
+                
+                <ProjectCard 
+                  title="Sécurisation des postes – Skyepharma"
+                  icon={<Database className="h-12 w-12 text-primary" />}
+                  category="Administration et sécurité des systèmes d'information"
+                  context="Besoins de renforcement de la sécurité physique et logique des postes de travail."
+                  objectives={["Limiter les risques liés aux accès physiques et aux données sensibles"]}
+                  actions={["Déploiement BitLocker", "Politique GPO", "Protection BIOS"]}
+                  results={["Protection contre les accès non autorisés", "Conformité aux standards de sécurité", "Protection en cas de vol de matériel"]}
+                  competenceLink="Défense en profondeur, protection des endpoints, conformité."
+                />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="supervision-infrastructure" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ProjectCard 
+                  title="Centreon – Skyepharma"
+                  icon={<Monitor className="h-12 w-12 text-primary" />}
+                  category="Supervision et gestion d'infrastructure"
+                  context="Besoin de monitoring proactif des équipements critiques."
+                  objectives={["Surveiller les équipements critiques et anticiper les incidents"]}
+                  actions={["Déploiement de Centreon", "Ajout de capteurs", "Paramétrage des alertes", "Création de tableaux de bord"]}
+                  results={["Détection précoce des anomalies", "Réduction des temps d'indisponibilité", "Vue consolidée de l'infrastructure"]}
+                  competenceLink="Monitoring, détection proactive, tableaux de bord."
+                />
+                
+                <ProjectCard 
+                  title="METEOR (supervision visuelle) – APRR"
+                  icon={<Monitor className="h-12 w-12 text-primary" />}
+                  category="Supervision et gestion d'infrastructure"
+                  context="Optimisation de la visualisation du trafic et des conditions météo."
+                  objectives={["Améliorer la lisibilité en temps réel des conditions d'exploitation"]}
+                  actions={["Paramétrage des vues", "Filtres", "Tests d'affichage en conditions réelles"]}
+                  results={["Meilleure lisibilité", "Prise de décision facilitée", "Supervision optimisée par zone"]}
+                  competenceLink="Visualisation de données, ergonomie, adaptation aux besoins opérationnels."
+                />
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="communication-accompagnement" className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <ProjectCard 
+                  title="Téléphonie IP – Skyepharma"
+                  icon={<MessageSquare className="h-12 w-12 text-primary" />}
+                  category="Communication et accompagnement des utilisateurs"
+                  context="Migration vers un nouveau système de téléphonie IP."
+                  objectives={["Faciliter la transition vers une nouvelle infrastructure télécom"]}
+                  actions={["Rédaction de procédures claires", "Accompagnement des utilisateurs", "Gestion des demandes"]}
+                  results={["Adoption réussie par les utilisateurs", "Réduction des demandes d'assistance", "Autonomie dans l'utilisation"]}
+                  competenceLink="Documentation utilisateur, pédagogie, accompagnement au changement."
+                />
+                
+                <ProjectCard 
+                  title="Formation METEOR – APRR"
+                  icon={<MessageSquare className="h-12 w-12 text-primary" />}
+                  category="Communication et accompagnement des utilisateurs"
+                  context="Déploiement de nouveaux contextes de visualisation pour les opérateurs."
+                  objectives={["Assurer la prise en main rapide de l'outil"]}
+                  actions={["Présentation des nouveaux contextes aux opérateurs", "Réponses aux questions terrain", "Documentation synthétique"]}
+                  results={["Adoption rapide des nouvelles fonctionnalités", "Autonomie des opérateurs", "Réduction des erreurs d'utilisation"]}
+                  competenceLink="Formation utilisateur, assistance de proximité, documentation adaptée."
+                />
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
       <Footer />
     </div>
+  );
+};
+
+interface ProjectCardProps {
+  title: string;
+  icon: React.ReactNode;
+  category: string;
+  context: string;
+  objectives: string[];
+  actions: string[];
+  results: string[];
+  competenceLink: string;
+}
+
+const ProjectCard = ({ 
+  title, 
+  icon, 
+  category, 
+  context, 
+  objectives, 
+  actions, 
+  results, 
+  competenceLink 
+}: ProjectCardProps) => {
+  return (
+    <Card className="h-full flex flex-col shadow-sm hover:shadow-md transition-shadow border border-primary/20">
+      <CardHeader className="flex flex-row items-start gap-4 pb-2 bg-primary/5">
+        <div className="bg-primary/10 p-2 rounded-full mt-1">
+          {icon}
+        </div>
+        <div>
+          <div className="text-sm text-muted-foreground mb-1">{category}</div>
+          <CardTitle className="text-lg font-semibold">{title}</CardTitle>
+        </div>
+      </CardHeader>
+      <CardContent className="pt-4 flex-1 flex flex-col gap-4">
+        <div>
+          <h3 className="text-sm font-semibold text-primary/80 mb-1">Contexte</h3>
+          <p className="text-sm text-muted-foreground">{context}</p>
+        </div>
+        
+        <div>
+          <h3 className="text-sm font-semibold text-primary/80 mb-1">Objectifs</h3>
+          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
+            {objectives.map((obj, index) => (
+              <li key={index}>{obj}</li>
+            ))}
+          </ul>
+        </div>
+        
+        <div>
+          <h3 className="text-sm font-semibold text-primary/80 mb-1">Actions menées</h3>
+          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
+            {actions.map((action, index) => (
+              <li key={index}>{action}</li>
+            ))}
+          </ul>
+        </div>
+        
+        <div>
+          <h3 className="text-sm font-semibold text-primary/80 mb-1">Résultats</h3>
+          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
+            {results.map((result, index) => (
+              <li key={index}>{result}</li>
+            ))}
+          </ul>
+        </div>
+        
+        <div className="mt-auto pt-2 border-t border-gray-100">
+          <h3 className="text-sm font-semibold text-primary/80 mb-1">Lien avec la compétence</h3>
+          <p className="text-sm italic text-muted-foreground">{competenceLink}</p>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
