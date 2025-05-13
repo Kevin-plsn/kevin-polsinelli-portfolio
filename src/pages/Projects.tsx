@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
@@ -42,61 +41,59 @@ const ProjectsPage = () => {
           
           <div className="mb-8">
             <h2 className="text-2xl font-bold mb-4 text-primary">Explorer par compétence :</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-              <TabsTrigger 
-                value="gestion-projet-sae" 
-                onClick={() => setActiveTab("gestion-projet-sae")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <Monitor className="h-5 w-5 text-primary" />
-                <span>Gestion de projet SAE</span>
-              </TabsTrigger>
-              
-              <TabsTrigger 
-                value="support-technique" 
-                onClick={() => setActiveTab("support-technique")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <Code className="h-5 w-5 text-primary" />
-                <span>Support technique</span>
-              </TabsTrigger>
-              
-              <TabsTrigger 
-                value="automatisation-securisation" 
-                onClick={() => setActiveTab("automatisation-securisation")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <Shield className="h-5 w-5 text-primary" />
-                <span>Automatisation & Sécurisation</span>
-              </TabsTrigger>
-              
-              <TabsTrigger 
-                value="administration-securite" 
-                onClick={() => setActiveTab("administration-securite")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <Database className="h-5 w-5 text-primary" />
-                <span>Administration SI</span>
-              </TabsTrigger>
-              
-              <TabsTrigger 
-                value="supervision-infrastructure" 
-                onClick={() => setActiveTab("supervision-infrastructure")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <Monitor className="h-5 w-5 text-primary" />
-                <span>Supervision Infrastructure</span>
-              </TabsTrigger>
-              
-              <TabsTrigger 
-                value="communication-accompagnement" 
-                onClick={() => setActiveTab("communication-accompagnement")}
-                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-              >
-                <MessageSquare className="h-5 w-5 text-primary" />
-                <span>Communication & Accompagnement</span>
-              </TabsTrigger>
-            </div>
+            
+            {/* The issue was here - TabsTrigger must be within Tabs and TabsList */}
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <TabsList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <TabsTrigger 
+                  value="gestion-projet-sae" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <Monitor className="h-5 w-5 text-primary" />
+                  <span>Gestion de projet SAE</span>
+                </TabsTrigger>
+                
+                <TabsTrigger 
+                  value="support-technique" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <Code className="h-5 w-5 text-primary" />
+                  <span>Support technique</span>
+                </TabsTrigger>
+                
+                <TabsTrigger 
+                  value="automatisation-securisation" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <Shield className="h-5 w-5 text-primary" />
+                  <span>Automatisation & Sécurisation</span>
+                </TabsTrigger>
+                
+                <TabsTrigger 
+                  value="administration-securite" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <Database className="h-5 w-5 text-primary" />
+                  <span>Administration SI</span>
+                </TabsTrigger>
+                
+                <TabsTrigger 
+                  value="supervision-infrastructure" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <Monitor className="h-5 w-5 text-primary" />
+                  <span>Supervision Infrastructure</span>
+                </TabsTrigger>
+                
+                <TabsTrigger 
+                  value="communication-accompagnement" 
+                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
+                >
+                  <MessageSquare className="h-5 w-5 text-primary" />
+                  <span>Communication & Accompagnement</span>
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
           </div>
           
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
