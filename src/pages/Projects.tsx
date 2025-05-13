@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, MessageSquare, Monitor, Shield, Briefcase, Layers, Target, Tool, AlertTriangle, Users } from "lucide-react";
+import { Code, Database, MessageSquare, Monitor, Shield, Briefcase, Layers, Target, AlertTriangle, Users } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -32,7 +32,7 @@ const ProjectsPage = () => {
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
           
-          <div className="max-w-4xl mx-auto mb-12">
+          <div className="max-w-4xl mx-auto mb-8">
             <p className="text-lg text-muted-foreground">
               Cette page présente les projets majeurs que j'ai réalisés durant mes années d'alternance. 
               Chaque projet est associé à une compétence développée dans un contexte réel, et témoigne 
@@ -40,76 +40,66 @@ const ProjectsPage = () => {
             </p>
           </div>
           
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-            <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto flex-wrap">
-              <TabsTrigger 
-                value="all" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-              >
-                Tous les projets
-              </TabsTrigger>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-4 text-primary">Explorer par compétence :</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               <TabsTrigger 
                 value="gestion-projet-sae" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("gestion-projet-sae")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <Monitor className="h-4 w-4" />
-                  <span className="hidden sm:inline">Gestion de projet SAE</span>
-                  <span className="sm:hidden">SAE</span>
-                </span>
+                <Monitor className="h-5 w-5 text-primary" />
+                <span>Gestion de projet SAE</span>
               </TabsTrigger>
+              
               <TabsTrigger 
                 value="support-technique" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("support-technique")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <Code className="h-4 w-4" />
-                  <span className="hidden sm:inline">Support technique</span>
-                  <span className="sm:hidden">Support</span>
-                </span>
+                <Code className="h-5 w-5 text-primary" />
+                <span>Support technique</span>
               </TabsTrigger>
+              
               <TabsTrigger 
                 value="automatisation-securisation" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("automatisation-securisation")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <Shield className="h-4 w-4" />
-                  <span className="hidden sm:inline">Automatisation & Sécurisation</span>
-                  <span className="sm:hidden">Auto & Sécu</span>
-                </span>
+                <Shield className="h-5 w-5 text-primary" />
+                <span>Automatisation & Sécurisation</span>
               </TabsTrigger>
+              
               <TabsTrigger 
                 value="administration-securite" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("administration-securite")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <Database className="h-4 w-4" />
-                  <span className="hidden sm:inline">Administration SI</span>
-                  <span className="sm:hidden">Admin SI</span>
-                </span>
+                <Database className="h-5 w-5 text-primary" />
+                <span>Administration SI</span>
               </TabsTrigger>
+              
               <TabsTrigger 
                 value="supervision-infrastructure" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("supervision-infrastructure")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <Monitor className="h-4 w-4" />
-                  <span className="hidden sm:inline">Supervision Infrastructure</span>
-                  <span className="sm:hidden">Supervision</span>
-                </span>
+                <Monitor className="h-5 w-5 text-primary" />
+                <span>Supervision Infrastructure</span>
               </TabsTrigger>
+              
               <TabsTrigger 
                 value="communication-accompagnement" 
-                className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                onClick={() => setActiveTab("communication-accompagnement")}
+                className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
               >
-                <span className="flex items-center gap-2">
-                  <MessageSquare className="h-4 w-4" />
-                  <span className="hidden sm:inline">Communication & Accompagnement</span>
-                  <span className="sm:hidden">Comm & Acc</span>
-                </span>
+                <MessageSquare className="h-5 w-5 text-primary" />
+                <span>Communication & Accompagnement</span>
               </TabsTrigger>
-            </TabsList>
-           
+            </div>
+          </div>
+          
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
             <TabsContent value="all" className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ProjectCard 
@@ -124,7 +114,7 @@ const ProjectsPage = () => {
                 />
                 
                 <ProjectCard 
-                  title="Reprise de l'informatique industrielle – Skyepharma"
+                  title="Informatique industrielle – Skyepharma"
                   icon={<Code className="h-12 w-12 text-primary" />}
                   category="Support technique & informatique industrielle"
                   context="Départ de l'informaticien industriel sans passation."
@@ -250,7 +240,7 @@ const ProjectsPage = () => {
             
             <TabsContent value="support-technique" className="space-y-6">
               <ProjectCard 
-                title="Reprise de l'informatique industrielle – Skyepharma"
+                title="Informatique industrielle – Skyepharma"
                 icon={<Code className="h-12 w-12 text-primary" />}
                 category="Support technique & informatique industrielle"
                 context="Départ de l'informaticien industriel sans passation."

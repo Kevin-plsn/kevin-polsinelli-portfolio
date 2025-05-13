@@ -57,16 +57,16 @@ const SkyepharmaPage = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800">Mes missions principales :</h3>
                     <ul className="list-disc pl-6 space-y-2 mt-2">
-                      <li>🧑‍💻 Administration Active Directory / Exchange : Gestion des comptes utilisateurs, des groupes de sécurité et des boîtes mail selon les process qualité.</li>
-                      <li>💻 Déploiement de nouveaux postes : Création d'un script d'automatisation pour faciliter le déploiement de nouveaux PC neufs dans l'environnement industriel.</li>
-                      <li>💽 Migration de disques durs : Remplacement des HDD par des SSD sur les postes fixes afin d'optimiser les performances et la réactivité du matériel.</li>
-                      <li>📞 Mise en place de la nouvelle téléphonie IP : Participation à l'accompagnement des utilisateurs dans la transition vers un système de téléphonie IP moderne.</li>
-                      <li>🔄 Sauvegarde des données : Migration des anciennes sauvegardes sur bandes magnétiques vers Veeam Backup, pour améliorer la gestion, la sécurité et la restauration des données.</li>
-                      <li>📲 Déploiement de scanettes : Installation de nouvelles scanettes pour les équipes du magasin et de la production, facilitant la traçabilité et les flux logistiques.</li>
-                      <li>🛡 Déploiement de l'antivirus SentinelOne : Installation, paramétrage et supervision d'un nouvel antivirus centralisé, garantissant une meilleure protection du parc informatique.</li>
-                      <li>📱 Mise en place d'un MDM : Déploiement d'une solution de Mobile Device Management (MDM) pour la nouvelle flotte de 15 smartphones, avec configuration des profils utilisateurs.</li>
-                      <li>🔍 Supervision Centreon : Participation au déploiement de Centreon pour superviser les équipements critiques et prévenir les incidents réseau ou système.</li>
-                      <li>🏭 Support pour un nouveau site de production : Assistance technique et logistique dans l'ouverture d'un nouveau site, en lien avec la DSI centrale.</li>
+                      <li>Administration Active Directory / Exchange : Gestion des comptes utilisateurs, des groupes de sécurité et des boîtes mail selon les process qualité.</li>
+                      <li>Déploiement de nouveaux postes : Création d'un script d'automatisation pour faciliter le déploiement de nouveaux PC neufs dans l'environnement industriel.</li>
+                      <li>Migration de disques durs : Remplacement des HDD par des SSD sur les postes fixes afin d'optimiser les performances et la réactivité du matériel.</li>
+                      <li>Mise en place de la nouvelle téléphonie IP : Participation à l'accompagnement des utilisateurs dans la transition vers un système de téléphonie IP moderne.</li>
+                      <li>Sauvegarde des données : Migration des anciennes sauvegardes sur bandes magnétiques vers Veeam Backup, pour améliorer la gestion, la sécurité et la restauration des données.</li>
+                      <li>Déploiement de scanettes : Installation de nouvelles scanettes pour les équipes du magasin et de la production, facilitant la traçabilité et les flux logistiques.</li>
+                      <li>Déploiement de l'antivirus SentinelOne : Installation, paramétrage et supervision d'un nouvel antivirus centralisé, garantissant une meilleure protection du parc informatique.</li>
+                      <li>Mise en place d'un MDM : Déploiement d'une solution de Mobile Device Management (MDM) pour la nouvelle flotte de 15 smartphones, avec configuration des profils utilisateurs.</li>
+                      <li>Supervision Centreon : Participation au déploiement de Centreon pour superviser les équipements critiques et prévenir les incidents réseau ou système.</li>
+                      <li>Support pour un nouveau site de production : Assistance technique et logistique dans l'ouverture d'un nouveau site, en lien avec la DSI centrale.</li>
                     </ul>
                   </div>
                   

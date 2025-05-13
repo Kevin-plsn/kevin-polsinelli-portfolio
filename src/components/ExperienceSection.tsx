@@ -16,7 +16,7 @@ const ExperienceSection = () => {
                 <Briefcase className="h-6 w-6 text-primary" />
               </div>
               <div>
-                <CardTitle className="text-xl font-semibold">Technicien SI Trafic</CardTitle>
+                <CardTitle className="text-xl font-semibold">APRR - Alternance</CardTitle>
                 <p className="text-gray-500 flex items-center gap-1 text-sm">
                   <Calendar className="h-4 w-4" /> 2023 - Présent
                 </p>

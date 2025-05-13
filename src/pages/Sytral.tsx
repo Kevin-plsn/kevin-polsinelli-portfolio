@@ -53,10 +53,10 @@ const SytralPage = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-800">Mes missions principales :</h3>
                     <ul className="list-disc pl-6 space-y-2 mt-2">
-                      <li>🧩 Découverte des différentes équipes IT : Présentation des métiers, des outils utilisés et des processus internes (support, réseau, systèmes, projets).</li>
-                      <li>🗃️ Recensement des baies réseau : Dans le cadre de travaux d'aménagement de nouveaux bureaux, j'ai été chargé de faire un état des lieux complet des baies informatiques réparties dans le bâtiment principal, en identifiant leur emplacement, leur contenu et leur état.</li>
-                      <li>📐 Participation à la réorganisation : En collaboration avec les équipes techniques, j'ai aidé à la préparation logistique pour la relocalisation de certains équipements dans les nouveaux espaces.</li>
-                      <li>📝 Rédaction de documents de suivi : Élaboration d'un tableau récapitulatif clair pour permettre aux équipes techniques de visualiser rapidement les ressources réseau présentes dans le bâtiment.</li>
+                      <li>Découverte des différentes équipes IT : Présentation des métiers, des outils utilisés et des processus internes (support, réseau, systèmes, projets).</li>
+                      <li>Recensement des baies réseau : Dans le cadre de travaux d'aménagement de nouveaux bureaux, j'ai été chargé de faire un état des lieux complet des baies informatiques réparties dans le bâtiment principal, en identifiant leur emplacement, leur contenu et leur état.</li>
+                      <li>Participation à la réorganisation : En collaboration avec les équipes techniques, j'ai aidé à la préparation logistique pour la relocalisation de certains équipements dans les nouveaux espaces.</li>
+                      <li>Rédaction de documents de suivi : Élaboration d'un tableau récapitulatif clair pour permettre aux équipes techniques de visualiser rapidement les ressources réseau présentes dans le bâtiment.</li>
                     </ul>
                   </div>
                   
