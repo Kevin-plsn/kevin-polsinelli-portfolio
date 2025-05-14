@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Badge } from "@/components/ui/badge";
 
 const ProjectsPage = () => {
   const projects = [
@@ -26,7 +27,8 @@ const ProjectsPage = () => {
         intellectual: "Esprit d'analyse, rigueur, autonomie",
         general: "Communication avec les métiers, documentation fonctionnelle",
         technical: "Outils SAE, supervision temps réel, ergonomie applicative"
-      }
+      },
+      relatedSkills: ["gestion-projet-sae", "supervision", "communication"]
     },
     {
       id: 2,
@@ -47,7 +49,8 @@ const ProjectsPage = () => {
         intellectual: "Esprit de synthèse, initiative",
         general: "Organisation personnelle, formalisation de standards",
         technical: "Active Directory, outils d'automatisation, documentation technique"
-      }
+      },
+      relatedSkills: ["automatisation", "administration-si"]
     },
     {
       id: 3,
@@ -69,7 +72,8 @@ const ProjectsPage = () => {
         intellectual: "Rigueur, respect des normes de sécurité",
         general: "Rédaction de procédures, suivi d'un audit",
         technical: "GPO, BitLocker, BIOS, sécurité poste client"
-      }
+      },
+      relatedSkills: ["automatisation", "administration-si"]
     },
     {
       id: 4,
@@ -91,7 +95,8 @@ const ProjectsPage = () => {
         intellectual: "Autonomie, gestion de projet",
         general: "Relation utilisateurs, documentation",
         technical: "MDM, sécurité mobile, téléphonie professionnelle"
-      }
+      },
+      relatedSkills: ["automatisation", "administration-si", "communication"]
     },
     {
       id: 5,
@@ -111,7 +116,8 @@ const ProjectsPage = () => {
         intellectual: "Organisation, réactivité",
         general: "Suivi administratif, documentation IT",
         technical: "Active Directory, gestion des droits, scripts PowerShell"
-      }
+      },
+      relatedSkills: ["administration-si"]
     },
     {
       id: 6,
@@ -133,7 +139,8 @@ const ProjectsPage = () => {
         intellectual: "Esprit de synthèse, anticipation",
         general: "Suivi d'outils IT, reporting",
         technical: "Supervision, Centreon, monitoring réseau"
-      }
+      },
+      relatedSkills: ["supervision"]
     },
     {
       id: 7,
@@ -155,7 +162,8 @@ const ProjectsPage = () => {
         intellectual: "Pédagogie, écoute",
         general: "Formation utilisateurs, support technique",
         technical: "Téléphonie IP, réseau LAN, VLAN voix"
-      }
+      },
+      relatedSkills: ["communication", "support-technique"]
     },
     {
       id: 8,
@@ -176,7 +184,8 @@ const ProjectsPage = () => {
         intellectual: "Réactivité, gestion du stress",
         general: "Support technique, travail en environnement critique",
         technical: "Informatique industrielle, AD, réseau local"
-      }
+      },
+      relatedSkills: ["support-technique", "administration-si"]
     }
   ];
 
@@ -238,6 +247,24 @@ const ProjectsPage = () => {
                           <span className="font-medium">💻 Savoir-faire techniques:</span>{" "}
                           {project.skills.technical}
                         </p>
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <h3 className="font-semibold text-sm mb-2">🔗 Compétences associées</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {project.relatedSkills.map((skill, index) => (
+                          <Badge key={index} variant="outline" className="hover:bg-primary/20" asChild>
+                            <Link to={`/skills#${skill}`}>
+                              {skill === "gestion-projet-sae" && "Gestion de projet SAE"}
+                              {skill === "support-technique" && "Support technique & informatique industrielle"}
+                              {skill === "automatisation" && "Automatisation et sécurisation IT"}
+                              {skill === "administration-si" && "Administration des SI"}
+                              {skill === "supervision" && "Supervision d'infrastructure"}
+                              {skill === "communication" && "Communication & accompagnement"}
+                            </Link>
+                          </Badge>
+                        ))}
                       </div>
                     </div>
                   </div>

@@ -1,7 +1,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Database, MessageSquare, Monitor, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const SkillsPage = () => {
   const skills = [
     {
+      id: "gestion-projet-sae",
       title: "Gestion de projet SAE",
       icon: <Monitor className="h-12 w-12 text-primary" />,
       definition: "La gestion de projet SAE (Services d'Aide à l'Exploitation) consiste à piloter le déploiement, l'évolution ou l'optimisation d'outils dédiés à l'exploitation des infrastructures (réseaux routiers, équipements techniques, systèmes métiers). Un SAE vise à centraliser, fiabiliser et automatiser les informations utiles à la prise de décision en temps réel : alertes, incidents, météo, interventions. Ce type de projet requiert une coordination étroite entre les équipes IT, les métiers et les exploitants terrain, tout en assurant la continuité de service, l'ergonomie des interfaces et la conformité aux exigences opérationnelles.",
@@ -17,6 +18,7 @@ const SkillsPage = () => {
       projectLink: "/projects"
     },
     {
+      id: "support-technique",
       title: "Support technique & informatique industrielle",
       icon: <Code className="h-12 w-12 text-primary" />,
       definition: "Le support technique regroupe les actions visant à maintenir le bon fonctionnement du parc informatique et à accompagner les utilisateurs. En environnement industriel, cela inclut également l'intervention sur les équipements liés à la production, dans un cadre souvent normatif et critique.",
@@ -25,6 +27,7 @@ const SkillsPage = () => {
       projectLink: "/projects"
     },
     {
+      id: "automatisation",
       title: "Automatisation et sécurisation des environnements IT",
       icon: <Shield className="h-12 w-12 text-primary" />,
       definition: "Automatiser et sécuriser les environnements IT permet de standardiser les processus, réduire les erreurs humaines, et garantir une meilleure protection des systèmes et des données. Cela repose sur des outils comme les scripts, les GPO, le MDM ou l'Active Directory.",
@@ -33,6 +36,7 @@ const SkillsPage = () => {
       projectLink: "/projects"
     },
     {
+      id: "administration-si",
       title: "Administration et sécurité des systèmes d'information",
       icon: <Database className="h-12 w-12 text-primary" />,
       definition: "Administrer un SI, c'est garantir la stabilité, la sécurité et la cohérence des services informatiques. Cela comprend la gestion des comptes utilisateurs, des droits d'accès, des politiques de sécurité et la supervision de l'ensemble de l'infrastructure.",
@@ -41,6 +45,7 @@ const SkillsPage = () => {
       projectLink: "/projects"
     },
     {
+      id: "supervision",
       title: "Supervision et gestion d'infrastructure",
       icon: <Monitor className="h-12 w-12 text-primary" />,
       definition: "La supervision permet de surveiller en temps réel l'état et les performances des ressources informatiques. Elle est essentielle pour anticiper les incidents, maintenir la disponibilité des services et garantir une infrastructure stable.",
@@ -49,6 +54,7 @@ const SkillsPage = () => {
       projectLink: "/projects"
     },
     {
+      id: "communication",
       title: "Communication et accompagnement des utilisateurs",
       icon: <MessageSquare className="h-12 w-12 text-primary" />,
       definition: "Communiquer efficacement et accompagner les utilisateurs est essentiel pour faciliter l'adoption des outils IT. Cela inclut la formation, la création de supports et la capacité à vulgariser des sujets techniques selon les profils.",
@@ -72,8 +78,12 @@ const SkillsPage = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {skills.map((skill, index) => (
-              <Card key={index} className="border border-primary/20 shadow-sm hover:shadow-md transition-shadow">
+            {skills.map((skill) => (
+              <Card 
+                key={skill.id} 
+                id={skill.id}
+                className="border border-primary/20 shadow-sm hover:shadow-md transition-shadow scroll-mt-24"
+              >
                 <CardHeader className="flex flex-row items-center gap-4 pb-2">
                   {skill.icon}
                   <div>
