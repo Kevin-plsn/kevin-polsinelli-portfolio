@@ -19,25 +19,27 @@ const Header = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Accueil
-          </Link>
-          <Link to="/experiences" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Mes expériences
-          </Link>
-          <Link to="/projects" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Mes projets
-          </Link>
-          <Link to="/skills" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Mes compétences
-          </Link>
-          <Link to="/entreprise" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Entreprise & École
-          </Link>
-          <Link to="/contact" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
-            Contact
-          </Link>
+        <nav className="hidden md:flex items-center justify-center flex-1">
+          <div className="flex items-center justify-center gap-8 mx-auto">
+            <Link to="/" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Accueil
+            </Link>
+            <Link to="/experiences" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Mes expériences
+            </Link>
+            <Link to="/projects" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Mes projets
+            </Link>
+            <Link to="/skills" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Mes compétences
+            </Link>
+            <Link to="/entreprise" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Entreprise & École
+            </Link>
+            <Link to="/contact" className="text-sm font-medium text-gray-200 hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </div>
         </nav>
         
         {/* Mobile Menu Button */}

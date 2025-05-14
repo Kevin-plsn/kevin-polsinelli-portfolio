@@ -1,28 +1,193 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, MessageSquare, Monitor, Shield, Briefcase, Layers, Target, AlertTriangle, Users } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Link } from "react-router-dom";
 
 const ProjectsPage = () => {
-  const [activeTab, setActiveTab] = useState("all");
-  const location = useLocation();
-  
-  // Handle anchor links for direct navigation to specific skill sections
-  useEffect(() => {
-    if (location.hash) {
-      const hash = location.hash.substring(1);
-      if (hash === "gestion-projet-sae") setActiveTab("gestion-projet-sae");
-      else if (hash === "support-technique") setActiveTab("support-technique");
-      else if (hash === "automatisation-securisation") setActiveTab("automatisation-securisation");
-      else if (hash === "administration-securite") setActiveTab("administration-securite");
-      else if (hash === "supervision-infrastructure") setActiveTab("supervision-infrastructure");
-      else if (hash === "communication-accompagnement") setActiveTab("communication-accompagnement");
+  const projects = [
+    {
+      id: 1,
+      title: "Création de contextes METEOR – APRR",
+      description: "METEOR est un outil intégré au programme MAGELLAN déployé chez APRR pour permettre aux Postes de Commandement (PC) d'avoir une vue en temps réel des conditions météo et du trafic. J'ai intégré le projet après son déploiement initial pour adapter et configurer les contextes visuels utilisés par les opérateurs selon les zones géographiques.",
+      objectives: [
+        "Créer des contextes géographiques (Nord, Sud, Est, Ouest) pour la supervision",
+        "Améliorer la lisibilité des informations et la réactivité des équipes",
+        "Assurer une cohérence fonctionnelle avec les autres outils métier"
+      ],
+      realization: [
+        "Configuration des zones de supervision sur METEOR",
+        "Recueil des besoins auprès des équipes de terrain",
+        "Tests de validation dans les salles de supervision",
+        "Élaboration de supports d'utilisation et de fiches pratiques",
+        "Ajustements ergonomiques selon les retours utilisateurs"
+      ],
+      skills: {
+        intellectual: "Esprit d'analyse, rigueur, autonomie",
+        general: "Communication avec les métiers, documentation fonctionnelle",
+        technical: "Outils SAE, supervision temps réel, ergonomie applicative"
+      },
+      image: "/lovable-uploads/c3802892-3e40-4f7e-b6b8-45c04bc32af9.png"
+    },
+    {
+      id: 2,
+      title: "Création automatisée de comptes utilisateurs via GHABIL – APRR",
+      description: "GHABIL est un outil interne utilisé chez APRR pour automatiser la création de comptes Active Directory en lien avec la gestion RH. J'ai été chargé d'analyser et d'harmoniser les règles de création de comptes afin de faciliter la maintenance du système et de garantir une cohérence entre les différents services.",
+      objectives: [
+        "Standardiser les règles de nommage des comptes dans GHABIL",
+        "Faciliter la création automatique de comptes utilisateurs",
+        "Réduire les erreurs et les interventions manuelles"
+      ],
+      realization: [
+        "Analyse des règles de nommage existantes",
+        "Création d'un tableau de correspondance pour homogénéiser les règles",
+        "Partage d'un guide standardisé pour les futurs ajouts",
+        "Communication aux équipes fonctionnelles sur les bonnes pratiques"
+      ],
+      skills: {
+        intellectual: "Esprit de synthèse, initiative",
+        general: "Organisation personnelle, formalisation de standards",
+        technical: "Active Directory, outils d'automatisation, documentation technique"
+      },
+      image: "/lovable-uploads/dc42d57c-c697-4a46-a922-1969a273854a.png"
+    },
+    {
+      id: 3,
+      title: "Déploiement BitLocker & sécurisation BIOS – Skyepharma",
+      description: "À la suite d'un audit de sécurité (pentest), la direction informatique de Skyepharma a décidé de renforcer la sécurité des postes utilisateurs. J'ai été en charge du déploiement de BitLocker via GPO ainsi que de la configuration de mots de passe BIOS sur les ordinateurs portables et fixes.",
+      objectives: [
+        "Sécuriser les postes utilisateurs contre le vol de données",
+        "Respecter les recommandations issues de l'audit de sécurité",
+        "Centraliser le contrôle via Active Directory"
+      ],
+      realization: [
+        "Déploiement de BitLocker avec stratégie GPO",
+        "Activation de la TPM et configuration automatique du chiffrement",
+        "Configuration manuelle des mots de passe BIOS sur chaque machine",
+        "Tests de redémarrage sécurisé",
+        "Rédaction de documentation à usage interne"
+      ],
+      skills: {
+        intellectual: "Rigueur, respect des normes de sécurité",
+        general: "Rédaction de procédures, suivi d'un audit",
+        technical: "GPO, BitLocker, BIOS, sécurité poste client"
+      },
+      image: "/lovable-uploads/9de0a077-4a3c-4fa0-ac7e-10e08bb2c465.png"
+    },
+    {
+      id: 4,
+      title: "Mise en place d'un MDM pour flotte mobile – Skyepharma",
+      description: "Skyepharma a renouvelé sa flotte de smartphones professionnels. Il m'a été confié le déploiement d'un MDM (Mobile Device Management) afin de gérer ces appareils à distance, garantir leur sécurité et en faciliter l'administration.",
+      objectives: [
+        "Déployer une solution de gestion à distance des mobiles",
+        "Sécuriser l'accès aux données pro",
+        "Pré-configurer les appareils avant remise aux utilisateurs"
+      ],
+      realization: [
+        "Choix et mise en place du MDM",
+        "Enregistrement des 15 appareils dans la console",
+        "Paramétrage des règles de sécurité (code, accès restreint, GPS, etc.)",
+        "Formation des utilisateurs à l'utilisation des smartphones",
+        "Suivi des alertes et tests de verrouillage à distance"
+      ],
+      skills: {
+        intellectual: "Autonomie, gestion de projet",
+        general: "Relation utilisateurs, documentation",
+        technical: "MDM, sécurité mobile, téléphonie professionnelle"
+      },
+      image: "/lovable-uploads/d631c07d-942c-41bb-8630-1359b8680576.png"
+    },
+    {
+      id: 5,
+      title: "Gestion Active Directory Industriel – Skyepharma",
+      description: "Dans un contexte de forte rotation du personnel (intérim), j'ai assuré la gestion quotidienne de l'Active Directory : création, modification et suppression des comptes utilisateurs et groupes.",
+      objectives: [
+        "Garantir un environnement AD propre et à jour",
+        "Gérer les accès en fonction des profils métiers",
+        "Réduire les risques de sécurité liés aux comptes orphelins"
+      ],
+      realization: [
+        "Création de comptes et attribution de droits",
+        "Nettoyage des comptes inactifs ou dupliqués",
+        "Suivi des mouvements RH pour les suppressions"
+      ],
+      skills: {
+        intellectual: "Organisation, réactivité",
+        general: "Suivi administratif, documentation IT",
+        technical: "Active Directory, gestion des droits, scripts PowerShell"
+      },
+      image: "/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png"
+    },
+    {
+      id: 6,
+      title: "Déploiement supervision Centreon – Skyepharma",
+      description: "Skyepharma souhaitait renforcer la supervision de son infrastructure IT. J'ai participé à la mise en place de Centreon, un outil open-source permettant de surveiller en temps réel l'état des serveurs, switches et équipements critiques.",
+      objectives: [
+        "Mettre en place une supervision proactive",
+        "Réduire les temps d'indisponibilité",
+        "Alerter automatiquement en cas de panne"
+      ],
+      realization: [
+        "Installation de Centreon sur serveur dédié",
+        "Ajout des hôtes critiques : serveurs, switchs, imprimantes, etc.",
+        "Paramétrage des seuils d'alerte et notifications mail",
+        "Tests de panne simulée",
+        "Création de tableaux de bord lisibles pour l'équipe IT"
+      ],
+      skills: {
+        intellectual: "Esprit de synthèse, anticipation",
+        general: "Suivi d'outils IT, reporting",
+        technical: "Supervision, Centreon, monitoring réseau"
+      },
+      image: "/lovable-uploads/d835cfec-72ec-4987-ba86-073891ceda41.png"
+    },
+    {
+      id: 7,
+      title: "Déploiement téléphonie IP – Skyepharma",
+      description: "Skyepharma a remplacé son ancienne téléphonie par une solution VoIP. J'ai accompagné le projet du déploiement des postes jusqu'à la formation des utilisateurs.",
+      objectives: [
+        "Installer les téléphones IP dans tous les services",
+        "Configurer les profils utilisateurs dans le système",
+        "Assurer la prise en main des nouveaux outils"
+      ],
+      realization: [
+        "Configuration réseau des téléphones IP",
+        "Affectation des postes utilisateurs dans le système",
+        "Tests de communication (interne / externe)",
+        "Rédaction de procédures d'utilisation simples",
+        "Support technique pendant la phase de transition"
+      ],
+      skills: {
+        intellectual: "Pédagogie, écoute",
+        general: "Formation utilisateurs, support technique",
+        technical: "Téléphonie IP, réseau LAN, VLAN voix"
+      },
+      image: "/lovable-uploads/fe77bceb-9e1b-41f1-a020-597872f86c30.png"
+    },
+    {
+      id: 8,
+      title: "Reprise informatique industrielle – Skyepharma",
+      description: "Suite au départ de l'informaticien industriel sans passation, j'ai repris en urgence la gestion de l'IT industrielle de l'usine. J'ai assuré la continuité du support en atelier et la maintenance des systèmes connectés à la production.",
+      objectives: [
+        "Garantir le bon fonctionnement des machines et postes industriels",
+        "Résoudre les incidents de production liés à l'IT",
+        "Tenir à jour les comptes et équipements en environnement critique"
+      ],
+      realization: [
+        "Gestion de l'AD spécifique au personnel de production",
+        "Maintenance des PC industriels connectés aux automates",
+        "Suivi des incidents techniques et coordination avec la production",
+        "Documentation des procédures internes"
+      ],
+      skills: {
+        intellectual: "Réactivité, gestion du stress",
+        general: "Support technique, travail en environnement critique",
+        technical: "Informatique industrielle, AD, réseau local"
+      },
+      image: "/lovable-uploads/f31ad815-1bc1-4748-9e3c-d5659c190765.png"
     }
-  }, [location]);
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -31,7 +196,7 @@ const ProjectsPage = () => {
         <div className="container">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
           
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="max-w-4xl mx-auto mb-12">
             <p className="text-lg text-muted-foreground">
               Cette page présente les projets majeurs que j'ai réalisés durant mes années d'alternance. 
               Chaque projet est associé à une compétence développée dans un contexte réel, et témoigne 
@@ -39,405 +204,69 @@ const ProjectsPage = () => {
             </p>
           </div>
           
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-4 text-primary">Explorer par compétence :</h2>
-            
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4">
-              <TabsList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                <TabsTrigger 
-                  value="gestion-projet-sae" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <Monitor className="h-5 w-5 text-primary" />
-                  <span>Gestion de projet SAE</span>
-                </TabsTrigger>
-                
-                <TabsTrigger 
-                  value="support-technique" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <Code className="h-5 w-5 text-primary" />
-                  <span>Support technique</span>
-                </TabsTrigger>
-                
-                <TabsTrigger 
-                  value="automatisation-securisation" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <Shield className="h-5 w-5 text-primary" />
-                  <span>Automatisation & Sécurisation</span>
-                </TabsTrigger>
-                
-                <TabsTrigger 
-                  value="administration-securite" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <Database className="h-5 w-5 text-primary" />
-                  <span>Administration SI</span>
-                </TabsTrigger>
-                
-                <TabsTrigger 
-                  value="supervision-infrastructure" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <Monitor className="h-5 w-5 text-primary" />
-                  <span>Supervision Infrastructure</span>
-                </TabsTrigger>
-                
-                <TabsTrigger 
-                  value="communication-accompagnement" 
-                  className="w-full px-4 py-3 bg-primary/10 rounded-md hover:bg-primary/20 transition-colors flex items-center gap-2"
-                >
-                  <MessageSquare className="h-5 w-5 text-primary" />
-                  <span>Communication & Accompagnement</span>
-                </TabsTrigger>
-              </TabsList>
-            
-              <TabsContent value="all" className="space-y-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard 
-                    title="METEOR – APRR"
-                    icon={<Monitor className="h-12 w-12 text-primary" />}
-                    category="Gestion de projet SAE"
-                    context="Projet national déjà déployé avant mon arrivée. J'ai été intégré à l'équipe fonctionnelle pour contribuer à son évolution."
-                    objectives={["Améliorer l'affichage des données météo et trafic par zones dans les Postes de Commandement."]}
-                    actions={["Paramétrage des contextes visuels selon les régions (Nord, Sud, Est, Ouest)", "Tests", "Documentation", "Accompagnement des utilisateurs"]}
-                    results={["Meilleure réactivité des opérateurs", "Affichage plus lisible", "Adoption rapide par les équipes"]}
-                    competenceLink="Coordination fonctionnelle, adaptation aux besoins terrain, conduite du changement."
-                  />
-                  
-                  <ProjectCard 
-                    title="Informatique industrielle – Skyepharma"
-                    icon={<Code className="h-12 w-12 text-primary" />}
-                    category="Support technique & informatique industrielle"
-                    context="Départ de l'informaticien industriel sans passation."
-                    objectives={["Assurer la continuité du support", "Maintenir les équipements de production", "Garantir la réactivité en atelier"]}
-                    actions={["Support N1/N2", "Gestion des incidents", "Maintenance des postes industriels", "Mise à jour de l'AD (intérimaires)"]}
-                    results={["Réduction des temps d'intervention", "Continuité assurée sans rupture de production", "Confiance des utilisateurs"]}
-                    competenceLink="Intervention sur le terrain, autonomie, lien direct avec la production."
-                  />
-                  
-                  <ProjectCard 
-                    title="GHABIL – APRR"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Besoin d'optimiser la gestion des comptes utilisateurs."
-                    objectives={["Automatiser la création des comptes utilisateurs dans l'Active Directory"]}
-                    actions={["Paramétrage fonctionnel", "Validation des règles", "Simplification du processus RH-DSI"]}
-                    results={["Processus standardisé", "Réduction des erreurs", "Gain de temps pour les équipes IT"]}
-                    competenceLink="Automatisation, standardisation, optimisation des processus IT."
-                  />
-                  
-                  <ProjectCard 
-                    title="BitLocker & BIOS – Skyepharma"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Renforcement nécessaire suite à un audit de sécurité."
-                    objectives={["Renforcer la sécurité post-audit Pentest"]}
-                    actions={["Déploiement BitLocker via GPO", "Ajout de mot de passe BIOS", "Rédaction de procédure"]}
-                    results={["Protection des données sensibles", "Conformité aux recommandations d'audit", "Réduction des risques de fuite"]}
-                    competenceLink="Sécurisation, conformité, protection des données."
-                  />
-                  
-                  <ProjectCard 
-                    title="MDM – Skyepharma"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Déploiement d'une nouvelle flotte de smartphones professionnels."
-                    objectives={["Gérer une nouvelle flotte de 15 smartphones professionnels"]}
-                    actions={["Mise en place de l'outil MDM", "Configuration", "Sécurité", "Gestion à distance"]}
-                    results={["Contrôle centralisé des appareils", "Sécurisation des données d'entreprise", "Facilité de déploiement d'applications"]}
-                    competenceLink="Gestion de flotte mobile, sécurité des terminaux, centralisation."
-                  />
-                  
-                  <ProjectCard 
-                    title="Active Directory – Skyepharma"
-                    icon={<Database className="h-12 w-12 text-primary" />}
-                    category="Administration et sécurité des systèmes d'information"
-                    context="Gestion d'un environnement Active Directory en entreprise pharmaceutique."
-                    objectives={["Maintenir un annuaire utilisateur propre et sécurisé"]}
-                    actions={["Création/suppression de comptes", "Gestion des groupes", "Affectation de droits"]}
-                    results={["Structure organisationnelle claire", "Contrôle d'accès efficace", "Réduction des risques de sécurité"]}
-                    competenceLink="Gestion des identités, contrôle d'accès, sécurisation des ressources."
-                  />
-                  
-                  <ProjectCard 
-                    title="Sécurisation des postes – Skyepharma"
-                    icon={<Database className="h-12 w-12 text-primary" />}
-                    category="Administration et sécurité des systèmes d'information"
-                    context="Besoins de renforcement de la sécurité physique et logique des postes de travail."
-                    objectives={["Limiter les risques liés aux accès physiques et aux données sensibles"]}
-                    actions={["Déploiement BitLocker", "Politique GPO", "Protection BIOS"]}
-                    results={["Protection contre les accès non autorisés", "Conformité aux standards de sécurité", "Protection en cas de vol de matériel"]}
-                    competenceLink="Défense en profondeur, protection des endpoints, conformité."
-                  />
-                  
-                  <ProjectCard 
-                    title="Centreon – Skyepharma"
-                    icon={<Monitor className="h-12 w-12 text-primary" />}
-                    category="Supervision et gestion d'infrastructure"
-                    context="Besoin de monitoring proactif des équipements critiques."
-                    objectives={["Surveiller les équipements critiques et anticiper les incidents"]}
-                    actions={["Déploiement de Centreon", "Ajout de capteurs", "Paramétrage des alertes", "Création de tableaux de bord"]}
-                    results={["Détection précoce des anomalies", "Réduction des temps d'indisponibilité", "Vue consolidée de l'infrastructure"]}
-                    competenceLink="Monitoring, détection proactive, tableaux de bord."
-                  />
-                  
-                  <ProjectCard 
-                    title="METEOR (supervision visuelle) – APRR"
-                    icon={<Monitor className="h-12 w-12 text-primary" />}
-                    category="Supervision et gestion d'infrastructure"
-                    context="Optimisation de la visualisation du trafic et des conditions météo."
-                    objectives={["Améliorer la lisibilité en temps réel des conditions d'exploitation"]}
-                    actions={["Paramétrage des vues", "Filtres", "Tests d'affichage en conditions réelles"]}
-                    results={["Meilleure lisibilité", "Prise de décision facilitée", "Supervision optimisée par zone"]}
-                    competenceLink="Visualisation de données, ergonomie, adaptation aux besoins opérationnels."
-                  />
-                  
-                  <ProjectCard 
-                    title="Téléphonie IP – Skyepharma"
-                    icon={<MessageSquare className="h-12 w-12 text-primary" />}
-                    category="Communication et accompagnement des utilisateurs"
-                    context="Migration vers un nouveau système de téléphonie IP."
-                    objectives={["Faciliter la transition vers une nouvelle infrastructure télécom"]}
-                    actions={["Rédaction de procédures claires", "Accompagnement des utilisateurs", "Gestion des demandes"]}
-                    results={["Adoption réussie par les utilisateurs", "Réduction des demandes d'assistance", "Autonomie dans l'utilisation"]}
-                    competenceLink="Documentation utilisateur, pédagogie, accompagnement au changement."
-                  />
-                  
-                  <ProjectCard 
-                    title="Formation METEOR – APRR"
-                    icon={<MessageSquare className="h-12 w-12 text-primary" />}
-                    category="Communication et accompagnement des utilisateurs"
-                    context="Déploiement de nouveaux contextes de visualisation pour les opérateurs."
-                    objectives={["Assurer la prise en main rapide de l'outil"]}
-                    actions={["Présentation des nouveaux contextes aux opérateurs", "Réponses aux questions terrain", "Documentation synthétique"]}
-                    results={["Adoption rapide des nouvelles fonctionnalités", "Autonomie des opérateurs", "Réduction des erreurs d'utilisation"]}
-                    competenceLink="Formation utilisateur, assistance de proximité, documentation adaptée."
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project) => (
+              <Card key={project.id} className="overflow-hidden border border-primary/20 hover:shadow-lg transition-shadow">
+                <div className="relative w-full h-48">
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="object-cover w-full h-full" 
+                    />
+                  </AspectRatio>
                 </div>
-              </TabsContent>
-              
-              <TabsContent value="gestion-projet-sae" className="space-y-6">
-                <ProjectCard 
-                  title="METEOR – APRR"
-                  icon={<Monitor className="h-12 w-12 text-primary" />}
-                  category="Gestion de projet SAE"
-                  context="Projet national déjà déployé avant mon arrivée. J'ai été intégré à l'équipe fonctionnelle pour contribuer à son évolution."
-                  objectives={["Améliorer l'affichage des données météo et trafic par zones dans les Postes de Commandement."]}
-                  actions={["Paramétrage des contextes visuels selon les régions (Nord, Sud, Est, Ouest)", "Tests", "Documentation", "Accompagnement des utilisateurs"]}
-                  results={["Meilleure réactivité des opérateurs", "Affichage plus lisible", "Adoption rapide par les équipes"]}
-                  competenceLink="Coordination fonctionnelle, adaptation aux besoins terrain, conduite du changement."
-                />
-              </TabsContent>
-              
-              <TabsContent value="support-technique" className="space-y-6">
-                <ProjectCard 
-                  title="Informatique industrielle – Skyepharma"
-                  icon={<Code className="h-12 w-12 text-primary" />}
-                  category="Support technique & informatique industrielle"
-                  context="Départ de l'informaticien industriel sans passation."
-                  objectives={["Assurer la continuité du support", "Maintenir les équipements de production", "Garantir la réactivité en atelier"]}
-                  actions={["Support N1/N2", "Gestion des incidents", "Maintenance des postes industriels", "Mise à jour de l'AD (intérimaires)"]}
-                  results={["Réduction des temps d'intervention", "Continuité assurée sans rupture de production", "Confiance des utilisateurs"]}
-                  competenceLink="Intervention sur le terrain, autonomie, lien direct avec la production."
-                />
-              </TabsContent>
-              
-              <TabsContent value="automatisation-securisation" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard 
-                    title="GHABIL – APRR"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Besoin d'optimiser la gestion des comptes utilisateurs."
-                    objectives={["Automatiser la création des comptes utilisateurs dans l'Active Directory"]}
-                    actions={["Paramétrage fonctionnel", "Validation des règles", "Simplification du processus RH-DSI"]}
-                    results={["Processus standardisé", "Réduction des erreurs", "Gain de temps pour les équipes IT"]}
-                    competenceLink="Automatisation, standardisation, optimisation des processus IT."
-                  />
-                  
-                  <ProjectCard 
-                    title="BitLocker & BIOS – Skyepharma"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Renforcement nécessaire suite à un audit de sécurité."
-                    objectives={["Renforcer la sécurité post-audit Pentest"]}
-                    actions={["Déploiement BitLocker via GPO", "Ajout de mot de passe BIOS", "Rédaction de procédure"]}
-                    results={["Protection des données sensibles", "Conformité aux recommandations d'audit", "Réduction des risques de fuite"]}
-                    competenceLink="Sécurisation, conformité, protection des données."
-                  />
-                  
-                  <ProjectCard 
-                    title="MDM – Skyepharma"
-                    icon={<Shield className="h-12 w-12 text-primary" />}
-                    category="Automatisation et sécurisation des environnements IT"
-                    context="Déploiement d'une nouvelle flotte de smartphones professionnels."
-                    objectives={["Gérer une nouvelle flotte de 15 smartphones professionnels"]}
-                    actions={["Mise en place de l'outil MDM", "Configuration", "Sécurité", "Gestion à distance"]}
-                    results={["Contrôle centralisé des appareils", "Sécurisation des données d'entreprise", "Facilité de déploiement d'applications"]}
-                    competenceLink="Gestion de flotte mobile, sécurité des terminaux, centralisation."
-                  />
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="administration-securite" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard 
-                    title="Active Directory – Skyepharma"
-                    icon={<Database className="h-12 w-12 text-primary" />}
-                    category="Administration et sécurité des systèmes d'information"
-                    context="Gestion d'un environnement Active Directory en entreprise pharmaceutique."
-                    objectives={["Maintenir un annuaire utilisateur propre et sécurisé"]}
-                    actions={["Création/suppression de comptes", "Gestion des groupes", "Affectation de droits"]}
-                    results={["Structure organisationnelle claire", "Contrôle d'accès efficace", "Réduction des risques de sécurité"]}
-                    competenceLink="Gestion des identités, contrôle d'accès, sécurisation des ressources."
-                  />
-                  
-                  <ProjectCard 
-                    title="Sécurisation des postes – Skyepharma"
-                    icon={<Database className="h-12 w-12 text-primary" />}
-                    category="Administration et sécurité des systèmes d'information"
-                    context="Besoins de renforcement de la sécurité physique et logique des postes de travail."
-                    objectives={["Limiter les risques liés aux accès physiques et aux données sensibles"]}
-                    actions={["Déploiement BitLocker", "Politique GPO", "Protection BIOS"]}
-                    results={["Protection contre les accès non autorisés", "Conformité aux standards de sécurité", "Protection en cas de vol de matériel"]}
-                    competenceLink="Défense en profondeur, protection des endpoints, conformité."
-                  />
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="supervision-infrastructure" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard 
-                    title="Centreon – Skyepharma"
-                    icon={<Monitor className="h-12 w-12 text-primary" />}
-                    category="Supervision et gestion d'infrastructure"
-                    context="Besoin de monitoring proactif des équipements critiques."
-                    objectives={["Surveiller les équipements critiques et anticiper les incidents"]}
-                    actions={["Déploiement de Centreon", "Ajout de capteurs", "Paramétrage des alertes", "Création de tableaux de bord"]}
-                    results={["Détection précoce des anomalies", "Réduction des temps d'indisponibilité", "Vue consolidée de l'infrastructure"]}
-                    competenceLink="Monitoring, détection proactive, tableaux de bord."
-                  />
-                  
-                  <ProjectCard 
-                    title="METEOR (supervision visuelle) – APRR"
-                    icon={<Monitor className="h-12 w-12 text-primary" />}
-                    category="Supervision et gestion d'infrastructure"
-                    context="Optimisation de la visualisation du trafic et des conditions météo."
-                    objectives={["Améliorer la lisibilité en temps réel des conditions d'exploitation"]}
-                    actions={["Paramétrage des vues", "Filtres", "Tests d'affichage en conditions réelles"]}
-                    results={["Meilleure lisibilité", "Prise de décision facilitée", "Supervision optimisée par zone"]}
-                    competenceLink="Visualisation de données, ergonomie, adaptation aux besoins opérationnels."
-                  />
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="communication-accompagnement" className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <ProjectCard 
-                    title="Téléphonie IP – Skyepharma"
-                    icon={<MessageSquare className="h-12 w-12 text-primary" />}
-                    category="Communication et accompagnement des utilisateurs"
-                    context="Migration vers un nouveau système de téléphonie IP."
-                    objectives={["Faciliter la transition vers une nouvelle infrastructure télécom"]}
-                    actions={["Rédaction de procédures claires", "Accompagnement des utilisateurs", "Gestion des demandes"]}
-                    results={["Adoption réussie par les utilisateurs", "Réduction des demandes d'assistance", "Autonomie dans l'utilisation"]}
-                    competenceLink="Documentation utilisateur, pédagogie, accompagnement au changement."
-                  />
-                  
-                  <ProjectCard 
-                    title="Formation METEOR – APRR"
-                    icon={<MessageSquare className="h-12 w-12 text-primary" />}
-                    category="Communication et accompagnement des utilisateurs"
-                    context="Déploiement de nouveaux contextes de visualisation pour les opérateurs."
-                    objectives={["Assurer la prise en main rapide de l'outil"]}
-                    actions={["Présentation des nouveaux contextes aux opérateurs", "Réponses aux questions terrain", "Documentation synthétique"]}
-                    results={["Adoption rapide des nouvelles fonctionnalités", "Autonomie des opérateurs", "Réduction des erreurs d'utilisation"]}
-                    competenceLink="Formation utilisateur, assistance de proximité, documentation adaptée."
-                  />
-                </div>
-              </TabsContent>
-            </Tabs>
+                <CardHeader>
+                  <CardTitle className="text-xl md:text-2xl text-primary">{project.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-sm text-foreground">{project.description}</p>
+                    
+                    <div>
+                      <h3 className="font-semibold text-sm mb-2">🎯 Objectifs</h3>
+                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                        {project.objectives.map((objective, index) => (
+                          <li key={index}>{objective}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-sm mb-2">🛠️ Réalisation</h3>
+                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                        {project.realization.map((item, index) => (
+                          <li key={index}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h3 className="font-semibold text-sm mb-2">✅ Compétences mobilisées</h3>
+                      <div className="pl-5 space-y-2">
+                        <p className="text-sm">
+                          <span className="font-medium">🧠 Aptitudes intellectuelles et comportementales:</span>{" "}
+                          {project.skills.intellectual}
+                        </p>
+                        <p className="text-sm">
+                          <span className="font-medium">🧩 Savoir-faire généraux:</span>{" "}
+                          {project.skills.general}
+                        </p>
+                        <p className="text-sm">
+                          <span className="font-medium">💻 Savoir-faire techniques:</span>{" "}
+                          {project.skills.technical}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </main>
       <Footer />
     </div>
-  );
-};
-
-interface ProjectCardProps {
-  title: string;
-  icon: React.ReactNode;
-  category: string;
-  context: string;
-  objectives: string[];
-  actions: string[];
-  results: string[];
-  competenceLink: string;
-}
-
-const ProjectCard = ({ 
-  title, 
-  icon, 
-  category, 
-  context, 
-  objectives, 
-  actions, 
-  results, 
-  competenceLink 
-}: ProjectCardProps) => {
-  return (
-    <Card className="h-full flex flex-col shadow-sm hover:shadow-md transition-shadow border border-primary/20">
-      <CardHeader className="flex flex-row items-start gap-4 pb-2 bg-primary/5">
-        <div className="bg-primary/10 p-2 rounded-full mt-1">
-          {icon}
-        </div>
-        <div>
-          <div className="text-sm text-muted-foreground mb-1">{category}</div>
-          <CardTitle className="text-lg font-semibold">{title}</CardTitle>
-        </div>
-      </CardHeader>
-      <CardContent className="pt-4 flex-1 flex flex-col gap-4">
-        <div>
-          <h3 className="text-sm font-semibold text-primary/80 mb-1">Contexte</h3>
-          <p className="text-sm text-muted-foreground">{context}</p>
-        </div>
-        
-        <div>
-          <h3 className="text-sm font-semibold text-primary/80 mb-1">Objectifs</h3>
-          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
-            {objectives.map((obj, index) => (
-              <li key={index}>{obj}</li>
-            ))}
-          </ul>
-        </div>
-        
-        <div>
-          <h3 className="text-sm font-semibold text-primary/80 mb-1">Actions menées</h3>
-          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
-            {actions.map((action, index) => (
-              <li key={index}>{action}</li>
-            ))}
-          </ul>
-        </div>
-        
-        <div>
-          <h3 className="text-sm font-semibold text-primary/80 mb-1">Résultats</h3>
-          <ul className="list-disc text-sm text-muted-foreground pl-5 space-y-1">
-            {results.map((result, index) => (
-              <li key={index}>{result}</li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="mt-auto pt-2 border-t border-gray-100">
-          <h3 className="text-sm font-semibold text-primary/80 mb-1">Lien avec la compétence</h3>
-          <p className="text-sm italic text-muted-foreground">{competenceLink}</p>
-        </div>
-      </CardContent>
-    </Card>
   );
 };
 
