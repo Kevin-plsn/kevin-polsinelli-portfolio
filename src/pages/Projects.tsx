@@ -2,7 +2,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 
 const ProjectsPage = () => {
@@ -27,8 +26,7 @@ const ProjectsPage = () => {
         intellectual: "Esprit d'analyse, rigueur, autonomie",
         general: "Communication avec les métiers, documentation fonctionnelle",
         technical: "Outils SAE, supervision temps réel, ergonomie applicative"
-      },
-      image: "/lovable-uploads/c3802892-3e40-4f7e-b6b8-45c04bc32af9.png"
+      }
     },
     {
       id: 2,
@@ -49,8 +47,7 @@ const ProjectsPage = () => {
         intellectual: "Esprit de synthèse, initiative",
         general: "Organisation personnelle, formalisation de standards",
         technical: "Active Directory, outils d'automatisation, documentation technique"
-      },
-      image: "/lovable-uploads/dc42d57c-c697-4a46-a922-1969a273854a.png"
+      }
     },
     {
       id: 3,
@@ -72,8 +69,7 @@ const ProjectsPage = () => {
         intellectual: "Rigueur, respect des normes de sécurité",
         general: "Rédaction de procédures, suivi d'un audit",
         technical: "GPO, BitLocker, BIOS, sécurité poste client"
-      },
-      image: "/lovable-uploads/9de0a077-4a3c-4fa0-ac7e-10e08bb2c465.png"
+      }
     },
     {
       id: 4,
@@ -95,8 +91,7 @@ const ProjectsPage = () => {
         intellectual: "Autonomie, gestion de projet",
         general: "Relation utilisateurs, documentation",
         technical: "MDM, sécurité mobile, téléphonie professionnelle"
-      },
-      image: "/lovable-uploads/d631c07d-942c-41bb-8630-1359b8680576.png"
+      }
     },
     {
       id: 5,
@@ -116,8 +111,7 @@ const ProjectsPage = () => {
         intellectual: "Organisation, réactivité",
         general: "Suivi administratif, documentation IT",
         technical: "Active Directory, gestion des droits, scripts PowerShell"
-      },
-      image: "/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png"
+      }
     },
     {
       id: 6,
@@ -139,8 +133,7 @@ const ProjectsPage = () => {
         intellectual: "Esprit de synthèse, anticipation",
         general: "Suivi d'outils IT, reporting",
         technical: "Supervision, Centreon, monitoring réseau"
-      },
-      image: "/lovable-uploads/d835cfec-72ec-4987-ba86-073891ceda41.png"
+      }
     },
     {
       id: 7,
@@ -162,8 +155,7 @@ const ProjectsPage = () => {
         intellectual: "Pédagogie, écoute",
         general: "Formation utilisateurs, support technique",
         technical: "Téléphonie IP, réseau LAN, VLAN voix"
-      },
-      image: "/lovable-uploads/fe77bceb-9e1b-41f1-a020-597872f86c30.png"
+      }
     },
     {
       id: 8,
@@ -184,8 +176,7 @@ const ProjectsPage = () => {
         intellectual: "Réactivité, gestion du stress",
         general: "Support technique, travail en environnement critique",
         technical: "Informatique industrielle, AD, réseau local"
-      },
-      image: "/lovable-uploads/f31ad815-1bc1-4748-9e3c-d5659c190765.png"
+      }
     }
   ];
 
@@ -207,15 +198,6 @@ const ProjectsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="overflow-hidden border border-primary/20 hover:shadow-lg transition-shadow">
-                <div className="relative w-full h-48">
-                  <AspectRatio ratio={16/9}>
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="object-cover w-full h-full" 
-                    />
-                  </AspectRatio>
-                </div>
                 <CardHeader>
                   <CardTitle className="text-xl md:text-2xl text-primary">{project.title}</CardTitle>
                 </CardHeader>
