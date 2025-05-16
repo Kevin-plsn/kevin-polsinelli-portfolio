@@ -7,20 +7,9 @@ const ProfileSection = () => {
   return (
     <section id="profile" className="min-h-[90vh] flex items-center py-12 md:py-24 bg-gradient-to-b from-background to-muted">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          {/* Profile Image - Larger */}
-          <div className="md:col-span-5 flex justify-center md:justify-end">
-            <div className="w-64 h-64 md:w-80 md:h-80 relative overflow-hidden rounded-xl shadow-2xl border-4 border-primary/20">
-              <img 
-                src="/lovable-uploads/d3d15554-9c66-419e-a9cf-c79c7acce826.png" 
-                alt="Kevin POLSINELLI" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          
+        <div className="grid grid-cols-1 gap-8 items-center">
           {/* Profile Info */}
-          <div className="md:col-span-7 space-y-6 animate-fade-in text-center md:text-left">
+          <div className="space-y-6 animate-fade-in text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-primary">
               POLSINELLI Kevin
             </h1>

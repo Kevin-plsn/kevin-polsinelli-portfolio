@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 
@@ -108,7 +107,7 @@ const ProjectsPage = () => {
     {
       id: "projet-6-magellan-meteor",
       title: "MAGELLAN – METEOR",
-      image: "https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Paramétrage d'un système de visualisation en temps réel pour la météo et le trafic autoroutier.",
       context: "Dans le cadre du projet MAGELLAN - METEOR chez APRR, l'outil METEOR a été conçu pour offrir une visualisation en temps réel de la météo et du trafic autoroutier. L'objectif était d'apporter aux opérateurs en poste de commandement une lecture claire des événements affectant les différentes zones du réseau. Mon rôle, au sein de l'équipe administratrice fonctionnelle, a été de contribuer au paramétrage du système pour qu'il réponde précisément aux besoins métier.",
       objectives: [
@@ -205,7 +204,7 @@ const ProjectsPage = () => {
               >
                 <div className={`w-full overflow-hidden ${
                   expandedProject === project.id 
-                    ? "max-h-[200px] md:max-h-[280px]" 
+                    ? "max-h-[200px] md:max-h-[250px]" 
                     : "aspect-video"
                 }`}>
                   <img 
