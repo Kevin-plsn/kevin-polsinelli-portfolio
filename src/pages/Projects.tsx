@@ -1,11 +1,12 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import { ChevronLeft } from "lucide-react";
 
 type Project = {
   id: string;
@@ -20,12 +21,24 @@ type Project = {
 
 const ProjectsPage = () => {
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Extract project ID from URL hash if present
+  useEffect(() => {
+    const projectId = location.hash.replace('#', '');
+    if (projectId) {
+      setExpandedProject(projectId);
+      setShowAllProjects(false);
+    }
+  }, [location]);
 
   const projects: Project[] = [
     {
       id: "projet-1-standardisation-parc",
       title: "Standardisation du parc d'impression – Skyepharma",
-      image: "/lovable-uploads/893ea8e3-6378-426c-8b04-c9a14d103aa5.png",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Optimisation et centralisation de la gestion des imprimantes et consommables pour simplifier le suivi et réduire les coûts.",
       context: "Lors de mon alternance chez Skyepharma, j'ai constaté une gestion désorganisée des imprimantes et des toners. Chaque service possédait des modèles différents, ce qui compliquait la traçabilité, la gestion des commandes et le suivi des consommables. Cette situation entraînait une perte de temps pour les utilisateurs comme pour l'équipe informatique.",
       objectives: [
@@ -39,7 +52,7 @@ const ProjectsPage = () => {
     {
       id: "projet-2-migration-office",
       title: "Migration Office 365 – Skyepharma",
-      image: "/lovable-uploads/c3802892-3e40-4f7e-b6b8-45c04bc32af9.png",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Harmonisation des versions d'Office sur le parc informatique pour résoudre les problèmes de compatibilité et améliorer la collaboration.",
       context: "Lors de ma mission chez Skyepharma, un manque d'homogénéité entre les versions d'Office utilisées sur les postes de travail posait de nombreux problèmes de compatibilité, notamment dans la lecture et l'édition de fichiers partagés. Cette situation impactait la collaboration entre les équipes et ralentissait les processus métiers.",
       objectives: [
@@ -53,7 +66,7 @@ const ProjectsPage = () => {
     {
       id: "projet-3-audit-securite",
       title: "Audit de sécurité - Skyepharma",
-      image: "/lovable-uploads/9de0a077-4a3c-4fa0-ac7e-10e08bb2c465.png",
+      image: "https://images.unsplash.com/photo-1563206767-5b18f218e8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Mise en conformité des postes utilisateurs suite à un audit de sécurité par le déploiement de solutions de chiffrement et de protection d'accès.",
       context: "À la suite d'un audit de sécurité chez Skyepharma, plusieurs failles ont été identifiées concernant la protection des postes utilisateurs. Notamment, le chiffrement des données n'était pas systématiquement appliqué, et l'accès matériel aux machines n'était pas suffisamment restreint. L'entreprise a donc engagé une démarche de mise en conformité pour renforcer la sécurité des postes de travail.",
       objectives: [
@@ -67,7 +80,7 @@ const ProjectsPage = () => {
     {
       id: "projet-4-informatique-industrielle",
       title: "Informatique industrielle – Skyepharma",
-      image: "/lovable-uploads/fe77bceb-9e1b-41f1-a020-597872f86c30.png",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Gestion autonome du parc informatique industriel et support utilisateurs dans un contexte de production sensible et de forte rotation du personnel.",
       context: "Durant mon alternance chez Skyepharma, j'ai été amené à intervenir dans un contexte industriel exigeant, marqué par une forte présence d'intérimaires et des besoins constants d'adaptation informatique en production. J'ai dû assurer la gestion du parc informatique de production et intervenir en autonomie sur des environnements critiques sans passation, suite au départ du technicien en charge de l'informatique industrielle.",
       objectives: [
@@ -81,7 +94,7 @@ const ProjectsPage = () => {
     {
       id: "projet-5-magellan-sagt",
       title: "MAGELLAN – SAGT – APRR",
-      image: "/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
       shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
       context: "Toujours dans le cadre du programme MAGELLAN chez APRR, le module SAGT (Système d'Aide à la Gestion des Trafic) permet d'automatiser les actions à déclencher lors d'événements sur le réseau autoroutier (accidents, bouchons, conditions météo, etc.). J'ai été sollicité pour intervenir sur l'organisation des règles utilisées par le système, qui manquaient d'uniformité et rendaient leur création complexe et chronophage pour les équipes.",
       objectives: [
@@ -95,7 +108,13 @@ const ProjectsPage = () => {
   ];
 
   const toggleProjectExpansion = (id: string) => {
-    setExpandedProject(expandedProject === id ? null : id);
+    if (expandedProject === id) {
+      setExpandedProject(null);
+      setShowAllProjects(true);
+    } else {
+      setExpandedProject(id);
+      setShowAllProjects(false);
+    }
   };
 
   const getSkillName = (skillId: string) => {
@@ -116,23 +135,49 @@ const ProjectsPage = () => {
     return skillNames[skillId] || skillId;
   };
 
+  const backToAllProjects = () => {
+    setExpandedProject(null);
+    setShowAllProjects(true);
+    navigate('/projects');
+  };
+
+  // Filter projects to display
+  const filteredProjects = expandedProject 
+    ? projects.filter(project => project.id === expandedProject) 
+    : projects;
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1 py-12">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
+          {!showAllProjects && (
+            <Button 
+              onClick={backToAllProjects} 
+              variant="outline" 
+              className="mb-6"
+            >
+              <ChevronLeft className="mr-2 h-4 w-4" />
+              Retour à tous les projets
+            </Button>
+          )}
           
-          <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-lg text-muted-foreground">
-              Cette page présente les projets majeurs que j'ai réalisés durant mes années d'alternance. 
-              Chaque projet est associé à une compétence développée dans un contexte réel, et témoigne 
-              de ma capacité à répondre à des besoins concrets dans différents environnements professionnels.
-            </p>
-          </div>
+          {showAllProjects && (
+            <>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
+              
+              <div className="max-w-4xl mx-auto mb-12">
+                <p className="text-lg text-muted-foreground">
+                  Cette page présente les projets majeurs que j'ai réalisés durant mes années d'alternance. 
+                  Chaque projet est associé à une compétence développée dans un contexte réel, et témoigne 
+                  de ma capacité à répondre à des besoins concrets dans différents environnements professionnels.
+                </p>
+              </div>
+            </>
+          )}
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <Card 
                 key={project.id} 
                 id={project.id}
@@ -142,7 +187,11 @@ const ProjectsPage = () => {
                     : "hover:shadow-md"
                 }`}
               >
-                <div className="aspect-video w-full overflow-hidden">
+                <div className={`w-full overflow-hidden ${
+                  expandedProject === project.id 
+                    ? "max-h-[300px] md:max-h-[400px]" 
+                    : "aspect-video"
+                }`}>
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -184,16 +233,13 @@ const ProjectsPage = () => {
                         <h3 className="font-semibold text-lg mb-2">✅ Compétences mobilisées</h3>
                         <div className="flex flex-wrap gap-2 mt-2">
                           {project.skills.map((skill) => (
-                            <Button 
+                            <Link 
                               key={skill} 
-                              variant="outline"
-                              className="text-sm"
-                              asChild
+                              to={`/skills#${skill}`} 
+                              className="inline-flex items-center rounded-md border border-input bg-background px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                             >
-                              <Link to={`/skills#${skill}`}>
-                                {getSkillName(skill)}
-                              </Link>
-                            </Button>
+                              {getSkillName(skill)}
+                            </Link>
                           ))}
                         </div>
                       </div>
@@ -201,12 +247,21 @@ const ProjectsPage = () => {
                   ) : null}
                   
                   <div className="pt-6 text-center">
-                    <Button 
-                      onClick={() => toggleProjectExpansion(project.id)} 
-                      variant="default"
-                    >
-                      {expandedProject === project.id ? "Réduire" : "Voir le détail du projet"}
-                    </Button>
+                    {!expandedProject ? (
+                      <Button 
+                        onClick={() => toggleProjectExpansion(project.id)} 
+                        variant="default"
+                      >
+                        Voir le détail du projet
+                      </Button>
+                    ) : (
+                      <Button 
+                        onClick={backToAllProjects} 
+                        variant="outline"
+                      >
+                        Retour à tous les projets
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
