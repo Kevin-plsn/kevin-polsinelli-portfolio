@@ -1,199 +1,126 @@
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+
+type Project = {
+  id: string;
+  title: string;
+  image: string;
+  shortDesc: string;
+  context: string;
+  objectives: string[];
+  realization: string;
+  skills: string[];
+};
 
 const ProjectsPage = () => {
-  const projects = [
+  const [expandedProject, setExpandedProject] = useState<string | null>(null);
+
+  const projects: Project[] = [
     {
-      id: 1,
-      title: "Création de contextes METEOR – APRR",
-      description: "METEOR est un outil intégré au programme MAGELLAN déployé chez APRR pour permettre aux Postes de Commandement (PC) d'avoir une vue en temps réel des conditions météo et du trafic. J'ai intégré le projet après son déploiement initial pour adapter et configurer les contextes visuels utilisés par les opérateurs selon les zones géographiques.",
+      id: "projet-1-standardisation-parc",
+      title: "Standardisation du parc d'impression – Skyepharma",
+      image: "/lovable-uploads/893ea8e3-6378-426c-8b04-c9a14d103aa5.png",
+      shortDesc: "Optimisation et centralisation de la gestion des imprimantes et consommables pour simplifier le suivi et réduire les coûts.",
+      context: "Lors de mon alternance chez Skyepharma, j'ai constaté une gestion désorganisée des imprimantes et des toners. Chaque service possédait des modèles différents, ce qui compliquait la traçabilité, la gestion des commandes et le suivi des consommables. Cette situation entraînait une perte de temps pour les utilisateurs comme pour l'équipe informatique.",
       objectives: [
-        "Créer des contextes géographiques (Nord, Sud, Est, Ouest) pour la supervision",
-        "Améliorer la lisibilité des informations et la réactivité des équipes",
-        "Assurer une cohérence fonctionnelle avec les autres outils métier"
+        "Centraliser les informations sur les imprimantes pour simplifier leur gestion",
+        "Améliorer la visibilité sur les consommables (toners)",
+        "Proposer une méthode durable et structurée pour optimiser les stocks"
       ],
-      realization: [
-        "Configuration des zones de supervision sur METEOR",
-        "Recueil des besoins auprès des équipes de terrain",
-        "Tests de validation dans les salles de supervision",
-        "Élaboration de supports d'utilisation et de fiches pratiques",
-        "Ajustements ergonomiques selon les retours utilisateurs"
-      ],
-      skills: {
-        intellectual: "Esprit d'analyse, rigueur, autonomie",
-        general: "Communication avec les métiers, documentation fonctionnelle",
-        technical: "Outils SAE, supervision temps réel, ergonomie applicative"
-      },
-      relatedSkills: ["gestion-projet-sae", "supervision", "communication"]
+      realization: "J'ai réalisé un état des lieux du parc d'imprimantes, en identifiant tous les modèles utilisés dans chaque service. J'ai ensuite construit un tableau de suivi regroupant les emplacements, les types de toners associés, et les besoins récurrents. Ce document a été intégré à l'organisation de l'équipe IT pour anticiper les ruptures, éviter les erreurs de commande, et accélérer les remplacements. Ce projet m'a permis de structurer l'information opérationnelle et de proposer une solution concrète à une problématique de terrain.",
+      skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse"]
     },
     {
-      id: 2,
-      title: "Création automatisée de comptes utilisateurs via GHABIL – APRR",
-      description: "GHABIL est un outil interne utilisé chez APRR pour automatiser la création de comptes Active Directory en lien avec la gestion RH. J'ai été chargé d'analyser et d'harmoniser les règles de création de comptes afin de faciliter la maintenance du système et de garantir une cohérence entre les différents services.",
+      id: "projet-2-migration-office",
+      title: "Migration Office 365 – Skyepharma",
+      image: "/lovable-uploads/c3802892-3e40-4f7e-b6b8-45c04bc32af9.png",
+      shortDesc: "Harmonisation des versions d'Office sur le parc informatique pour résoudre les problèmes de compatibilité et améliorer la collaboration.",
+      context: "Lors de ma mission chez Skyepharma, un manque d'homogénéité entre les versions d'Office utilisées sur les postes de travail posait de nombreux problèmes de compatibilité, notamment dans la lecture et l'édition de fichiers partagés. Cette situation impactait la collaboration entre les équipes et ralentissait les processus métiers.",
       objectives: [
-        "Standardiser les règles de nommage des comptes dans GHABIL",
-        "Faciliter la création automatique de comptes utilisateurs",
-        "Réduire les erreurs et les interventions manuelles"
+        "Uniformiser les versions d'Office pour améliorer la compatibilité entre les utilisateurs",
+        "Faciliter la transition vers la suite Office 365",
+        "Accompagner les collaborateurs dans la prise en main des nouveaux outils"
       ],
-      realization: [
-        "Analyse des règles de nommage existantes",
-        "Création d'un tableau de correspondance pour homogénéiser les règles",
-        "Partage d'un guide standardisé pour les futurs ajouts",
-        "Communication aux équipes fonctionnelles sur les bonnes pratiques"
-      ],
-      skills: {
-        intellectual: "Esprit de synthèse, initiative",
-        general: "Organisation personnelle, formalisation de standards",
-        technical: "Active Directory, outils d'automatisation, documentation technique"
-      },
-      relatedSkills: ["automatisation", "administration-si"]
+      realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
+      skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative"]
     },
     {
-      id: 3,
-      title: "Déploiement BitLocker & sécurisation BIOS – Skyepharma",
-      description: "À la suite d'un audit de sécurité (pentest), la direction informatique de Skyepharma a décidé de renforcer la sécurité des postes utilisateurs. J'ai été en charge du déploiement de BitLocker via GPO ainsi que de la configuration de mots de passe BIOS sur les ordinateurs portables et fixes.",
+      id: "projet-3-audit-securite",
+      title: "Audit de sécurité - Skyepharma",
+      image: "/lovable-uploads/9de0a077-4a3c-4fa0-ac7e-10e08bb2c465.png",
+      shortDesc: "Mise en conformité des postes utilisateurs suite à un audit de sécurité par le déploiement de solutions de chiffrement et de protection d'accès.",
+      context: "À la suite d'un audit de sécurité chez Skyepharma, plusieurs failles ont été identifiées concernant la protection des postes utilisateurs. Notamment, le chiffrement des données n'était pas systématiquement appliqué, et l'accès matériel aux machines n'était pas suffisamment restreint. L'entreprise a donc engagé une démarche de mise en conformité pour renforcer la sécurité des postes de travail.",
       objectives: [
-        "Sécuriser les postes utilisateurs contre le vol de données",
-        "Respecter les recommandations issues de l'audit de sécurité",
-        "Centraliser le contrôle via Active Directory"
+        "Mettre en conformité les postes selon les recommandations de l'audit",
+        "Protéger les données stockées localement via le chiffrement",
+        "Restreindre l'accès matériel aux machines (BIOS) pour éviter toute manipulation non autorisée"
       ],
-      realization: [
-        "Déploiement de BitLocker avec stratégie GPO",
-        "Activation de la TPM et configuration automatique du chiffrement",
-        "Configuration manuelle des mots de passe BIOS sur chaque machine",
-        "Tests de redémarrage sécurisé",
-        "Rédaction de documentation à usage interne"
-      ],
-      skills: {
-        intellectual: "Rigueur, respect des normes de sécurité",
-        general: "Rédaction de procédures, suivi d'un audit",
-        technical: "GPO, BitLocker, BIOS, sécurité poste client"
-      },
-      relatedSkills: ["automatisation", "administration-si"]
+      realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
+      skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse"]
     },
     {
-      id: 4,
-      title: "Mise en place d'un MDM pour flotte mobile – Skyepharma",
-      description: "Skyepharma a renouvelé sa flotte de smartphones professionnels. Il m'a été confié le déploiement d'un MDM (Mobile Device Management) afin de gérer ces appareils à distance, garantir leur sécurité et en faciliter l'administration.",
+      id: "projet-4-informatique-industrielle",
+      title: "Informatique industrielle – Skyepharma",
+      image: "/lovable-uploads/fe77bceb-9e1b-41f1-a020-597872f86c30.png",
+      shortDesc: "Gestion autonome du parc informatique industriel et support utilisateurs dans un contexte de production sensible et de forte rotation du personnel.",
+      context: "Durant mon alternance chez Skyepharma, j'ai été amené à intervenir dans un contexte industriel exigeant, marqué par une forte présence d'intérimaires et des besoins constants d'adaptation informatique en production. J'ai dû assurer la gestion du parc informatique de production et intervenir en autonomie sur des environnements critiques sans passation, suite au départ du technicien en charge de l'informatique industrielle.",
       objectives: [
-        "Déployer une solution de gestion à distance des mobiles",
-        "Sécuriser l'accès aux données pro",
-        "Pré-configurer les appareils avant remise aux utilisateurs"
+        "Maintenir à jour l'Active Directory dans un contexte de fort turnover",
+        "Garantir la continuité du service informatique en environnement de production",
+        "Répondre rapidement aux incidents sur les machines connectées à la chaîne industrielle"
       ],
-      realization: [
-        "Choix et mise en place du MDM",
-        "Enregistrement des 15 appareils dans la console",
-        "Paramétrage des règles de sécurité (code, accès restreint, GPS, etc.)",
-        "Formation des utilisateurs à l'utilisation des smartphones",
-        "Suivi des alertes et tests de verrouillage à distance"
-      ],
-      skills: {
-        intellectual: "Autonomie, gestion de projet",
-        general: "Relation utilisateurs, documentation",
-        technical: "MDM, sécurité mobile, téléphonie professionnelle"
-      },
-      relatedSkills: ["automatisation", "administration-si", "communication"]
+      realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
+      skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel"]
     },
     {
-      id: 5,
-      title: "Gestion Active Directory Industriel – Skyepharma",
-      description: "Dans un contexte de forte rotation du personnel (intérim), j'ai assuré la gestion quotidienne de l'Active Directory : création, modification et suppression des comptes utilisateurs et groupes.",
+      id: "projet-5-magellan-sagt",
+      title: "MAGELLAN – SAGT – APRR",
+      image: "/lovable-uploads/6b020a7d-495f-49ee-b8f4-e1be02e2d69b.png",
+      shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
+      context: "Toujours dans le cadre du programme MAGELLAN chez APRR, le module SAGT (Système d'Aide à la Gestion des Trafic) permet d'automatiser les actions à déclencher lors d'événements sur le réseau autoroutier (accidents, bouchons, conditions météo, etc.). J'ai été sollicité pour intervenir sur l'organisation des règles utilisées par le système, qui manquaient d'uniformité et rendaient leur création complexe et chronophage pour les équipes.",
       objectives: [
-        "Garantir un environnement AD propre et à jour",
-        "Gérer les accès en fonction des profils métiers",
-        "Réduire les risques de sécurité liés aux comptes orphelins"
+        "Homogénéiser les règles d'automatisation dans le module SAGT",
+        "Faciliter la création de nouvelles règles pour les utilisateurs internes",
+        "Améliorer la lisibilité et la cohérence du système"
       ],
-      realization: [
-        "Création de comptes et attribution de droits",
-        "Nettoyage des comptes inactifs ou dupliqués",
-        "Suivi des mouvements RH pour les suppressions"
-      ],
-      skills: {
-        intellectual: "Organisation, réactivité",
-        general: "Suivi administratif, documentation IT",
-        technical: "Active Directory, gestion des droits, scripts PowerShell"
-      },
-      relatedSkills: ["administration-si"]
-    },
-    {
-      id: 6,
-      title: "Déploiement supervision Centreon – Skyepharma",
-      description: "Skyepharma souhaitait renforcer la supervision de son infrastructure IT. J'ai participé à la mise en place de Centreon, un outil open-source permettant de surveiller en temps réel l'état des serveurs, switches et équipements critiques.",
-      objectives: [
-        "Mettre en place une supervision proactive",
-        "Réduire les temps d'indisponibilité",
-        "Alerter automatiquement en cas de panne"
-      ],
-      realization: [
-        "Installation de Centreon sur serveur dédié",
-        "Ajout des hôtes critiques : serveurs, switchs, imprimantes, etc.",
-        "Paramétrage des seuils d'alerte et notifications mail",
-        "Tests de panne simulée",
-        "Création de tableaux de bord lisibles pour l'équipe IT"
-      ],
-      skills: {
-        intellectual: "Esprit de synthèse, anticipation",
-        general: "Suivi d'outils IT, reporting",
-        technical: "Supervision, Centreon, monitoring réseau"
-      },
-      relatedSkills: ["supervision"]
-    },
-    {
-      id: 7,
-      title: "Déploiement téléphonie IP – Skyepharma",
-      description: "Skyepharma a remplacé son ancienne téléphonie par une solution VoIP. J'ai accompagné le projet du déploiement des postes jusqu'à la formation des utilisateurs.",
-      objectives: [
-        "Installer les téléphones IP dans tous les services",
-        "Configurer les profils utilisateurs dans le système",
-        "Assurer la prise en main des nouveaux outils"
-      ],
-      realization: [
-        "Configuration réseau des téléphones IP",
-        "Affectation des postes utilisateurs dans le système",
-        "Tests de communication (interne / externe)",
-        "Rédaction de procédures d'utilisation simples",
-        "Support technique pendant la phase de transition"
-      ],
-      skills: {
-        intellectual: "Pédagogie, écoute",
-        general: "Formation utilisateurs, support technique",
-        technical: "Téléphonie IP, réseau LAN, VLAN voix"
-      },
-      relatedSkills: ["communication", "support-technique"]
-    },
-    {
-      id: 8,
-      title: "Reprise informatique industrielle – Skyepharma",
-      description: "Suite au départ de l'informaticien industriel sans passation, j'ai repris en urgence la gestion de l'IT industrielle de l'usine. J'ai assuré la continuité du support en atelier et la maintenance des systèmes connectés à la production.",
-      objectives: [
-        "Garantir le bon fonctionnement des machines et postes industriels",
-        "Résoudre les incidents de production liés à l'IT",
-        "Tenir à jour les comptes et équipements en environnement critique"
-      ],
-      realization: [
-        "Gestion de l'AD spécifique au personnel de production",
-        "Maintenance des PC industriels connectés aux automates",
-        "Suivi des incidents techniques et coordination avec la production",
-        "Documentation des procédures internes"
-      ],
-      skills: {
-        intellectual: "Réactivité, gestion du stress",
-        general: "Support technique, travail en environnement critique",
-        technical: "Informatique industrielle, AD, réseau local"
-      },
-      relatedSkills: ["support-technique", "administration-si"]
+      realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
+      skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "management-projet"]
     }
   ];
+
+  const toggleProjectExpansion = (id: string) => {
+    setExpandedProject(expandedProject === id ? null : id);
+  };
+
+  const getSkillName = (skillId: string) => {
+    const skillNames: {[key: string]: string} = {
+      "administration-windows": "Administration Windows",
+      "securite": "Sécurité",
+      "bureautique-productivite": "Bureautique et productivité",
+      "conduite-projet-logiciel": "Conduite de projet logiciel",
+      "management-projet": "Management de projet",
+      "communication-relationnel": "Communication et relationnel",
+      "esprit-analyse": "Esprit d'analyse",
+      "rigueur": "Rigueur",
+      "initiative": "Initiative",
+      "organisation-personnelle": "Organisation personnelle",
+      "autonomie": "Autonomie"
+    };
+    
+    return skillNames[skillId] || skillId;
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1 py-12">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes projets</h1>
           
           <div className="max-w-4xl mx-auto mb-12">
@@ -204,69 +131,82 @@ const ProjectsPage = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden border border-primary/20 hover:shadow-lg transition-shadow">
+              <Card 
+                key={project.id} 
+                id={project.id}
+                className={`overflow-hidden border border-primary/20 transition-all duration-300 ${
+                  expandedProject === project.id 
+                    ? "col-span-1 md:col-span-2 lg:col-span-3" 
+                    : "hover:shadow-md"
+                }`}
+              >
+                <div className="aspect-video w-full overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+                
                 <CardHeader>
-                  <CardTitle className="text-xl md:text-2xl text-primary">{project.title}</CardTitle>
+                  <CardTitle className="text-xl text-primary">{project.title}</CardTitle>
                 </CardHeader>
+                
                 <CardContent>
-                  <div className="space-y-4">
-                    <p className="text-sm text-foreground">{project.description}</p>
-                    
-                    <div>
-                      <h3 className="font-semibold text-sm mb-2">🎯 Objectifs</h3>
-                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                        {project.objectives.map((objective, index) => (
-                          <li key={index}>{objective}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-sm mb-2">🛠️ Réalisation</h3>
-                      <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
-                        {project.realization.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-sm mb-2">✅ Compétences mobilisées</h3>
-                      <div className="pl-5 space-y-2">
-                        <p className="text-sm">
-                          <span className="font-medium">🧠 Aptitudes intellectuelles et comportementales:</span>{" "}
-                          {project.skills.intellectual}
-                        </p>
-                        <p className="text-sm">
-                          <span className="font-medium">🧩 Savoir-faire généraux:</span>{" "}
-                          {project.skills.general}
-                        </p>
-                        <p className="text-sm">
-                          <span className="font-medium">💻 Savoir-faire techniques:</span>{" "}
-                          {project.skills.technical}
-                        </p>
+                  <p className="text-sm text-muted-foreground mb-6">
+                    {project.shortDesc}
+                  </p>
+                  
+                  {expandedProject === project.id ? (
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">🧭 Contexte du projet</h3>
+                        <p className="text-sm text-foreground">{project.context}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">🎯 Objectifs</h3>
+                        <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1">
+                          {project.objectives.map((objective, index) => (
+                            <li key={index}>{objective}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">🛠️ Réalisation</h3>
+                        <p className="text-sm text-foreground">{project.realization}</p>
+                      </div>
+                      
+                      <div>
+                        <h3 className="font-semibold text-lg mb-2">✅ Compétences mobilisées</h3>
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {project.skills.map((skill) => (
+                            <Button 
+                              key={skill} 
+                              variant="outline"
+                              className="text-sm"
+                              asChild
+                            >
+                              <Link to={`/skills#${skill}`}>
+                                {getSkillName(skill)}
+                              </Link>
+                            </Button>
+                          ))}
+                        </div>
                       </div>
                     </div>
-
-                    <div className="pt-2">
-                      <h3 className="font-semibold text-sm mb-2">🔗 Compétences associées</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.relatedSkills.map((skill, index) => (
-                          <Badge key={index} variant="outline" className="hover:bg-primary/20" asChild>
-                            <Link to={`/skills#${skill}`}>
-                              {skill === "gestion-projet-sae" && "Gestion de projet SAE"}
-                              {skill === "support-technique" && "Support technique & informatique industrielle"}
-                              {skill === "automatisation" && "Automatisation et sécurisation IT"}
-                              {skill === "administration-si" && "Administration des SI"}
-                              {skill === "supervision" && "Supervision d'infrastructure"}
-                              {skill === "communication" && "Communication & accompagnement"}
-                            </Link>
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
+                  ) : null}
+                  
+                  <div className="pt-6 text-center">
+                    <Button 
+                      onClick={() => toggleProjectExpansion(project.id)} 
+                      variant="default"
+                    >
+                      {expandedProject === project.id ? "Réduire" : "Voir le détail du projet"}
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

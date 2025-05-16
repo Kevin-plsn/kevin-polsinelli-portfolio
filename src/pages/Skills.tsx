@@ -1,115 +1,272 @@
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Database, MessageSquare, Monitor, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+type SkillType = "all" | "technical" | "behavioral" | "general";
+
+type Skill = {
+  id: string;
+  type: "technical" | "behavioral" | "general";
+  title: string;
+  icon: React.ReactNode;
+  definition: string;
+  application: string;
+  assessment: string;
+  relatedProjects: string[];
+};
+
 const SkillsPage = () => {
-  const skills = [
+  const [selectedType, setSelectedType] = useState<SkillType>("all");
+  const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
+
+  const skills: Skill[] = [
     {
-      id: "gestion-projet-sae",
-      title: "Gestion de projet SAE",
-      icon: <Monitor className="h-12 w-12 text-primary" />,
-      definition: "La gestion de projet SAE (Services d'Aide à l'Exploitation) consiste à piloter le déploiement, l'évolution ou l'optimisation d'outils dédiés à l'exploitation des infrastructures (réseaux routiers, équipements techniques, systèmes métiers). Un SAE vise à centraliser, fiabiliser et automatiser les informations utiles à la prise de décision en temps réel : alertes, incidents, météo, interventions. Ce type de projet requiert une coordination étroite entre les équipes IT, les métiers et les exploitants terrain, tout en assurant la continuité de service, l'ergonomie des interfaces et la conformité aux exigences opérationnelles.",
-      projects: "Intégré au projet MAGELLAN chez APRR après son lancement, j'ai contribué à l'évolution de METEOR, un outil de supervision permettant la visualisation en temps réel du trafic et des conditions météo. Ma mission consistait à paramétrer les contextes de visualisation pour les Postes de Commandement, en adaptant les interfaces aux spécificités géographiques. J'ai analysé les besoins métiers, validé les paramétrages réalisés et accompagné les équipes terrain dans la prise en main du système.",
-      impact: "Ce projet m'a permis de comprendre comment intégrer des évolutions dans un projet déjà en place, en m'adaptant à des contraintes fonctionnelles et à des retours utilisateurs. J'ai renforcé ma capacité à structurer un projet, à travailler en coordination avec des équipes variées, et à livrer une solution concrète et utile sur le terrain.",
-      projectLink: "/projects"
+      id: "management-projet",
+      type: "general",
+      title: "📊 Management de projet",
+      icon: null,
+      definition: "Capacité à structurer, suivre et contribuer à un projet technique en respectant les étapes clés, les ressources disponibles et les attentes métiers.",
+      application: "Chez APRR, dans le cadre du projet MAGELLAN, j'ai contribué au paramétrage de l'outil METEOR. Aux côtés du responsable de l'équipe fonctionnelle, nous avons organisé les différentes étapes nécessaires à sa mise en œuvre. En collaboration avec les référents du logiciel répartis dans plusieurs régions, j'ai structuré mon travail comme un véritable projet, en définissant des étapes clés pour guider l'avancement. Cette approche m'a permis de bien comprendre les enjeux de l'outil et de rester efficace tout au long du processus.",
+      assessment: "Ce projet m'a permis de saisir l'importance d'un cadre méthodologique structuré : de l'expression des besoins au suivi des tâches, en passant par la documentation et la coordination avec les référents métier. Cette compétence renforcera ma capacité à contribuer efficacement à la réussite de futurs projets et me prépare à évoluer vers un rôle de référent technique sur logiciel.",
+      relatedProjects: ["projet-5-magellan-sagt"]
     },
     {
-      id: "support-technique",
-      title: "Support technique & informatique industrielle",
-      icon: <Code className="h-12 w-12 text-primary" />,
-      definition: "Le support technique regroupe les actions visant à maintenir le bon fonctionnement du parc informatique et à accompagner les utilisateurs. En environnement industriel, cela inclut également l'intervention sur les équipements liés à la production, dans un cadre souvent normatif et critique.",
-      projects: "Chez Skyepharma, j'ai repris l'ensemble des missions de l'informaticien industriel après son départ sans passation. J'ai assuré le support de niveau 1 et 2, le suivi du parc informatique, la gestion des incidents sur les machines de production, et la mise à jour régulière de l'Active Directory dans un contexte de forte rotation du personnel intérimaire.",
-      impact: "Cette expérience m'a permis de renforcer mon autonomie, ma réactivité et ma capacité d'analyse dans un contexte où les erreurs peuvent avoir un impact direct sur la production. J'ai appris à prioriser les demandes, à être opérationnel rapidement sur des environnements critiques, et à créer un lien de confiance avec les utilisateurs.",
-      projectLink: "/projects"
+      id: "communication-relationnel",
+      type: "general",
+      title: "🗣️ Communication et relationnel",
+      icon: null,
+      definition: "Capacité à interagir efficacement avec différents interlocuteurs, à adapter son discours selon le profil (technique, métier, utilisateur), et à entretenir une collaboration fluide dans un environnement professionnel.",
+      application: "Chez APRR lors du paramétrage de METEOR, j'ai su remonté les problèmes terrains et prendre les informations pour rédigé des tickets d'anomalies pour nos services. Ce qui m'a permis d'adapter ma communication à des profils non techniques tout en transmettant des informations claires. Chez Skyepharma, j'ai accompagné les utilisateurs lors du déploiement de la nouvelle téléphonie IP, en assurant des explications accessibles et des supports compréhensibles. Dans chaque projet, j'ai su m'intégrer aux équipes, recueillir les besoins et maintenir un dialogue constant, aussi bien avec les équipes IT qu'avec les utilisateurs métiers.",
+      assessment: "Cette compétence me permet aujourd'hui d'être un relais fiable entre les utilisateurs et les équipes techniques. Elle facilite la compréhension mutuelle, renforce la confiance, et garantit une meilleure adoption des solutions déployées. Elle est essentielle dans tout environnement de travail collaboratif ou en gestion de projet.",
+      relatedProjects: ["projet-5-magellan-sagt", "projet-2-migration-office"]
     },
     {
-      id: "automatisation",
-      title: "Automatisation et sécurisation des environnements IT",
-      icon: <Shield className="h-12 w-12 text-primary" />,
-      definition: "Automatiser et sécuriser les environnements IT permet de standardiser les processus, réduire les erreurs humaines, et garantir une meilleure protection des systèmes et des données. Cela repose sur des outils comme les scripts, les GPO, le MDM ou l'Active Directory.",
-      projects: "Chez APRR, j'ai utilisé GHABIL pour automatiser la création de comptes utilisateurs selon les services. Chez Skyepharma, j'ai déployé BitLocker via GPO, sécurisé les postes avec un mot de passe BIOS, et mis en place un MDM pour la gestion d'une nouvelle flotte de smartphones. Ces actions ont renforcé l'autonomie de gestion et la protection des équipements.",
-      impact: "J'ai appris à automatiser intelligemment des tâches critiques, à déployer des solutions de sécurité cohérentes à l'échelle de l'entreprise, et à structurer des configurations pour en assurer la fiabilité. Cela m'a permis de gagner du temps, de fiabiliser les installations, et de répondre aux exigences des audits de sécurité.",
-      projectLink: "/projects"
+      id: "esprit-analyse",
+      type: "behavioral",
+      title: "🧠 Esprit d'analyse",
+      icon: null,
+      definition: "Capacité à comprendre une situation complexe, identifier ses éléments clés, détecter les incohérences et proposer des solutions pertinentes en s'appuyant sur des faits et une réflexion structurée.",
+      application: "Dans le cadre du projet SAGT chez APRR, j'ai travaillé sur la cohérence des règles de paramétrage en analysant les nomenclatures utilisées dans le système. Ce travail m'a permis d'identifier des doublons, des écarts de nommage, et de proposer une structure homogène facilitant la compréhension et la maintenance du système. Chez Skyepharma, suite à un audit de sécurité, j'ai analysé l'état du parc informatique pour définir une stratégie de chiffrement BitLocker et de protection BIOS adaptée à l'environnement.",
+      assessment: "L'esprit d'analyse me permet de traiter efficacement des situations techniques complexes, de faire ressortir les enjeux critiques, et d'élaborer des solutions adaptées. Il constitue un levier essentiel pour garantir la qualité, la cohérence et la pérennité des actions menées dans des environnements structurés.",
+      relatedProjects: ["projet-5-magellan-sagt", "projet-3-audit-securite"]
     },
     {
-      id: "administration-si",
-      title: "Administration et sécurité des systèmes d'information",
-      icon: <Database className="h-12 w-12 text-primary" />,
-      definition: "Administrer un SI, c'est garantir la stabilité, la sécurité et la cohérence des services informatiques. Cela comprend la gestion des comptes utilisateurs, des droits d'accès, des politiques de sécurité et la supervision de l'ensemble de l'infrastructure.",
-      projects: "J'ai administré l'Active Directory chez Skyepharma (création de comptes, affectation aux groupes), géré la sécurité des postes via BitLocker, et configuré des GPO adaptées aux besoins internes. J'ai également participé à la supervision via Centreon pour maintenir les équipements critiques.",
-      impact: "Ces missions m'ont permis d'adopter une posture rigoureuse et préventive dans la gestion du SI. J'ai compris l'importance d'une politique de sécurité structurée, appris à intervenir rapidement en cas d'incident, et à documenter mes actions pour assurer leur traçabilité.",
-      projectLink: "/projects"
+      id: "rigueur",
+      type: "behavioral",
+      title: "🎯 Rigueur",
+      icon: null,
+      definition: "Capacité et respect à appliquer les méthodes de travail précises, les procédures et contraintes techniques, tout en assurant la fiabilité et la qualité des livrables produits.",
+      application: "Chez Skyepharma, lors du déploiement de BitLocker sur l'ensemble du parc informatique, j'ai respecté une procédure stricte de configuration, d'activation et de vérification, en veillant à ne pas perturber l'environnement industriel. J'ai également sécurisé l'accès au BIOS par mot de passe sur chaque ordinateur de chaque collaborateur, en documentant chaque étape. Dans le projet METEOR chez APRR, j'ai appliqué rigoureusement les règles de configuration définies pour chaque Poste de Commandement, afin d'assurer l'harmonisation des contextes de sur l'ensemble du réseau.",
+      assessment: "La rigueur m'a permis de garantir la qualité et la fiabilité des actions menées sur des systèmes critiques. Elle renforce ma capacité à travailler dans des environnements exigeants, à produire des livrables fiables, et à limiter les erreurs en phase d'exécution. Cette approche méthodique est essentielle dans les domaines liés à la sécurité, à l'automatisation ou à la production.",
+      relatedProjects: ["projet-3-audit-securite", "projet-5-magellan-sagt"]
     },
     {
-      id: "supervision",
-      title: "Supervision et gestion d'infrastructure",
-      icon: <Monitor className="h-12 w-12 text-primary" />,
-      definition: "La supervision permet de surveiller en temps réel l'état et les performances des ressources informatiques. Elle est essentielle pour anticiper les incidents, maintenir la disponibilité des services et garantir une infrastructure stable.",
-      projects: "Chez Skyepharma, j'ai participé à la mise en place de la supervision Centreon. J'ai configuré des points de contrôle, paramétré les alertes critiques et aidé à l'intégration de nouveaux équipements au système de surveillance.",
-      impact: "Cette mission m'a appris à lire et interpréter des indicateurs techniques, à être proactif dans la détection d'incidents, et à collaborer avec les équipes pour adapter la supervision aux enjeux réels de production. Elle a renforcé ma vision globale de l'infrastructure et ma capacité à travailler en mode préventif.",
-      projectLink: "/projects"
+      id: "initiative",
+      type: "general",
+      title: "💡 Initiative",
+      icon: null,
+      definition: "Capacité à proposer, anticiper ou entreprendre des actions sans y être formellement invité, dans le but d'améliorer une situation, de résoudre un problème ou de répondre à un besoin identifié sur le terrain.",
+      application: "Chez Skyepharma, dans le projet de standardisation du parc d'impression, j'ai constaté que chaque service utilisait des modèles d'imprimantes différents, ce qui rendait le suivi des consommables difficile et chronophage. J'ai alors proposé une centralisation du modèle d'imprimante, afin de simplifier la gestion des stocks et d'optimiser les commandes. Lors de la migration vers Office 365, j'ai constaté que certains collaborateurs utilisaient des versions différentes d'Office, ce qui empêchait parfois l'ouverture correcte de fichiers Excel ou Word. J'ai pris l'initiative de recenser les versions installées, d'alerter l'équipe IT, puis de contribuer à l'organisation.",
+      assessment: "Ces initiatives ont démontré ma capacité à observer, analyser et agir rapidement pour résoudre des dysfonctionnements opérationnels. Elles m'ont permis de contribuer à une meilleure fluidité du service, de simplifier des processus internes, et de gagner en autonomie et en crédibilité au sein de l'équipe.",
+      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office"]
     },
     {
-      id: "communication",
-      title: "Communication et accompagnement des utilisateurs",
-      icon: <MessageSquare className="h-12 w-12 text-primary" />,
-      definition: "Communiquer efficacement et accompagner les utilisateurs est essentiel pour faciliter l'adoption des outils IT. Cela inclut la formation, la création de supports et la capacité à vulgariser des sujets techniques selon les profils.",
-      projects: "Chez APRR, j'ai formé les opérateurs des PC à l'utilisation de METEOR, en leur expliquant les nouveaux contextes de visualisation mis en place. Chez Skyepharma, j'ai accompagné le déploiement de la nouvelle téléphonie IP en rédigeant des procédures claires et en formant les collaborateurs.",
-      impact: "J'ai appris à m'adapter à des publics variés, à transmettre des consignes techniques de manière simple, et à recueillir des retours pour améliorer les outils. Cela a renforcé mes qualités relationnelles et mon aisance dans les échanges transverses.",
-      projectLink: "/projects"
+      id: "organisation-personnelle",
+      type: "general",
+      title: "🧩 Organisation personnelle",
+      icon: null,
+      definition: "Capacité à gérer efficacement son temps, ses priorités et ses tâches, afin d'atteindre les objectifs fixés dans les délais, même dans un environnement exigeant ou multitâche.",
+      application: "Chez Skyepharma, lors de ma mission informatique industrielle, j'ai repris l'ensemble de la gestion du parc informatique industriel suite au départ de l'informaticien en poste, sans passation avec quelques documentations préalable. J'ai dû organiser mes tâches de façon autonome, afin de gérer mes missions de technicien côte administratif et production. la mise à jour régulière des comptes utilisateurs dans Active Directory Industriel, tout en maintenant le suivi matériel et le bon fonctionnement des équipements utilisés en production. Cette mission m'a obligé à planifier rigoureusement mes interventions, à prioriser les urgences terrain et à tenir un suivi précis de l'environnement informatique global de l'entreprise.",
+      assessment: "Cette expérience m'a permis de développer une forte capacité d'organisation et de gestion autonome dans un contexte exigeant. J'ai appris à gérer seul un périmètre complet, à structurer mes priorités en fonction des contraintes techniques et à assurer une continuité de service dans un environnement sensible.",
+      relatedProjects: ["projet-4-informatique-industrielle"]
+    },
+    {
+      id: "autonomie",
+      type: "behavioral",
+      title: "🧑‍🚀 Autonomie",
+      icon: null,
+      definition: "Capacité à prendre des initiatives, à organiser son travail de manière indépendante et à prendre des décisions sans supervision directe, tout en assumant ses responsabilités.",
+      application: "Dans le cadre de ma mission en informatique industrielle chez Skyepharma, j'ai dû reprendre seul l'ensemble des tâches du technicien précédent, parti sans passation. J'ai été chargé de la gestion du parc informatique de production, du maintien à jour de l'Active Directory dans un environnement à fort turnover, et de la résolution des incidents sur des postes critiques, parfois directement reliés aux chaînes de production. Sans encadrement direct ni documentation formalisée, j'ai su m'adapter, prioriser les interventions et garantir la continuité de service avec efficacité.",
+      assessment: "Cette expérience m'a permis de développer une véritable autonomie opérationnelle, essentielle dans les environnements industriels exigeants. Elle m'a appris à gérer des situations imprévues, à prendre des décisions rapidement, et à m'auto-organiser pour maintenir un niveau de service élevé, même sans appui extérieur. Cette compétence me sera précieuse dans toute situation où la réactivité et la capacité à avancer seul sont attendues.",
+      relatedProjects: ["projet-4-informatique-industrielle"]
+    },
+    {
+      id: "administration-windows",
+      type: "technical",
+      title: "💻 Administration Windows",
+      icon: null,
+      definition: "Maîtrise des fonctionnalités du système d'exploitation Windows en entreprise : gestion des comptes et des droits via Active Directory, sécurisation des postes, intégration réseau, et mise en œuvre de politiques système (GPO).",
+      application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai pris en charge la gestion complète des comptes utilisateurs dans l'Active Directory, en assurant la création, la suppression et l'organisation des accès au sein d'une structure exposée à un fort turnover. J'ai maintenu l'intégrité du domaine malgré l'absence de passation, en assurant un suivi rigoureux des comptes et des machines utilisées en production. À la suite d'un audit de sécurité, j'ai mis en place le chiffrement des postes utilisateurs avec BitLocker, en définissant les paramètres manuellement poste par poste selon les recommandations internes. J'ai également sécurisé les postes au niveau matériel en configurant un mot de passe administrateur BIOS pour limiter les accès non autorisés. Ce projet m'a permis de développer une bonne connaissance de Windows/AD qui m'a permis de m'adapter à des environnements professionnels.",
+      assessment: "Cette expérience m'a permis de développer une autonomie totale sur la gestion des comptes utilisateurs et des postes dans un environnement complexe. J'ai appris à organiser et structurer une gestion système fiable, même sans supervision, tout en respectant les standards de sécurité et de continuité d'activité.",
+      relatedProjects: ["projet-4-informatique-industrielle", "projet-3-audit-securite"]
+    },
+    {
+      id: "securite",
+      type: "technical",
+      title: "💻 Sécurité",
+      icon: null,
+      definition: "Mise en œuvre de solutions et de pratiques visant à protéger les systèmes d'exploitation contre les accès non autorisés, les pertes de données ou les vulnérabilités, en assurant la confidentialité, l'intégrité et la disponibilité des informations.",
+      application: "Chez Skyepharma, dans le cadre de l'audit de sécurité mené par une équipe externe de pentester, j'ai été chargé de mettre en œuvre plusieurs mesures correctives sur les postes de travail. J'ai mis en place BitLocker pour garantir le chiffrement des disques durs des utilisateurs, en assurant la compatibilité des machines et la bonne configuration des options de sécurité. J'ai également sécurisé les postes au niveau matériel en configurant manuellement un mot de passe administrateur dans le BIOS afin de limiter les modifications non autorisées. Cette démarche faisait suite à des recommandations précises formulées dans le rapport d'audit, et a nécessité une coordination étroite avec les utilisateurs et les services IT internes. En parallèle, j'ai participé à la migration vers Office 365, en veillant à l'uniformité des versions déployées et à la protection des données migrées.",
+      assessment: "Ces projets m'ont permis de renforcer ma capacité à appliquer des mesures de sécurité concrètes et adaptées aux contraintes de terrain. J'ai développé une sensibilité aux bonnes pratiques de sécurité des systèmes d'exploitation, appris à interpréter des recommandations d'audit, et à mettre en œuvre des solutions efficaces, même en l'absence d'outils d'automatisation.",
+      relatedProjects: ["projet-3-audit-securite"]
+    },
+    {
+      id: "bureautique-productivite",
+      type: "technical",
+      title: "💻 Bureautique et productivité personnelle",
+      icon: null,
+      definition: "Capacité à optimiser les environnements informatiques et les outils bureautiques afin de garantir une utilisation fluide, homogène et efficace des postes de travail et des ressources associées.",
+      application: "Chez Skyepharma, j'ai accompagné les équipes lors de la migration vers Office 365 en assurant une uniformisation des versions de la suite bureautique. Certaines incompatibilités empêchaient la lecture correcte des fichiers partagés, ce qui ralentissait les échanges. J'ai mené un inventaire, organisé les mises à niveau, et facilité l'adoption d'un environnement commun. En parallèle, dans le projet Standardisation du parc d'impression, j'ai pris l'initiative de centraliser la gestion des imprimantes et des toners. La diversité des modèles rendait le suivi complexe ; j'ai mis en place un tableau synthétique pour suivre les consommables, standardiser les commandes et améliorer la lisibilité globale. Chez APRR, dans le cadre du projet MAGELLAN – SAGT, j'ai identifié que les règles métiers utilisées dans le logiciel n'étaient pas nommées de façon cohérente. Pour y remédier, j'ai conçu un tableau de nomenclature claire et homogène, utilisé par toute l'équipe comme modèle. Ce travail a permis d'uniformiser les noms de règles, de réduire les erreurs de saisie et de fluidifier le paramétrage fonctionnel du système.",
+      assessment: "Ce type de projet m'a permis de développer des réflexes d'analyse et d'adaptation face aux besoins bureautiques du terrain. J'ai appris à améliorer la cohérence d'un parc informatique, à favoriser la productivité des utilisateurs et à proposer des méthodes pratiques qui allègent le travail quotidien des équipes. Cette compétence me permet d'intervenir efficacement dans la structuration et la fluidité des environnements numériques internes.",
+      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office"]
+    },
+    {
+      id: "conduite-projet-logiciel",
+      type: "technical",
+      title: "💻 Conduite de projet logiciel",
+      icon: null,
+      definition: "Capacité à participer à la conception, à l'adaptation et à l'évolution d'un logiciel métier en suivant une logique projet : compréhension des besoins, structuration des livrables, tests, documentation, accompagnement au changement et retours utilisateurs.",
+      application: "Chez APRR, j'ai intégré l'équipe administratrice fonctionnelle du projet MAGELLAN, qui vise à centraliser et améliorer les outils métiers utilisés dans différents services. Dans ce cadre, j'ai travaillé sur le projet MAGELLAN - METEOR, un outil d'aide à l'exploitation permettant la visualisation en temps réel des données trafic et météo. J'ai participé au paramétrage fonctionnel des vues régionales, en lien avec les référents terrain, en structurant le travail par étapes pour assurer cohérence, clarté et compatibilité avec les besoins opérationnels. J'ai également contribué au projet MAGELLAN - SAGT, qui automatise les actions déclenchées lors d'événements sur le réseau autoroutier. J'ai constaté une hétérogénéité dans le nommage des règles, freinant leur création et leur compréhension. Pour y remédier, j'ai conçu un tableau de nomenclature partagé, facilitant l'harmonisation et accélérant le travail des équipes. Ces missions ont nécessité un suivi structuré, des échanges fréquents avec les utilisateurs métiers, la rédaction de supports, ainsi qu'un travail itératif pour adapter la configuration du système.",
+      assessment: "Ce projet m'a permis de développer une vision complète de la conduite de projet logiciel en contexte métier. J'ai appris à formaliser des besoins, à structurer une réponse fonctionnelle dans un outil, à travailler en interaction avec les utilisateurs finaux et à contribuer à l'amélioration continue d'un service. Cette compétence me prépare à évoluer vers des rôles de coordination fonctionnelle, d'assistance à maîtrise d'ouvrage ou de pilotage d'outils métiers transverses.",
+      relatedProjects: ["projet-5-magellan-sagt"]
     }
   ];
+
+  const filteredSkills = selectedType === "all" 
+    ? skills 
+    : skills.filter(skill => skill.type === selectedType);
+
+  const handleTypeChange = (type: SkillType) => {
+    setSelectedType(type);
+    setExpandedSkill(null); // Reset expanded skill when changing filter
+  };
+
+  const toggleSkillExpansion = (id: string) => {
+    setExpandedSkill(expandedSkill === id ? null : id);
+  };
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1 py-12">
-        <div className="container">
+        <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes compétences</h1>
           
           <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground mb-8">
               Au fil de mes expériences en alternance et de ma formation en ingénierie informatique, j'ai acquis des compétences solides à la fois techniques et humaines. Cette section présente les domaines dans lesquels j'ai évolué, les projets concrets que j'ai menés, et les savoir-faire que j'ai développés pour répondre aux enjeux de l'entreprise et du terrain.
             </p>
+            
+            <div className="flex flex-wrap gap-3 justify-center mb-10">
+              <Button 
+                variant={selectedType === "all" ? "default" : "outline"}
+                onClick={() => handleTypeChange("all")}
+                className="min-w-[120px]"
+              >
+                Toutes
+              </Button>
+              <Button 
+                variant={selectedType === "technical" ? "default" : "outline"}
+                onClick={() => handleTypeChange("technical")}
+                className="min-w-[120px]"
+              >
+                Techniques
+              </Button>
+              <Button 
+                variant={selectedType === "behavioral" ? "default" : "outline"}
+                onClick={() => handleTypeChange("behavioral")}
+                className="min-w-[120px]"
+              >
+                Comportementales
+              </Button>
+              <Button 
+                variant={selectedType === "general" ? "default" : "outline"}
+                onClick={() => handleTypeChange("general")}
+                className="min-w-[120px]"
+              >
+                Générales
+              </Button>
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-            {skills.map((skill) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredSkills.map((skill) => (
               <Card 
                 key={skill.id} 
                 id={skill.id}
-                className="border border-primary/20 shadow-sm hover:shadow-md transition-shadow scroll-mt-24"
+                className={`border border-primary/20 transition-all duration-300 ${
+                  expandedSkill === skill.id 
+                    ? "col-span-1 md:col-span-2 lg:col-span-3 shadow-lg" 
+                    : "shadow-sm hover:shadow-md"
+                }`}
               >
-                <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                  {skill.icon}
-                  <div>
-                    <CardTitle className="text-xl font-semibold">{skill.title}</CardTitle>
-                  </div>
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary flex items-center">
+                    {skill.title}
+                  </CardTitle>
                 </CardHeader>
-                <CardContent className="pt-4">
-                  <div className="mb-4">
-                    <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">Définition</h3>
-                    <p className="text-sm text-foreground">{skill.definition}</p>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">Projets et actions menées</h3>
-                    <p className="text-sm text-foreground">{skill.projects}</p>
-                  </div>
-                  
-                  <div className="mb-4">
-                    <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">Ce que cette compétence m'a apportée</h3>
-                    <p className="text-sm text-foreground">{skill.impact}</p>
-                  </div>
-                  
-                  <div className="mt-6 text-center">
-                    <Button asChild variant="outline" className="text-primary hover:text-primary-foreground hover:bg-primary">
-                      <Link to={skill.projectLink}>Voir les projets associés</Link>
-                    </Button>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">Définition</h3>
+                      <p className="text-sm text-foreground">{skill.definition}</p>
+                    </div>
+                    
+                    {expandedSkill === skill.id ? (
+                      <>
+                        <div>
+                          <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">
+                            Mise en application
+                          </h3>
+                          <p className="text-sm text-foreground">{skill.application}</p>
+                        </div>
+                        
+                        <div>
+                          <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-1">
+                            Bilan professionnel
+                          </h3>
+                          <p className="text-sm text-foreground">{skill.assessment}</p>
+                        </div>
+                        
+                        {skill.relatedProjects && skill.relatedProjects.length > 0 && (
+                          <div>
+                            <h3 className="text-sm uppercase tracking-wide text-muted-foreground mb-2">
+                              Projets associés
+                            </h3>
+                            <div className="grid grid-cols-1 gap-4">
+                              {skill.relatedProjects.map(projectId => (
+                                <div key={projectId} className="bg-primary/5 p-3 rounded-md">
+                                  <Link 
+                                    to={`/projects#${projectId}`}
+                                    className="text-primary hover:underline"
+                                  >
+                                    {projectId === "projet-1-standardisation-parc" && "Standardisation du parc d'impression – Skyepharma"}
+                                    {projectId === "projet-2-migration-office" && "Migration Office 365 – Skyepharma"}
+                                    {projectId === "projet-3-audit-securite" && "Audit de sécurité - Skyepharma"}
+                                    {projectId === "projet-4-informatique-industrielle" && "Informatique industrielle – Skyepharma"}
+                                    {projectId === "projet-5-magellan-sagt" && "MAGELLAN – SAGT – APRR"}
+                                  </Link>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : null}
+                    
+                    <div className="pt-4 text-center">
+                      <Button 
+                        variant="outline" 
+                        onClick={() => toggleSkillExpansion(skill.id)}
+                        className="text-primary hover:text-primary-foreground hover:bg-primary"
+                      >
+                        {expandedSkill === skill.id ? "Réduire" : "Voir les détails"}
+                      </Button>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
