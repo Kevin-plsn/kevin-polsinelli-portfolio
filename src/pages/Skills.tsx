@@ -19,6 +19,7 @@ import {
   Target, 
   UserCog
 } from "lucide-react";
+import { projects } from "@/data/projects";
 
 type Skill = {
   id: string;
@@ -44,6 +45,8 @@ const SkillsPage = () => {
     if (skillId && skills.some(s => s.id === skillId)) {
       setExpandedSkill(skillId);
       setShowAllSkills(false);
+      // Scroll to top when a skill is selected
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
@@ -172,6 +175,12 @@ const SkillsPage = () => {
     
     return projectTitles[projectId] || projectId;
   };
+  
+  // Get the correct project image from the projects data
+  const getProjectImage = (projectId: string) => {
+    const project = projects.find(p => p.id === projectId);
+    return project ? project.image : "";
+  };
 
   const toggleSkillExpansion = (id: string) => {
     if (expandedSkill === id) {
@@ -182,6 +191,8 @@ const SkillsPage = () => {
       setExpandedSkill(id);
       setShowAllSkills(false);
       navigate(`/skills#${id}`);
+      // Scroll to top when expanding a skill
+      window.scrollTo(0, 0);
     }
   };
 
@@ -309,11 +320,7 @@ const SkillsPage = () => {
                           <Card className="hover:shadow-md transition-shadow border border-primary/20">
                             <div className="h-48 overflow-hidden">
                               <img 
-                                src={`https://images.unsplash.com/photo-${projectId === 'projet-4-informatique-industrielle' 
-                                  ? "1581267455542-6053a3322176" 
-                                  : projectId === 'projet-6-magellan-meteor'
-                                  ? "1518770660439-4636190af475"
-                                  : "1566837945700-30057527ade0"}`}
+                                src={getProjectImage(projectId)}
                                 alt={getProjectTitle(projectId)}
                                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                               />
