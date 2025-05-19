@@ -12,7 +12,7 @@ const ProfileSection = () => {
           <div className="flex justify-center md:justify-end">
             <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/20 shadow-xl">
               <img 
-                src="/photo1.jpg" 
+                src="/lovable-uploads/91cb1a3d-669d-42c3-9680-fde64dd31fe1.png" 
                 alt="Kevin Polsinelli" 
                 className="w-full h-full object-cover"
               />
