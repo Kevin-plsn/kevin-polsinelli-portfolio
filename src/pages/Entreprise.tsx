@@ -32,7 +32,7 @@ const EntreprisePage = () => {
                   
                   <div className="text-gray-700 leading-relaxed space-y-4">
                     <p>
-                      J'ai rejoint le Groupe APRR en septembre 2022 dans le cadre de mon Mastère 1, avec l'ambition d'évoluer 
+                      J'ai rejoint le Groupe APRR en novembre 2023 dans le cadre de mon Mastère, avec l'ambition d'évoluer 
                       dans une entreprise de grande envergure, structurée et porteuse de projets stratégiques à l'échelle nationale. 
                       Après mon expérience dans une PME, je souhaitais intégrer un environnement où les processus sont rigoureux, 
                       les équipes multidisciplinaires, et les enjeux métiers bien définis.
