@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 import ProjectsHeader from "./ProjectsHeader";
 import { projects, getSkillName } from "@/data/projects";
@@ -14,7 +14,7 @@ const ProjectList = () => {
   // Extract project ID from URL hash if present
   useEffect(() => {
     const projectId = location.hash.replace('#', '');
-    if (projectId) {
+    if (projectId && projects.some(p => p.id === projectId)) {
       setExpandedProject(projectId);
       setShowAllProjects(false);
     }

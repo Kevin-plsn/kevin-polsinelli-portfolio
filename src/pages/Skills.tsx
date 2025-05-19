@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { 
   Computer, 
   ChevronLeft, 
@@ -36,11 +36,12 @@ const SkillsPage = () => {
   const [showAllSkills, setShowAllSkills] = useState(true);
   const [filter, setFilter] = useState<"all" | "technique" | "comportementale" | "generale">("all");
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Extract skill ID from URL hash if present
   useEffect(() => {
     const skillId = location.hash.replace('#', '');
-    if (skillId) {
+    if (skillId && skills.some(s => s.id === skillId)) {
       setExpandedSkill(skillId);
       setShowAllSkills(false);
     }
@@ -176,18 +177,18 @@ const SkillsPage = () => {
     if (expandedSkill === id) {
       setExpandedSkill(null);
       setShowAllSkills(true);
-      window.history.pushState({}, "", "/skills");
+      navigate('/skills');
     } else {
       setExpandedSkill(id);
       setShowAllSkills(false);
-      window.history.pushState({}, "", `/skills#${id}`);
+      navigate(`/skills#${id}`);
     }
   };
 
   const backToAllSkills = () => {
     setExpandedSkill(null);
     setShowAllSkills(true);
-    window.history.pushState({}, "", "/skills");
+    navigate('/skills');
   };
 
   // Filter skills based on selected category

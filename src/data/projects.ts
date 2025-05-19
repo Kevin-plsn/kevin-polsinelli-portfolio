@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: "projet-4-informatique-industrielle",
     title: "Informatique industrielle",
-    image: "https://images.unsplash.com/photo-1581267455542-6053a3322176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Gestion autonome du parc informatique industriel et support utilisateurs dans un contexte de production sensible et de forte rotation du personnel.",
     context: "Durant mon alternance chez Skyepharma, j'ai été amené à intervenir dans un contexte industriel exigeant, marqué par une forte présence d'intérimaires et des besoins constants d'adaptation informatique en production. J'ai dû assurer la gestion du parc informatique de production et intervenir en autonomie sur des environnements critiques sans passation, suite au départ du technicien en charge de l'informatique industrielle.",
     objectives: [
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   {
     id: "projet-6-magellan-meteor",
     title: "MAGELLAN – METEOR",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Paramétrage d'un système de visualisation en temps réel pour la météo et le trafic autoroutier.",
     context: "Dans le cadre du projet MAGELLAN - METEOR chez APRR, l'outil METEOR a été conçu pour offrir une visualisation en temps réel de la météo et du trafic autoroutier. L'objectif était d'apporter aux opérateurs en poste de commandement une lecture claire des événements affectant les différentes zones du réseau. Mon rôle, au sein de l'équipe administratrice fonctionnelle, a été de contribuer au paramétrage du système pour qu'il réponde précisément aux besoins métier.",
     objectives: [

@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -104,7 +103,7 @@ const ProjectCard = ({
         ) : null}
         
         <div className="pt-6 text-center">
-          {!expandedProject ? (
+          {!isExpanded ? (
             <Button 
               onClick={() => onToggle(project.id)} 
               variant="default"
