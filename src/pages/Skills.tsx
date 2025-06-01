@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -239,6 +240,42 @@ const SkillsPage = () => {
               <ChevronLeft className="mr-2 h-4 w-4" />
               Retour à toutes les compétences
             </Button>
+          )}
+          
+          {!expandedSkill && (
+            <div className="flex flex-wrap gap-4 mb-8 justify-center">
+              <Button 
+                onClick={() => setFilter("all")}
+                variant={filter === "all" ? "default" : "outline"}
+                className="flex items-center gap-2"
+              >
+                Toutes les compétences
+              </Button>
+              <Button 
+                onClick={() => setFilter("technique")}
+                variant={filter === "technique" ? "default" : "outline"}
+                className="flex items-center gap-2"
+              >
+                <Computer className="h-4 w-4" />
+                Compétences techniques
+              </Button>
+              <Button 
+                onClick={() => setFilter("comportementale")}
+                variant={filter === "comportementale" ? "default" : "outline"}
+                className="flex items-center gap-2"
+              >
+                <BrainCircuit className="h-4 w-4" />
+                Compétences comportementales
+              </Button>
+              <Button 
+                onClick={() => setFilter("generale")}
+                variant={filter === "generale" ? "default" : "outline"}
+                className="flex items-center gap-2"
+              >
+                <FileSpreadsheet className="h-4 w-4" />
+                Compétences générales
+              </Button>
+            </div>
           )}
           
           {expandedSkill ? (
