@@ -230,48 +230,15 @@ const SkillsPage = () => {
             </>
           )}
           
-          {expandedSkill ? (
-            <>
-              <Button 
-                onClick={backToAllSkills} 
-                variant="outline" 
-                className="mb-6"
-              >
-                <ChevronLeft className="mr-2 h-4 w-4" />
-                Retour à toutes les compétences
-              </Button>
-              
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-                Mes compétences
-              </h1>
-            </>
-          ) : (
-            <div className="flex flex-wrap gap-4 mb-8 justify-center">
-              <Button 
-                onClick={() => setFilter("technique")}
-                variant={filter === "technique" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <Computer className="h-4 w-4" />
-                Compétences techniques
-              </Button>
-              <Button 
-                onClick={() => setFilter("comportementale")}
-                variant={filter === "comportementale" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <BrainCircuit className="h-4 w-4" />
-                Compétences comportementales
-              </Button>
-              <Button 
-                onClick={() => setFilter("generale")}
-                variant={filter === "generale" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <FileSpreadsheet className="h-4 w-4" />
-                Compétences générales
-              </Button>
-            </div>
+          {expandedSkill && (
+            <Button 
+              onClick={backToAllSkills} 
+              variant="outline" 
+              className="mb-6"
+            >
+              <ChevronLeft className="mr-2 h-4 w-4" />
+              Retour à toutes les compétences
+            </Button>
           )}
           
           {expandedSkill ? (
