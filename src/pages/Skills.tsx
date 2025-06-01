@@ -1,393 +1,430 @@
-import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { 
-  Computer, 
-  ChevronLeft, 
-  BrainCircuit, 
-  FileSpreadsheet, 
-  Shield, 
-  Database, 
-  Clock, 
-  Users, 
-  Lightbulb, 
-  Target, 
-  UserCog
-} from "lucide-react";
-import { projects } from "@/data/projects";
+import { ArrowLeft, ArrowRight, Briefcase, Code, Database, GraduationCap, Network, Shield, Users, Zap } from "lucide-react";
+import { Link, useParams } from "react-router-dom";
 
-type Skill = {
+interface Project {
+  name: string;
+  description: string;
+}
+
+interface Skill {
   id: string;
-  icon: React.ReactNode;
   title: string;
-  type: "technique" | "comportementale" | "generale";
-  definition: string;
+  category: string;
+  icon: any;
+  description: string;
+  projects: Project[];
   application: string;
-  assessment: string;
-  relatedProjects: string[];
-};
+  color: string;
+}
+
+const skills: Skill[] = [
+  {
+    id: "maitrise-outils-informatiques",
+    title: "Maîtrise des outils informatiques",
+    category: "Informatique",
+    icon: Code,
+    description: "Excellente maîtrise des outils informatiques, des systèmes d'exploitation et des logiciels courants.",
+    projects: [
+      { name: "Gestion du parc informatique", description: "Optimisation des ressources" },
+      { name: "Support technique", description: "Assistance aux utilisateurs" }
+    ],
+    application: "Lors de la gestion du parc informatique, j'ai mis en œuvre des solutions innovantes pour optimiser l'utilisation des ressources et améliorer la productivité des équipes. En tant que support technique, j'ai résolu rapidement et efficacement les problèmes rencontrés par les utilisateurs, garantissant ainsi la continuité de leurs activités.",
+    color: "border-blue-500"
+  },
+  {
+    id: "gestion-reseaux",
+    title: "Gestion de réseaux",
+    category: "Informatique",
+    icon: Network,
+    description: "Compétences approfondies en gestion de réseaux, incluant la configuration, la maintenance et la sécurisation des infrastructures.",
+    projects: [
+      { name: "Configuration réseau", description: "Mise en place d'un réseau performant" },
+      { name: "Sécurisation du réseau", description: "Protection contre les menaces" }
+    ],
+    application: "J'ai configuré et maintenu des réseaux complexes, en assurant leur performance et leur sécurité. J'ai également mis en place des mesures de protection efficaces contre les menaces, garantissant ainsi la confidentialité et l'intégrité des données.",
+    color: "border-green-500"
+  },
+  {
+    id: "securite-informatique",
+    title: "Sécurité informatique",
+    category: "Informatique",
+    icon: Shield,
+    description: "Expertise en sécurité informatique, incluant la prévention des intrusions, la détection des vulnérabilités et la mise en place de mesures de protection.",
+    projects: [
+      { name: "Audit de sécurité", description: "Identification des risques" },
+      { name: "Mise en place de mesures de sécurité", description: "Protection des systèmes" }
+    ],
+    application: "J'ai réalisé des audits de sécurité pour identifier les vulnérabilités des systèmes et j'ai mis en place des mesures de protection efficaces pour prévenir les intrusions et protéger les données sensibles.",
+    color: "border-red-500"
+  },
+  {
+    id: "administration-systemes",
+    title: "Administration de systèmes",
+    category: "Informatique",
+    icon: Database,
+    description: "Maîtrise de l'administration de systèmes, incluant l'installation, la configuration et la maintenance des serveurs et des applications.",
+    projects: [
+      { name: "Installation de serveurs", description: "Mise en place de l'infrastructure" },
+      { name: "Maintenance des systèmes", description: "Garantie de la disponibilité" }
+    ],
+    application: "J'ai installé et configuré des serveurs, en assurant leur maintenance et leur disponibilité. J'ai également mis en place des solutions de sauvegarde et de restauration pour garantir la continuité des activités en cas de problème.",
+    color: "border-yellow-500"
+  },
+  {
+    id: "gestion-bases-de-donnees",
+    title: "Gestion de bases de données",
+    category: "Informatique",
+    icon: Database,
+    description: "Compétences en gestion de bases de données, incluant la conception, l'optimisation et la maintenance des systèmes.",
+    projects: [
+      { name: "Conception de bases de données", description: "Modélisation des données" },
+      { name: "Optimisation des performances", description: "Amélioration de la rapidité" }
+    ],
+    application: "J'ai conçu et optimisé des bases de données, en assurant leur performance et leur intégrité. J'ai également mis en place des procédures de sauvegarde et de restauration pour garantir la disponibilité des données en cas de problème.",
+    color: "border-purple-500"
+  },
+  {
+    id: "developpement-logiciel",
+    title: "Développement logiciel",
+    category: "Informatique",
+    icon: Code,
+    description: "Aptitudes en développement logiciel, incluant la conception, la programmation et les tests d'applications.",
+    projects: [
+      { name: "Conception d'applications", description: "Création de solutions innovantes" },
+      { name: "Tests unitaires", description: "Vérification de la qualité" }
+    ],
+    application: "J'ai conçu et développé des applications, en utilisant les langages de programmation appropriés et en respectant les normes de qualité. J'ai également réalisé des tests unitaires pour vérifier le bon fonctionnement des applications et garantir leur fiabilité.",
+    color: "border-indigo-500"
+  },
+  {
+    id: "gestion-projet",
+    title: "Gestion de projet",
+    category: "Gestion",
+    icon: Briefcase,
+    description: "Capacité à gérer des projets, incluant la planification, le suivi et la coordination des équipes.",
+    projects: [
+      { name: "Planification de projet", description: "Définition des étapes" },
+      { name: "Coordination des équipes", description: "Animation des réunions" }
+    ],
+    application: "J'ai géré des projets complexes, en planifiant les étapes, en coordonnant les équipes et en assurant le suivi des activités. J'ai également mis en place des outils de communication efficaces pour faciliter la collaboration et garantir la réussite des projets.",
+    color: "border-teal-500"
+  },
+  {
+    id: "management-projet",
+    title: "Management de projet",
+    category: "Gestion",
+    icon: Users,
+    description: "Capacité à organiser, coordonner et suivre un projet de bout en bout, en définissant des objectifs clairs, en planifiant les étapes et en mobilisant les ressources nécessaires.",
+    projects: [
+      { name: "MAGELLAN - METEOR", description: "Projet de modernisation" }
+    ],
+    application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
+    color: "border-blue-500"
+  },
+  {
+    id: "organisation-personnelle",
+    title: "Organisation personnelle",
+    category: "Gestion",
+    icon: Zap,
+    description: "Aptitude à structurer son travail, prioriser les tâches et optimiser son temps pour atteindre ses objectifs de manière efficace.",
+    projects: [
+      { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
+      { name: "Migration Office 365", description: "Transition vers le cloud" },
+      { name: "Audit de sécurité", description: "Évaluation des risques" },
+      { name: "Informatique industrielle", description: "Gestion des systèmes industriels" },
+      { name: "MAGELLAN – METEOR", description: "Projet de modernisation" }
+    ],
+    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365, Audit de sécurité, Informatique industrielle et MAGELLAN – METEOR, j'ai structuré mon travail en tenant compte des contraintes de production, des délais techniques et des priorités utilisateurs. Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
+    color: "border-green-500"
+  },
+  {
+    id: "initiative",
+    title: "Initiative",
+    category: "Gestion",
+    icon: Zap,
+    description: "Capacité à identifier les opportunités d'amélioration et à proposer des solutions concrètes de manière proactive.",
+    projects: [
+      { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
+      { name: "Migration Office 365", description: "Transition vers le cloud" },
+      { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" }
+    ],
+    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365 et MAGELLAN – SAGT, j'ai identifié des problématiques non signalées et proposé des solutions concrètes pour améliorer l'organisation ou les outils. Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
+    color: "border-yellow-500"
+  },
+  {
+    id: "communication-relationnel",
+    title: "Communication et relationnel",
+    category: "Gestion",
+    icon: Users,
+    description: "Aptitude à échanger efficacement avec différents interlocuteurs, à expliquer des concepts techniques et à maintenir de bonnes relations professionnelles.",
+    projects: [
+      { name: "Migration Office 365", description: "Transition vers le cloud" },
+      { name: "Audit de sécurité", description: "Évaluation des risques" },
+      { name: "Informatique industrielle", description: "Gestion des systèmes industriels" },
+      { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
+      { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" }
+    ],
+    application: "Dans les projets Migration Office 365, Audit de sécurité, Informatique industrielle, MAGELLAN – METEOR et MAGELLAN – SAGT, j'ai communiqué régulièrement avec les utilisateurs et les équipes métiers pour expliquer les changements, recueillir leurs besoins ou résoudre les incidents. Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
+    color: "border-purple-500"
+  },
+  {
+    id: "autonomie",
+    title: "Autonomie",
+    category: "Gestion",
+    icon: Zap,
+    description: "Capacité à travailler de manière indépendante, à prendre des décisions et à résoudre des problèmes sans supervision constante.",
+    projects: [
+      { name: "Informatique industrielle", description: "Gestion des systèmes industriels" },
+      { name: "Audit de sécurité", description: "Évaluation des risques" }
+    ],
+    application: "Dans les projets Informatique industrielle et Audit de sécurité, j'ai géré seul la configuration de postes critiques, le suivi des comptes Active Directory, et le déploiement de mesures de sécurité (BitLocker, mots de passe BIOS), souvent sans documentation ni passation. Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
+    color: "border-red-500"
+  },
+  {
+    id: "rigueur",
+    title: "Rigueur",
+    category: "Gestion",
+    icon: Shield,
+    description: "Aptitude à appliquer des méthodes précises, à respecter les procédures et à maintenir un niveau de qualité élevé dans son travail.",
+    projects: [
+      { name: "Audit de sécurité", description: "Évaluation des risques" },
+      { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
+      { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" },
+      { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
+      { name: "Informatique industrielle", description: "Gestion des systèmes industriels" }
+    ],
+    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
+    color: "border-indigo-500"
+  },
+  {
+    id: "esprit-analyse",
+    title: "Esprit d'analyse",
+    category: "Gestion",
+    icon: Database,
+    description: "Capacité à décomposer des problèmes complexes, à identifier les causes racines et à structurer des solutions logiques.",
+    projects: [
+      { name: "Audit de sécurité", description: "Évaluation des risques" },
+      { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
+      { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" },
+      { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
+      { name: "Informatique industrielle", description: "Gestion des systèmes industriels" }
+    ],
+    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
+    color: "border-teal-500"
+  },
+  {
+    id: "administration-windows",
+    title: "Administration Windows",
+    category: "Technique",
+    icon: Network,
+    description: "Maîtrise de l'administration des systèmes Windows, incluant la gestion des utilisateurs, des stratégies de groupe et de la sécurité.",
+    projects: [
+      { name: "Active Directory", description: "Gestion des comptes et accès" },
+      { name: "GPO BitLocker", description: "Déploiement sécurisé" }
+    ],
+    application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai assuré la gestion complète des comptes utilisateurs dans Active Directory : création, suppression et organisation des accès, dans un environnement marqué par un fort turnover. Cette compétence m'a également été utile lors du déploiement par GPO de BitLocker à la suite d'un audit de sécurité, que j'ai configuré manuellement poste par poste par la suite. J'ai renforcé la protection physique des équipements en définissant des mots de passe administrateurs dans le BIOS. Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
+    color: "border-blue-600"
+  },
+  {
+    id: "securite",
+    title: "Sécurité",
+    category: "Technique",
+    icon: Shield,
+    description: "Connaissance des bonnes pratiques de sécurité informatique et capacité à mettre en œuvre des mesures de protection.",
+    projects: [
+      { name: "Audit de sécurité", description: "Évaluation des risques" },
+      { name: "Déploiement BitLocker", description: "Chiffrement des données" }
+    ],
+    application: "A la suite d'un audit de sécurité, j'ai mobilisé cette compétence pour sécuriser le parc informatique. J'ai déployé la solution de chiffrement BitLocker via GPO, puis je suis intervenu poste par poste pour m'assurer de la bonne configuration. En complément, j'ai configuré un mot de passe administrateur dans le BIOS . Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
+    color: "border-red-600"
+  },
+  {
+    id: "bureautique",
+    title: "Bureautique et productivité personnelle",
+    category: "Technique",
+    icon: Code,
+    description: "Maîtrise des outils bureautiques et des méthodes d'organisation pour optimiser la productivité personnelle.",
+    projects: [
+      { name: "Migration Office 365", description: "Transition vers le cloud" },
+      { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" }
+    ],
+    application: "J'ai mobilisé cette compétence à plusieurs reprises. Lors du projet de migration Office 365, j'ai mené un inventaire des versions installées pour standardiser les environnements bureautiques, facilitant ainsi la collaboration entre utilisateurs. Dans le projet de standardisation du parc d'imprimantes, j'ai construit un tableau de suivi précis regroupant les emplacements, les modèles et les consommables associés, afin de faciliter la gestion logistique et anticiper les ruptures.",
+    color: "border-green-600"
+  },
+  {
+    id: "conduite-projet-logiciel",
+    title: "Conduite de projet logiciel",
+    category: "Technique",
+    icon: Briefcase,
+    description: "Aptitude à mener des projets logiciels en appliquant des méthodologies structurées et en coordonnant les aspects techniques et fonctionnels.",
+    projects: [
+      { name: "MAGELLAN - METEOR", description: "Projet de modernisation" },
+      { name: "MAGELLAN - SAGT", description: "Système de gestion automatisée du trafic" }
+    ],
+    application: "Cette compétence à été utilisée dans le projet MAGELLAN - METEOR, j'ai participé au paramétrage fonctionnel du logiciel aux côtés des référents régionaux, en configurant des contextes adaptés aux postes de commandement pour refléter les zones météo et trafic pertinentes. Dans le projet MAGELLAN - SAGT, j'ai structuré une nomenclature de règles permettant d'uniformiser les automatisations du système de gestion du trafic. J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
+    color: "border-purple-600"
+  }
+];
 
 const SkillsPage = () => {
-  const [expandedSkill, setExpandedSkill] = useState<string | null>(null);
-  const [showAllSkills, setShowAllSkills] = useState(true);
-  const [filter, setFilter] = useState<"all" | "technique" | "comportementale" | "generale">("all");
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  // Extract skill ID from URL hash if present
-  useEffect(() => {
-    const skillId = location.hash.replace('#', '');
-    if (skillId && skills.some(s => s.id === skillId)) {
-      setExpandedSkill(skillId);
-      setShowAllSkills(false);
-      // Scroll to top when a skill is selected
-      window.scrollTo(0, 0);
-    }
-  }, [location]);
-
-  const skills: Skill[] = [
-    {
-      id: "management-projet",
-      icon: <FileSpreadsheet className="h-5 w-5" />,
-      title: "Management de projet",
-      type: "generale",
-      definition: "Capacité à structurer, suivre et contribuer à un projet technique en respectant les étapes clés, les ressources disponibles et les attentes métiers.",
-      application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
-      assessment: "Ce projet m'a permis de saisir l'importance d'un cadre méthodologique structuré : de l'expression des besoins au suivi des tâches, en passant par la documentation et la coordination avec les référents métier. Cette compétence renforcera ma capacité à contribuer efficacement à la réussite de futurs projets et me prépare à évoluer vers un rôle de référent technique sur logiciel.",
-      relatedProjects: ["projet-6-magellan-meteor"]
-    },
-    {
-      id: "communication-relationnel",
-      icon: <Users className="h-5 w-5" />,
-      title: "Communication et relationnel",
-      type: "generale",
-      definition: "Capacité à interagir efficacement avec différents interlocuteurs, à adapter son discours selon le profil (technique, métier, utilisateur), et à entretenir une collaboration fluide dans un environnement professionnel.",
-      application: "Dans les projets Migration Office 365, Audit de sécurité, Informatique industrielle, MAGELLAN – METEOR et MAGELLAN – SAGT, j'ai communiqué régulièrement avec les utilisateurs et les équipes métiers pour expliquer les changements, recueillir leurs besoins ou résoudre les incidents. Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
-      assessment: "Cette compétence me permet aujourd'hui d'être un relais fiable entre les utilisateurs et les équipes techniques. Elle facilite la compréhension mutuelle, renforce la confiance, et garantit une meilleure adoption des solutions déployées. Elle est essentielle dans tout environnement de travail collaboratif ou en gestion de projet.",
-      relatedProjects: ["projet-2-migration-office", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-5-magellan-sagt", "projet-6-magellan-meteor"]
-    },
-    {
-      id: "esprit-analyse",
-      icon: <BrainCircuit className="h-5 w-5" />,
-      title: "Esprit d'analyse",
-      type: "comportementale",
-      definition: "Capacité à comprendre une situation complexe, identifier ses éléments clés, détecter les incohérences et proposer des solutions pertinentes en s'appuyant sur des faits et une réflexion structurée.",
-      application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
-      assessment: "L'esprit d'analyse me permet de traiter efficacement des situations techniques complexes, de faire ressortir les enjeux critiques, et d'élaborer des solutions adaptées. Il constitue un levier essentiel pour garantir la qualité, la cohérence et la pérennité des actions menées dans des environnements structurés.",
-      relatedProjects: ["projet-1-standardisation-parc", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-5-magellan-sagt", "projet-6-magellan-meteor"]
-    },
-    {
-      id: "rigueur",
-      icon: <Target className="h-5 w-5" />,
-      title: "Rigueur",
-      type: "comportementale",
-      definition: "Capacité et respect à appliquer les méthodes de travail précises, les procédures et contraintes techniques, tout en assurant la fiabilité et la qualité des livrables produits.",
-      application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
-      assessment: "La rigueur m'a permis de garantir la qualité et la fiabilité des actions menées sur des systèmes critiques. Elle renforce ma capacité à travailler dans des environnements exigeants, à produire des livrables fiables, et à limiter les erreurs en phase d'exécution. Cette approche méthodique est essentielle dans les domaines liés à la sécurité, à l'automatisation ou à la production.",
-      relatedProjects: ["projet-2-migration-office", "projet-3-audit-securite", "projet-5-magellan-sagt"]
-    },
-    {
-      id: "initiative",
-      icon: <Lightbulb className="h-5 w-5" />,
-      title: "Initiative",
-      type: "generale",
-      definition: "Capacité à proposer, anticiper ou entreprendre des actions sans y être formellement invité, dans le but d'améliorer une situation, de résoudre un problème ou de répondre à un besoin identifié sur le terrain.",
-      application: "Dans les projets Standardisation du parc d'impression, Migration Office 365 et MAGELLAN – SAGT, j'ai identifié des problématiques non signalées et proposé des solutions concrètes pour améliorer l'organisation ou les outils. Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
-      assessment: "Ces initiatives ont démontré ma capacité à observer, analyser et agir rapidement pour résoudre des dysfonctionnements opérationnels. Elles m'ont permis de contribuer à une meilleure fluidité du service, de simplifier des processus internes, et de gagner en autonomie et en crédibilité au sein de l'équipe.",
-      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office", "projet-5-magellan-sagt"]
-    },
-    {
-      id: "organisation-personnelle",
-      icon: <Clock className="h-5 w-5" />,
-      title: "Organisation personnelle",
-      type: "generale",
-      definition: "Capacité à gérer efficacement son temps, ses priorités et ses tâches, afin d'atteindre les objectifs fixés dans les délais, même dans un environnement exigeant ou multitâche.",
-      application: "Dans les projets Standardisation du parc d'impression, Migration Office 365, Audit de sécurité, Informatique industrielle et MAGELLAN – METEOR, j'ai structuré mon travail en tenant compte des contraintes de production, des délais techniques et des priorités utilisateurs. Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
-      assessment: "Cette expérience m'a permis de développer une forte capacité d'organisation et de gestion autonome dans un contexte exigeant. J'ai appris à gérer seul un périmètre complet, à structurer mes priorités en fonction des contraintes techniques et à assurer une continuité de service dans un environnement sensible.",
-      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-6-magellan-meteor"]
-    },
-    {
-      id: "autonomie",
-      icon: <UserCog className="h-5 w-5" />,
-      title: "Autonomie",
-      type: "comportementale",
-      definition: "Capacité à prendre des initiatives, à organiser son travail de manière indépendante et à prendre des décisions sans supervision directe, tout en assumant ses responsabilités.",
-      application: "Dans les projets Informatique industrielle et Audit de sécurité, j'ai géré seul la configuration de postes critiques, le suivi des comptes Active Directory, et le déploiement de mesures de sécurité (BitLocker, mots de passe BIOS), souvent sans documentation ni passation. Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
-      assessment: "Cette expérience m'a permis de développer une véritable autonomie opérationnelle, essentielle dans les environnements industriels exigeants. Elle m'a appris à gérer des situations imprévues, à prendre des décisions rapidement, et à m'auto-organiser pour maintenir un niveau de service élevé, même sans appui extérieur. Cette compétence me sera précieuse dans toute situation où la réactivité et la capacité à avancer seul sont attendues.",
-      relatedProjects: ["projet-4-informatique-industrielle", "projet-3-audit-securite"]
-    },
-    {
-      id: "administration-windows",
-      icon: <Computer className="h-5 w-5" />,
-      title: "Administration Windows",
-      type: "technique",
-      definition: "Maîtrise des fonctionnalités du système d'exploitation Windows en entreprise : gestion des comptes et des droits via Active Directory, sécurisation des postes, intégration réseau, et mise en œuvre de politiques système (GPO).",
-      application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai assuré la gestion complète des comptes utilisateurs dans Active Directory : création, suppression et organisation des accès, dans un environnement marqué par un fort turnover. Cette compétence m'a également été utile lors du déploiement par GPO de BitLocker à la suite d'un audit de sécurité, que j'ai configuré manuellement poste par poste par la suite. J'ai renforcé la protection physique des équipements en définissant des mots de passe administrateurs dans le BIOS. Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
-      assessment: "Cette expérience m'a permis de développer une autonomie totale sur la gestion des comptes utilisateurs et des postes dans un environnement complexe. J'ai appris à organiser et structurer une gestion système fiable, même sans supervision, tout en respectant les standards de sécurité et de continuité d'activité.",
-      relatedProjects: ["projet-3-audit-securite", "projet-4-informatique-industrielle"]
-    },
-    {
-      id: "securite",
-      icon: <Shield className="h-5 w-5" />,
-      title: "Sécurité",
-      type: "technique",
-      definition: "Mise en œuvre de solutions et de pratiques visant à protéger les systèmes d'exploitation contre les accès non autorisés, les pertes de données ou les vulnérabilités, en assurant la confidentialité, l'intégrité et la disponibilité des informations.",
-      application: "A la suite d'un audit de sécurité, j'ai mobilisé cette compétence pour sécuriser le parc informatique. J'ai déployé la solution de chiffrement BitLocker via GPO, puis je suis intervenu poste par poste pour m'assurer de la bonne configuration. En complément, j'ai configuré un mot de passe administrateur dans le BIOS . Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
-      assessment: "Ces projets m'ont permis de renforcer ma capacité à appliquer des mesures de sécurité concrètes et adaptées aux contraintes de terrain. J'ai développé une sensibilité aux bonnes pratiques de sécurité des systèmes d'exploitation, appris à interpréter des recommandations d'audit, et à mettre en œuvre des solutions efficaces, même en l'absence d'outils d'automatisation.",
-      relatedProjects: ["projet-3-audit-securite"]
-    },
-    {
-      id: "bureautique-productivite",
-      icon: <Database className="h-5 w-5" />,
-      title: "Bureautique et productivité personnelle",
-      type: "technique",
-      definition: "Capacité à optimiser les environnements informatiques et les outils bureautiques afin de garantir une utilisation fluide, homogène et efficace des postes de travail et des ressources associées.",
-      application: "J'ai mobilisé cette compétence à plusieurs reprises. Lors du projet de migration Office 365, j'ai mené un inventaire des versions installées pour standardiser les environnements bureautiques, facilitant ainsi la collaboration entre utilisateurs. Dans le projet de standardisation du parc d'imprimantes, j'ai construit un tableau de suivi précis regroupant les emplacements, les modèles et les consommables associés, afin de faciliter la gestion logistique et anticiper les ruptures.",
-      assessment: "Ce type de projet m'a permis de développer des réflexes d'analyse et d'adaptation face aux besoins bureautiques du terrain. J'ai appris à améliorer la cohérence d'un parc informatique, à favoriser la productivité des utilisateurs et à proposer des méthodes pratiques qui allègent le travail quotidien des équipes. Cette compétence me permet d'intervenir efficacement dans la structuration et la fluidité des environnements numériques internes.",
-      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office"]
-    },
-    {
-      id: "conduite-projet-logiciel",
-      icon: <Computer className="h-5 w-5" />,
-      title: "Conduite de projet logiciel",
-      type: "technique",
-      definition: "Capacité à participer à la conception, à l'adaptation et à l'évolution d'un logiciel métier en suivant une logique projet : compréhension des besoins, structuration des livrables, tests, documentation, accompagnement au changement et retours utilisateurs.",
-      application: "Cette compétence à été utilisée dans le projet MAGELLAN - METEOR, j'ai participé au paramétrage fonctionnel du logiciel aux côtés des référents régionaux, en configurant des contextes adaptés aux postes de commandement pour refléter les zones météo et trafic pertinentes. Dans le projet MAGELLAN - SAGT, j'ai structuré une nomenclature de règles permettant d'uniformiser les automatisations du système de gestion du trafic. J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
-      assessment: "Ce projet m'a permis de développer une vision complète de la conduite de projet logiciel en contexte métier. J'ai appris à formaliser des besoins, à structurer une réponse fonctionnelle dans un outil, à travailler en interaction avec les utilisateurs finaux et à contribuer à l'amélioration continue d'un service. Cette compétence me prépare à évoluer vers des rôles de coordination fonctionnelle, d'assistance à maîtrise d'ouvrage ou de pilotage d'outils métiers transverses.",
-      relatedProjects: ["projet-5-magellan-sagt", "projet-6-magellan-meteor"]
-    }
-  ];
-
-  const getProjectTitle = (projectId: string) => {
-    const projectTitles: {[key: string]: string} = {
-      "projet-1-standardisation-parc": "Standardisation du parc d'impression",
-      "projet-2-migration-office": "Migration Office 365",
-      "projet-3-audit-securite": "Audit de sécurité",
-      "projet-4-informatique-industrielle": "Informatique industrielle",
-      "projet-5-magellan-sagt": "MAGELLAN – SAGT",
-      "projet-6-magellan-meteor": "MAGELLAN – METEOR"
-    };
-    
-    return projectTitles[projectId] || projectId;
-  };
+  const { skillId } = useParams();
   
-  // Get the correct project image from the projects data
-  const getProjectImage = (projectId: string) => {
-    const project = projects.find(p => p.id === projectId);
-    return project ? project.image : "";
-  };
-
-  const toggleSkillExpansion = (id: string) => {
-    if (expandedSkill === id) {
-      setExpandedSkill(null);
-      setShowAllSkills(true);
-      navigate('/skills');
-    } else {
-      setExpandedSkill(id);
-      setShowAllSkills(false);
-      navigate(`/skills#${id}`);
-      // Scroll to top when expanding a skill
-      window.scrollTo(0, 0);
+  if (skillId) {
+    const skill = skills.find(s => s.id === skillId);
+    
+    if (!skill) {
+      return (
+        <div className="min-h-screen flex flex-col bg-background">
+          <Header />
+          <main className="flex-1 py-12">
+            <div className="container">
+              <p className="text-center text-muted-foreground">Compétence non trouvée</p>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      );
     }
-  };
 
-  const backToAllSkills = () => {
-    setExpandedSkill(null);
-    setShowAllSkills(true);
-    navigate('/skills');
-  };
+    const IconComponent = skill.icon;
+    
+    return (
+      <div className="min-h-screen flex flex-col bg-background">
+        <Header />
+        <main className="flex-1 py-12">
+          <div className="container">
+            <div className="mb-8">
+              <Button asChild variant="outline" className="group mb-6">
+                <Link to="/skills">
+                  <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+                  Retour à toutes les compétences
+                </Link>
+              </Button>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-4 mb-8">
+                <div className={`p-3 rounded-lg border-2 ${skill.color} bg-white shadow-sm`}>
+                  <IconComponent className="h-8 w-8 text-primary" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-4xl font-bold text-primary">{skill.title}</h1>
+                  <p className="text-muted-foreground text-lg">{skill.category}</p>
+                </div>
+              </div>
+              
+              <div className="grid gap-8">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Description</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 leading-relaxed">{skill.description}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Projets associés</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-4">
+                      {skill.projects.map((project, index) => (
+                        <div key={index} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+                          <div className="p-1 bg-primary/10 rounded">
+                            <Briefcase className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{project.name}</h4>
+                            <p className="text-sm text-gray-600">{project.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Mise en application</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 leading-relaxed">{skill.application}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
-  // Filter skills based on selected category
-  const filteredSkills = skills.filter(skill => 
-    filter === "all" || skill.type === filter
-  );
-
-  // If a skill is expanded, only show that skill
-  const displayedSkills = expandedSkill 
-    ? skills.filter(skill => skill.id === expandedSkill)
-    : filteredSkills;
+  // Vue principale des compétences
+  const skillsByCategory = skills.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, Skill[]>);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
       <main className="flex-1 py-12">
-        <div className="container mx-auto px-4">
-          {!expandedSkill && (
-            <>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes compétences</h1>
-              
-              <div className="max-w-4xl mx-auto mb-8">
-                <p className="text-lg text-muted-foreground">
-                  Cette page présente les compétences techniques et comportementales que j'ai développées 
-                  tout au long de mon parcours professionnel. Chaque compétence est illustrée par des exemples 
-                  concrets issus de mes expériences.
-                </p>
-              </div>
-            </>
-          )}
+        <div className="container">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">Mes compétences</h1>
           
-          {expandedSkill ? (
-            <>
-              <Button 
-                onClick={backToAllSkills} 
-                variant="outline" 
-                className="mb-6"
-              >
-                <ChevronLeft className="mr-2 h-4 w-4" />
-                Retour à toutes les compétences
-              </Button>
-              
-              <Link 
-                to="/skills"
-                onClick={backToAllSkills}
-                className="text-4xl md:text-5xl font-bold text-primary mb-6 inline-block hover:text-primary/80 transition-colors"
-              >
-                Mes compétences
-              </Link>
-            </>
-          ) : (
-            <div className="flex flex-wrap gap-4 mb-8 justify-center">
-              <Button 
-                onClick={() => setFilter("technique")}
-                variant={filter === "technique" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <Computer className="h-4 w-4" />
-                Compétences techniques
-              </Button>
-              <Button 
-                onClick={() => setFilter("comportementale")}
-                variant={filter === "comportementale" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <BrainCircuit className="h-4 w-4" />
-                Compétences comportementales
-              </Button>
-              <Button 
-                onClick={() => setFilter("generale")}
-                variant={filter === "generale" ? "default" : "outline"}
-                className="flex items-center gap-2"
-              >
-                <FileSpreadsheet className="h-4 w-4" />
-                Compétences générales
-              </Button>
-            </div>
-          )}
+          <div className="max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-muted-foreground">
+              Découvrez l'ensemble de mes compétences développées au cours de mes expériences professionnelles. 
+              Chaque compétence est illustrée par des exemples concrets de mise en application dans des projets réels.
+            </p>
+          </div>
           
-          {expandedSkill ? (
-            // Full page display for expanded skill
-            displayedSkills.map((skill) => (
-              <div key={skill.id} id={skill.id}>
-                <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
-                  <div className="bg-primary/10 p-2 rounded-full">
-                    {skill.icon}
-                  </div>
-                  {skill.title}
-                </h2>
-                
-                <Card className="mb-8">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Définition</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">{skill.definition}</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="mb-8">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Mise en application</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">{skill.application}</p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="mb-8">
-                  <CardHeader>
-                    <CardTitle className="text-xl">Bilan de compétences professionnelles</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">{skill.assessment}</p>
-                  </CardContent>
-                </Card>
-                
-                {skill.relatedProjects.length > 0 && (
-                  <div className="mt-12">
-                    <h3 className="text-2xl font-semibold mb-6">Projets associés à cette compétence</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {skill.relatedProjects.map(projectId => (
-                        <Link 
-                          key={projectId} 
-                          to={`/projects#${projectId}`}
-                          className="no-underline"
-                        >
-                          <Card className="hover:shadow-md transition-shadow border border-primary/20">
-                            <div className="h-48 overflow-hidden">
-                              <img 
-                                src={getProjectImage(projectId)}
-                                alt={getProjectTitle(projectId)}
-                                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                              />
-                            </div>
-                            <CardContent className="p-4">
-                              <h4 className="font-semibold text-primary">{getProjectTitle(projectId)}</h4>
-                            </CardContent>
-                          </Card>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
+          {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
+            <div key={category} className="mb-12">
+              <h2 className="text-2xl font-bold text-primary mb-6">{category}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {categorySkills.map((skill) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <Card key={skill.id} className={`transition-all duration-300 hover:shadow-lg border-2 ${skill.color}`}>
+                      <CardHeader className="flex items-center space-y-4">
+                        <div className="w-full flex justify-center">
+                          <div className="p-3 bg-primary/10 rounded-lg">
+                            <IconComponent className="h-8 w-8 text-primary" />
+                          </div>
+                        </div>
+                        <CardTitle className="text-xl text-center">{skill.title}</CardTitle>
+                        <CardDescription className="text-center text-sm">
+                          {skill.description.length > 120 
+                            ? `${skill.description.substring(0, 120)}...` 
+                            : skill.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="flex justify-center">
+                          <Button asChild className="group">
+                            <Link to={`/skills/${skill.id}`}>
+                              Voir détails
+                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
-            ))
-          ) : (
-            // Grid of skill cards
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {displayedSkills.map((skill) => (
-                <Card 
-                  key={skill.id} 
-                  id={skill.id}
-                  className="hover:shadow-md transition-all border border-primary/20 h-full flex flex-col"
-                >
-                  <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                      {skill.icon}
-                    </div>
-                    <CardTitle className="text-lg">{skill.title}</CardTitle>
-                  </CardHeader>
-                  
-                  <CardContent className="pt-4 flex-grow">
-                    <p className="text-sm text-muted-foreground mb-6">
-                      {skill.definition}
-                    </p>
-                    
-                    <Badge className="mb-2" variant="outline">
-                      {skill.type === "technique" 
-                        ? "Compétence technique" 
-                        : skill.type === "comportementale" 
-                        ? "Compétence comportementale" 
-                        : "Compétence générale"}
-                    </Badge>
-                  </CardContent>
-                  
-                  <div className="p-4 pt-0 mt-auto">
-                    <Button 
-                      onClick={() => toggleSkillExpansion(skill.id)} 
-                      variant="default" 
-                      className="w-full"
-                    >
-                      Voir les détails
-                    </Button>
-                  </div>
-                </Card>
-              ))}
             </div>
-          )}
+          ))}
         </div>
       </main>
       <Footer />
