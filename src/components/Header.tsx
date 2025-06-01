@@ -13,8 +13,6 @@ const Header = () => {
   const handleNavigation = (path: string) => {
     navigate(path);
     setIsMenuOpen(false);
-    // Scroll to top of the page
-    window.scrollTo(0, 0);
   };
 
   return (
