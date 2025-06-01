@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -25,7 +26,7 @@ const skills: Skill[] = [
   {
     id: "maitrise-outils-informatiques",
     title: "Maîtrise des outils informatiques",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Code,
     description: "Excellente maîtrise des outils informatiques, des systèmes d'exploitation et des logiciels courants.",
     projects: [
@@ -38,7 +39,7 @@ const skills: Skill[] = [
   {
     id: "gestion-reseaux",
     title: "Gestion de réseaux",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Network,
     description: "Compétences approfondies en gestion de réseaux, incluant la configuration, la maintenance et la sécurisation des infrastructures.",
     projects: [
@@ -51,7 +52,7 @@ const skills: Skill[] = [
   {
     id: "securite-informatique",
     title: "Sécurité informatique",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Shield,
     description: "Expertise en sécurité informatique, incluant la prévention des intrusions, la détection des vulnérabilités et la mise en place de mesures de protection.",
     projects: [
@@ -64,7 +65,7 @@ const skills: Skill[] = [
   {
     id: "administration-systemes",
     title: "Administration de systèmes",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Database,
     description: "Maîtrise de l'administration de systèmes, incluant l'installation, la configuration et la maintenance des serveurs et des applications.",
     projects: [
@@ -77,7 +78,7 @@ const skills: Skill[] = [
   {
     id: "gestion-bases-de-donnees",
     title: "Gestion de bases de données",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Database,
     description: "Compétences en gestion de bases de données, incluant la conception, l'optimisation et la maintenance des systèmes.",
     projects: [
@@ -90,7 +91,7 @@ const skills: Skill[] = [
   {
     id: "developpement-logiciel",
     title: "Développement logiciel",
-    category: "Informatique",
+    category: "Compétences techniques",
     icon: Code,
     description: "Aptitudes en développement logiciel, incluant la conception, la programmation et les tests d'applications.",
     projects: [
@@ -103,7 +104,7 @@ const skills: Skill[] = [
   {
     id: "gestion-projet",
     title: "Gestion de projet",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Briefcase,
     description: "Capacité à gérer des projets, incluant la planification, le suivi et la coordination des équipes.",
     projects: [
@@ -116,7 +117,7 @@ const skills: Skill[] = [
   {
     id: "management-projet",
     title: "Management de projet",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Users,
     description: "Capacité à organiser, coordonner et suivre un projet de bout en bout, en définissant des objectifs clairs, en planifiant les étapes et en mobilisant les ressources nécessaires.",
     projects: [
@@ -128,7 +129,7 @@ const skills: Skill[] = [
   {
     id: "organisation-personnelle",
     title: "Organisation personnelle",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Zap,
     description: "Aptitude à structurer son travail, prioriser les tâches et optimiser son temps pour atteindre ses objectifs de manière efficace.",
     projects: [
@@ -144,7 +145,7 @@ const skills: Skill[] = [
   {
     id: "initiative",
     title: "Initiative",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Zap,
     description: "Capacité à identifier les opportunités d'amélioration et à proposer des solutions concrètes de manière proactive.",
     projects: [
@@ -158,7 +159,7 @@ const skills: Skill[] = [
   {
     id: "communication-relationnel",
     title: "Communication et relationnel",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Users,
     description: "Aptitude à échanger efficacement avec différents interlocuteurs, à expliquer des concepts techniques et à maintenir de bonnes relations professionnelles.",
     projects: [
@@ -174,7 +175,7 @@ const skills: Skill[] = [
   {
     id: "autonomie",
     title: "Autonomie",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Zap,
     description: "Capacité à travailler de manière indépendante, à prendre des décisions et à résoudre des problèmes sans supervision constante.",
     projects: [
@@ -187,7 +188,7 @@ const skills: Skill[] = [
   {
     id: "rigueur",
     title: "Rigueur",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Shield,
     description: "Aptitude à appliquer des méthodes précises, à respecter les procédures et à maintenir un niveau de qualité élevé dans son travail.",
     projects: [
@@ -203,7 +204,7 @@ const skills: Skill[] = [
   {
     id: "esprit-analyse",
     title: "Esprit d'analyse",
-    category: "Gestion",
+    category: "Compétences comportementales",
     icon: Database,
     description: "Capacité à décomposer des problèmes complexes, à identifier les causes racines et à structurer des solutions logiques.",
     projects: [
@@ -219,7 +220,7 @@ const skills: Skill[] = [
   {
     id: "administration-windows",
     title: "Administration Windows",
-    category: "Technique",
+    category: "Compétences générales",
     icon: Network,
     description: "Maîtrise de l'administration des systèmes Windows, incluant la gestion des utilisateurs, des stratégies de groupe et de la sécurité.",
     projects: [
@@ -232,7 +233,7 @@ const skills: Skill[] = [
   {
     id: "securite",
     title: "Sécurité",
-    category: "Technique",
+    category: "Compétences générales",
     icon: Shield,
     description: "Connaissance des bonnes pratiques de sécurité informatique et capacité à mettre en œuvre des mesures de protection.",
     projects: [
@@ -245,7 +246,7 @@ const skills: Skill[] = [
   {
     id: "bureautique",
     title: "Bureautique et productivité personnelle",
-    category: "Technique",
+    category: "Compétences générales",
     icon: Code,
     description: "Maîtrise des outils bureautiques et des méthodes d'organisation pour optimiser la productivité personnelle.",
     projects: [
@@ -258,7 +259,7 @@ const skills: Skill[] = [
   {
     id: "conduite-projet-logiciel",
     title: "Conduite de projet logiciel",
-    category: "Technique",
+    category: "Compétences générales",
     icon: Briefcase,
     description: "Aptitude à mener des projets logiciels en appliquant des méthodologies structurées et en coordonnant les aspects techniques et fonctionnels.",
     projects: [
