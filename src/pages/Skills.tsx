@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -57,9 +56,9 @@ const SkillsPage = () => {
       title: "Management de projet",
       type: "generale",
       definition: "Capacité à structurer, suivre et contribuer à un projet technique en respectant les étapes clés, les ressources disponibles et les attentes métiers.",
-      application: "Chez APRR, dans le cadre du projet MAGELLAN, j'ai contribué au paramétrage de l'outil METEOR. Aux côtés du responsable de l'équipe fonctionnelle, nous avons organisé les différentes étapes nécessaires à sa mise en œuvre. En collaboration avec les référents du logiciel répartis dans plusieurs régions, j'ai structuré mon travail comme un véritable projet, en définissant des étapes clés pour guider l'avancement. Cette approche m'a permis de bien comprendre les enjeux de l'outil et de rester efficace tout au long du processus.",
+      application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
       assessment: "Ce projet m'a permis de saisir l'importance d'un cadre méthodologique structuré : de l'expression des besoins au suivi des tâches, en passant par la documentation et la coordination avec les référents métier. Cette compétence renforcera ma capacité à contribuer efficacement à la réussite de futurs projets et me prépare à évoluer vers un rôle de référent technique sur logiciel.",
-      relatedProjects: ["projet-5-magellan-sagt"]
+      relatedProjects: ["projet-6-magellan-meteor"]
     },
     {
       id: "communication-relationnel",
@@ -67,7 +66,7 @@ const SkillsPage = () => {
       title: "Communication et relationnel",
       type: "generale",
       definition: "Capacité à interagir efficacement avec différents interlocuteurs, à adapter son discours selon le profil (technique, métier, utilisateur), et à entretenir une collaboration fluide dans un environnement professionnel.",
-      application: "Chez APRR lors du paramétrage de METEOR, j'ai su remonté les problèmes terrains et prendre les informations pour rédigé des tickets d'anomalies pour nos services. Ce qui m'a permis d'adapter ma communication à des profils non techniques tout en transmettant des informations claires. Chez Skyepharma, j'ai accompagné les utilisateurs lors du déploiement de la nouvelle téléphonie IP, en assurant des explications accessibles et des supports compréhensibles. Dans chaque projet, j'ai su m'intégrer aux équipes, recueillir les besoins et maintenir un dialogue constant, aussi bien avec les équipes IT qu'avec les utilisateurs métiers.",
+      application: "Dans les projets Migration Office 365, Audit de sécurité, Informatique industrielle, MAGELLAN – METEOR et MAGELLAN – SAGT, j'ai communiqué régulièrement avec les utilisateurs et les équipes métiers pour expliquer les changements, recueillir leurs besoins ou résoudre les incidents. Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
       assessment: "Cette compétence me permet aujourd'hui d'être un relais fiable entre les utilisateurs et les équipes techniques. Elle facilite la compréhension mutuelle, renforce la confiance, et garantit une meilleure adoption des solutions déployées. Elle est essentielle dans tout environnement de travail collaboratif ou en gestion de projet.",
       relatedProjects: ["projet-2-migration-office", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-5-magellan-sagt", "projet-6-magellan-meteor"]
     },
@@ -97,7 +96,7 @@ const SkillsPage = () => {
       title: "Initiative",
       type: "generale",
       definition: "Capacité à proposer, anticiper ou entreprendre des actions sans y être formellement invité, dans le but d'améliorer une situation, de résoudre un problème ou de répondre à un besoin identifié sur le terrain.",
-      application: "Chez Skyepharma, dans le projet de standardisation du parc d'impression, j'ai constaté que chaque service utilisait des modèles d'imprimantes différents, ce qui rendait le suivi des consommables difficile et chronophage. J'ai alors proposé une centralisation du modèle d'imprimante, afin de simplifier la gestion des stocks et d'optimiser les commandes. Lors de la migration vers Office 365, j'ai constaté que certains collaborateurs utilisaient des versions différentes d'Office, ce qui empêchait parfois l'ouverture correcte de fichiers Excel ou Word. J'ai pris l'initiative de recenser les versions installées, d'alerter l'équipe IT, puis de contribuer à l'organisation",
+      application: "Dans les projets Standardisation du parc d'impression, Migration Office 365 et MAGELLAN – SAGT, j'ai identifié des problématiques non signalées et proposé des solutions concrètes pour améliorer l'organisation ou les outils. Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
       assessment: "Ces initiatives ont démontré ma capacité à observer, analyser et agir rapidement pour résoudre des dysfonctionnements opérationnels. Elles m'ont permis de contribuer à une meilleure fluidité du service, de simplifier des processus internes, et de gagner en autonomie et en crédibilité au sein de l'équipe.",
       relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office", "projet-5-magellan-sagt"]
     },
@@ -107,7 +106,7 @@ const SkillsPage = () => {
       title: "Organisation personnelle",
       type: "generale",
       definition: "Capacité à gérer efficacement son temps, ses priorités et ses tâches, afin d'atteindre les objectifs fixés dans les délais, même dans un environnement exigeant ou multitâche.",
-      application: "Chez Skyepharma, lors de ma mission informatique industrielle, j'ai repris l'ensemble de la gestion du parc informatique industriel suite au départ de l'informaticien en poste, sans passation avec quelques documentations préalable. J'ai dû organiser mes tâches de façon autonome, afin de gérer mes missions de technicien côte administratif et production. la mise à jour régulière des comptes utilisateurs dans Active Directory Industriel, tout en maintenant le suivi matériel et le bon fonctionnement des équipements utilisés en production. Cette mission m'a obligé à planifier rigoureusement mes interventions, à prioriser les urgences terrain et à tenir un suivi précis de l'environnement informatique global de l'entreprise.",
+      application: "Dans les projets Standardisation du parc d'impression, Migration Office 365, Audit de sécurité, Informatique industrielle et MAGELLAN – METEOR, j'ai structuré mon travail en tenant compte des contraintes de production, des délais techniques et des priorités utilisateurs. Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
       assessment: "Cette expérience m'a permis de développer une forte capacité d'organisation et de gestion autonome dans un contexte exigeant. J'ai appris à gérer seul un périmètre complet, à structurer mes priorités en fonction des contraintes techniques et à assurer une continuité de service dans un environnement sensible.",
       relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-6-magellan-meteor"]
     },
@@ -117,9 +116,9 @@ const SkillsPage = () => {
       title: "Autonomie",
       type: "comportementale",
       definition: "Capacité à prendre des initiatives, à organiser son travail de manière indépendante et à prendre des décisions sans supervision directe, tout en assumant ses responsabilités.",
-      application: "Dans le cadre de ma mission en informatique industrielle chez Skyepharma, j'ai dû reprendre seul l'ensemble des tâches du technicien précédent, parti sans passation. J'ai été chargé de la gestion du parc informatique de production, du maintien à jour de l'Active Directory dans un environnement à fort turnover, et de la résolution des incidents sur des postes critiques, parfois directement reliés aux chaînes de production. Sans encadrement direct ni documentation formalisée, j'ai su m'adapter, prioriser les interventions et garantir la continuité de service avec efficacité.",
+      application: "Dans les projets Informatique industrielle et Audit de sécurité, j'ai géré seul la configuration de postes critiques, le suivi des comptes Active Directory, et le déploiement de mesures de sécurité (BitLocker, mots de passe BIOS), souvent sans documentation ni passation. Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
       assessment: "Cette expérience m'a permis de développer une véritable autonomie opérationnelle, essentielle dans les environnements industriels exigeants. Elle m'a appris à gérer des situations imprévues, à prendre des décisions rapidement, et à m'auto-organiser pour maintenir un niveau de service élevé, même sans appui extérieur. Cette compétence me sera précieuse dans toute situation où la réactivité et la capacité à avancer seul sont attendues.",
-      relatedProjects: ["projet-4-informatique-industrielle"]
+      relatedProjects: ["projet-4-informatique-industrielle", "projet-3-audit-securite"]
     },
     {
       id: "administration-windows",
