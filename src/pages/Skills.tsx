@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -17,23 +16,41 @@ interface Skill {
   category: string;
   icon: any;
   description: string;
-  projects: Project[];
+  definition: string;
   application: string;
+  projects: Project[];
+  professionalSkills: string;
   color: string;
 }
 
 const skills: Skill[] = [
+  {
+    id: "securite",
+    title: "Sécurité",
+    category: "Compétences techniques",
+    icon: Shield,
+    description: "Mise en œuvre de solutions et de pratiques visant à protéger les systèmes d'exploitation contre les accès non autorisés, les pertes de données ou les vulnérabilités, en assurant la confidentialité, l'intégrité et la disponibilité des informations.",
+    definition: "Mise en œuvre de solutions et de pratiques visant à protéger les systèmes d'exploitation contre les accès non autorisés, les pertes de données ou les vulnérabilités, en assurant la confidentialité, l'intégrité et la disponibilité des informations.",
+    application: "Chez Skyepharma, dans le cadre de l'audit de sécurité mené par une équipe externe de pentester, j'ai été chargé de mettre en œuvre plusieurs mesures correctives sur les postes de travail. J'ai mis en place BitLocker pour garantir le chiffrement des disques durs des utilisateurs, en assurant la compatibilité des machines et la bonne configuration des options de sécurité. J'ai également sécurisé les postes au niveau matériel en configurant manuellement un mot de passe administrateur dans le BIOS afin de limiter les modifications non autorisées. Cette démarche faisait suite à des recommandations précises formulées dans le rapport d'audit, et a nécessité une coordination étroite avec les utilisateurs et les services IT internes. En parallèle, j'ai participé à la migration vers Office 365, en veillant à l'uniformité des versions déployées et à la protection des données migrées.",
+    professionalSkills: "Ces projets m'ont permis de renforcer ma capacité à appliquer des mesures de sécurité concrètes et adaptées aux contraintes de terrain. J'ai développé une sensibilité aux bonnes pratiques de sécurité des systèmes d'exploitation, appris à interpréter des recommandations d'audit, et à mettre en œuvre des solutions efficaces, même en l'absence d'outils d'automatisation.",
+    projects: [
+      { name: "Audit de sécurité", description: "Évaluation des risques" }
+    ],
+    color: "border-red-500"
+  },
   {
     id: "maitrise-outils-informatiques",
     title: "Maîtrise des outils informatiques",
     category: "Compétences techniques",
     icon: Code,
     description: "Excellente maîtrise des outils informatiques, des systèmes d'exploitation et des logiciels courants.",
+    definition: "Excellente maîtrise des outils informatiques, des systèmes d'exploitation et des logiciels courants.",
+    application: "Lors de la gestion du parc informatique, j'ai mis en œuvre des solutions innovantes pour optimiser l'utilisation des ressources et améliorer la productivité des équipes. En tant que support technique, j'ai résolu rapidement et efficacement les problèmes rencontrés par les utilisateurs, garantissant ainsi la continuité de leurs activités.",
+    professionalSkills: "Ces expériences m'ont permis de développer une expertise technique solide et une capacité d'adaptation aux nouvelles technologies.",
     projects: [
       { name: "Gestion du parc informatique", description: "Optimisation des ressources" },
       { name: "Support technique", description: "Assistance aux utilisateurs" }
     ],
-    application: "Lors de la gestion du parc informatique, j'ai mis en œuvre des solutions innovantes pour optimiser l'utilisation des ressources et améliorer la productivité des équipes. En tant que support technique, j'ai résolu rapidement et efficacement les problèmes rencontrés par les utilisateurs, garantissant ainsi la continuité de leurs activités.",
     color: "border-blue-500"
   },
   {
@@ -42,11 +59,13 @@ const skills: Skill[] = [
     category: "Compétences techniques",
     icon: Network,
     description: "Compétences approfondies en gestion de réseaux, incluant la configuration, la maintenance et la sécurisation des infrastructures.",
+    definition: "Compétences approfondies en gestion de réseaux, incluant la configuration, la maintenance et la sécurisation des infrastructures.",
+    application: "J'ai configuré et maintenu des réseaux complexes, en assurant leur performance et leur sécurité. J'ai également mis en place des mesures de protection efficaces contre les menaces, garantissant ainsi la confidentialité et l'intégrité des données.",
+    professionalSkills: "Grâce à ces projets, j'ai acquis une solide expérience dans la gestion des réseaux et la mise en place de mesures de sécurité efficaces.",
     projects: [
       { name: "Configuration réseau", description: "Mise en place d'un réseau performant" },
       { name: "Sécurisation du réseau", description: "Protection contre les menaces" }
     ],
-    application: "J'ai configuré et maintenu des réseaux complexes, en assurant leur performance et leur sécurité. J'ai également mis en place des mesures de protection efficaces contre les menaces, garantissant ainsi la confidentialité et l'intégrité des données.",
     color: "border-green-500"
   },
   {
@@ -55,11 +74,13 @@ const skills: Skill[] = [
     category: "Compétences techniques",
     icon: Shield,
     description: "Expertise en sécurité informatique, incluant la prévention des intrusions, la détection des vulnérabilités et la mise en place de mesures de protection.",
+    definition: "Expertise en sécurité informatique, incluant la prévention des intrusions, la détection des vulnérabilités et la mise en place de mesures de protection.",
+    application: "J'ai réalisé des audits de sécurité pour identifier les vulnérabilités des systèmes et j'ai mis en place des mesures de protection efficaces pour prévenir les intrusions et protéger les données sensibles.",
+    professionalSkills: "Ces projets m'ont permis de développer une expertise pointue en sécurité informatique et de mettre en œuvre des solutions de protection efficaces.",
     projects: [
       { name: "Audit de sécurité", description: "Identification des risques" },
       { name: "Mise en place de mesures de sécurité", description: "Protection des systèmes" }
     ],
-    application: "J'ai réalisé des audits de sécurité pour identifier les vulnérabilités des systèmes et j'ai mis en place des mesures de protection efficaces pour prévenir les intrusions et protéger les données sensibles.",
     color: "border-red-500"
   },
   {
@@ -68,11 +89,13 @@ const skills: Skill[] = [
     category: "Compétences techniques",
     icon: Database,
     description: "Maîtrise de l'administration de systèmes, incluant l'installation, la configuration et la maintenance des serveurs et des applications.",
+    definition: "Maîtrise de l'administration de systèmes, incluant l'installation, la configuration et la maintenance des serveurs et des applications.",
+    application: "J'ai installé et configuré des serveurs, en assurant leur maintenance et leur disponibilité. J'ai également mis en place des solutions de sauvegarde et de restauration pour garantir la continuité des activités en cas de problème.",
+    professionalSkills: "Ces projets m'ont permis de développer une expertise dans l'administration de systèmes et de garantir la disponibilité des services.",
     projects: [
       { name: "Installation de serveurs", description: "Mise en place de l'infrastructure" },
       { name: "Maintenance des systèmes", description: "Garantie de la disponibilité" }
     ],
-    application: "J'ai installé et configuré des serveurs, en assurant leur maintenance et leur disponibilité. J'ai également mis en place des solutions de sauvegarde et de restauration pour garantir la continuité des activités en cas de problème.",
     color: "border-yellow-500"
   },
   {
@@ -81,11 +104,13 @@ const skills: Skill[] = [
     category: "Compétences techniques",
     icon: Database,
     description: "Compétences en gestion de bases de données, incluant la conception, l'optimisation et la maintenance des systèmes.",
+    definition: "Compétences en gestion de bases de données, incluant la conception, l'optimisation et la maintenance des systèmes.",
+    application: "J'ai conçu et optimisé des bases de données, en assurant leur performance et leur intégrité. J'ai également mis en place des procédures de sauvegarde et de restauration pour garantir la disponibilité des données en cas de problème.",
+    professionalSkills: "Ces projets m'ont permis de développer une expertise dans la gestion des bases de données et d'assurer leur performance et leur intégrité.",
     projects: [
       { name: "Conception de bases de données", description: "Modélisation des données" },
       { name: "Optimisation des performances", description: "Amélioration de la rapidité" }
     ],
-    application: "J'ai conçu et optimisé des bases de données, en assurant leur performance et leur intégrité. J'ai également mis en place des procédures de sauvegarde et de restauration pour garantir la disponibilité des données en cas de problème.",
     color: "border-purple-500"
   },
   {
@@ -94,11 +119,13 @@ const skills: Skill[] = [
     category: "Compétences techniques",
     icon: Code,
     description: "Aptitudes en développement logiciel, incluant la conception, la programmation et les tests d'applications.",
+    definition: "Aptitudes en développement logiciel, incluant la conception, la programmation et les tests d'applications.",
+    application: "J'ai conçu et développé des applications, en utilisant les langages de programmation appropriés et en respectant les normes de qualité. J'ai également réalisé des tests unitaires pour vérifier le bon fonctionnement des applications et garantir leur fiabilité.",
+    professionalSkills: "Ces projets m'ont permis de développer une expertise dans le développement logiciel et de garantir la qualité des applications.",
     projects: [
       { name: "Conception d'applications", description: "Création de solutions innovantes" },
       { name: "Tests unitaires", description: "Vérification de la qualité" }
     ],
-    application: "J'ai conçu et développé des applications, en utilisant les langages de programmation appropriés et en respectant les normes de qualité. J'ai également réalisé des tests unitaires pour vérifier le bon fonctionnement des applications et garantir leur fiabilité.",
     color: "border-indigo-500"
   },
   {
@@ -107,11 +134,13 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Briefcase,
     description: "Capacité à gérer des projets, incluant la planification, le suivi et la coordination des équipes.",
+    definition: "Capacité à gérer des projets, incluant la planification, le suivi et la coordination des équipes.",
+    application: "J'ai géré des projets complexes, en planifiant les étapes, en coordonnant les équipes et en assurant le suivi des activités. J'ai également mis en place des outils de communication efficaces pour faciliter la collaboration et garantir la réussite des projets.",
+    professionalSkills: "Ces projets m'ont permis de développer une expertise dans la gestion de projets et de garantir leur réussite.",
     projects: [
       { name: "Planification de projet", description: "Définition des étapes" },
       { name: "Coordination des équipes", description: "Animation des réunions" }
     ],
-    application: "J'ai géré des projets complexes, en planifiant les étapes, en coordonnant les équipes et en assurant le suivi des activités. J'ai également mis en place des outils de communication efficaces pour faciliter la collaboration et garantir la réussite des projets.",
     color: "border-teal-500"
   },
   {
@@ -120,10 +149,12 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Users,
     description: "Capacité à organiser, coordonner et suivre un projet de bout en bout, en définissant des objectifs clairs, en planifiant les étapes et en mobilisant les ressources nécessaires.",
+    definition: "Capacité à organiser, coordonner et suivre un projet de bout en bout, en définissant des objectifs clairs, en planifiant les étapes et en mobilisant les ressources nécessaires.",
+    application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
+    professionalSkills: "Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
     projects: [
       { name: "MAGELLAN - METEOR", description: "Projet de modernisation" }
     ],
-    application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
     color: "border-blue-500"
   },
   {
@@ -132,6 +163,9 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Zap,
     description: "Aptitude à structurer son travail, prioriser les tâches et optimiser son temps pour atteindre ses objectifs de manière efficace.",
+    definition: "Aptitude à structurer son travail, prioriser les tâches et optimiser son temps pour atteindre ses objectifs de manière efficace.",
+    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365, Audit de sécurité, Informatique industrielle et MAGELLAN – METEOR, j'ai structuré mon travail en tenant compte des contraintes de production, des délais techniques et des priorités utilisateurs. Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
+    professionalSkills: "Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
     projects: [
       { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
       { name: "Migration Office 365", description: "Transition vers le cloud" },
@@ -139,7 +173,6 @@ const skills: Skill[] = [
       { name: "Informatique industrielle", description: "Gestion des systèmes industriels" },
       { name: "MAGELLAN – METEOR", description: "Projet de modernisation" }
     ],
-    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365, Audit de sécurité, Informatique industrielle et MAGELLAN – METEOR, j'ai structuré mon travail en tenant compte des contraintes de production, des délais techniques et des priorités utilisateurs. Cette compétence à planifier mes interventions m'a permis de rester efficace et autonome, même dans des contextes multitâches ou sans encadrement direct.",
     color: "border-green-500"
   },
   {
@@ -148,12 +181,14 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Zap,
     description: "Capacité à identifier les opportunités d'amélioration et à proposer des solutions concrètes de manière proactive.",
+    definition: "Capacité à identifier les opportunités d'amélioration et à proposer des solutions concrètes de manière proactive.",
+    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365 et MAGELLAN – SAGT, j'ai identifié des problématiques non signalées et proposé des solutions concrètes pour améliorer l'organisation ou les outils. Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
+    professionalSkills: "Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
     projects: [
       { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
       { name: "Migration Office 365", description: "Transition vers le cloud" },
       { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" }
     ],
-    application: "Dans les projets Standardisation du parc d'impression, Migration Office 365 et MAGELLAN – SAGT, j'ai identifié des problématiques non signalées et proposé des solutions concrètes pour améliorer l'organisation ou les outils. Cette compétence m'a permis d'apporter une réelle valeur ajoutée en anticipant les besoins et en structurant des réponses efficaces sans directive préalable.",
     color: "border-yellow-500"
   },
   {
@@ -162,6 +197,9 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Users,
     description: "Aptitude à échanger efficacement avec différents interlocuteurs, à expliquer des concepts techniques et à maintenir de bonnes relations professionnelles.",
+    definition: "Aptitude à échanger efficacement avec différents interlocuteurs, à expliquer des concepts techniques et à maintenir de bonnes relations professionnelles.",
+    application: "Dans les projets Migration Office 365, Audit de sécurité, Informatique industrielle, MAGELLAN – METEOR et MAGELLAN – SAGT, j'ai communiqué régulièrement avec les utilisateurs et les équipes métiers pour expliquer les changements, recueillir leurs besoins ou résoudre les incidents. Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
+    professionalSkills: "Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
     projects: [
       { name: "Migration Office 365", description: "Transition vers le cloud" },
       { name: "Audit de sécurité", description: "Évaluation des risques" },
@@ -169,7 +207,6 @@ const skills: Skill[] = [
       { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
       { name: "MAGELLAN – SAGT", description: "Système de gestion automatisée du trafic" }
     ],
-    application: "Dans les projets Migration Office 365, Audit de sécurité, Informatique industrielle, MAGELLAN – METEOR et MAGELLAN – SAGT, j'ai communiqué régulièrement avec les utilisateurs et les équipes métiers pour expliquer les changements, recueillir leurs besoins ou résoudre les incidents. Cette compétence m'a permis de créer un climat de confiance, de fluidifier les échanges techniques et d'assurer une meilleure compréhension des enjeux des projets.",
     color: "border-purple-500"
   },
   {
@@ -178,11 +215,13 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Zap,
     description: "Capacité à travailler de manière indépendante, à prendre des décisions et à résoudre des problèmes sans supervision constante.",
+    definition: "Capacité à travailler de manière indépendante, à prendre des décisions et à résoudre des problèmes sans supervision constante.",
+    application: "Dans les projets Informatique industrielle et Audit de sécurité, j'ai géré seul la configuration de postes critiques, le suivi des comptes Active Directory, et le déploiement de mesures de sécurité (BitLocker, mots de passe BIOS), souvent sans documentation ni passation. Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
+    professionalSkills: "Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
     projects: [
       { name: "Informatique industrielle", description: "Gestion des systèmes industriels" },
       { name: "Audit de sécurité", description: "Évaluation des risques" }
     ],
-    application: "Dans les projets Informatique industrielle et Audit de sécurité, j'ai géré seul la configuration de postes critiques, le suivi des comptes Active Directory, et le déploiement de mesures de sécurité (BitLocker, mots de passe BIOS), souvent sans documentation ni passation. Cette compétence m'a permis de maintenir la continuité du service en environnement sensible et de prendre des initiatives techniques en toute confiance.",
     color: "border-red-500"
   },
   {
@@ -191,6 +230,9 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Shield,
     description: "Aptitude à appliquer des méthodes précises, à respecter les procédures et à maintenir un niveau de qualité élevé dans son travail.",
+    definition: "Aptitude à appliquer des méthodes précises, à respecter les procédures et à maintenir un niveau de qualité élevé dans son travail.",
+    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
+    professionalSkills: "Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
     projects: [
       { name: "Audit de sécurité", description: "Évaluation des risques" },
       { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
@@ -198,7 +240,6 @@ const skills: Skill[] = [
       { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
       { name: "Informatique industrielle", description: "Gestion des systèmes industriels" }
     ],
-    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
     color: "border-indigo-500"
   },
   {
@@ -207,6 +248,9 @@ const skills: Skill[] = [
     category: "Compétences comportementales",
     icon: Database,
     description: "Capacité à décomposer des problèmes complexes, à identifier les causes racines et à structurer des solutions logiques.",
+    definition: "Capacité à décomposer des problèmes complexes, à identifier les causes racines et à structurer des solutions logiques.",
+    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
+    professionalSkills: "Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
     projects: [
       { name: "Audit de sécurité", description: "Évaluation des risques" },
       { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" },
@@ -214,7 +258,6 @@ const skills: Skill[] = [
       { name: "MAGELLAN – METEOR", description: "Projet de modernisation" },
       { name: "Informatique industrielle", description: "Gestion des systèmes industriels" }
     ],
-    application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
     color: "border-teal-500"
   },
   {
@@ -223,11 +266,13 @@ const skills: Skill[] = [
     category: "Compétences générales",
     icon: Network,
     description: "Maîtrise de l'administration des systèmes Windows, incluant la gestion des utilisateurs, des stratégies de groupe et de la sécurité.",
+    definition: "Maîtrise de l'administration des systèmes Windows, incluant la gestion des utilisateurs, des stratégies de groupe et de la sécurité.",
+    application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai assuré la gestion complète des comptes utilisateurs dans Active Directory : création, suppression et organisation des accès, dans un environnement marqué par un fort turnover. Cette compétence m'a également été utile lors du déploiement par GPO de BitLocker à la suite d'un audit de sécurité, que j'ai configuré manuellement poste par poste par la suite. J'ai renforcé la protection physique des équipements en définissant des mots de passe administrateurs dans le BIOS. Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
+    professionalSkills: "Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
     projects: [
       { name: "Active Directory", description: "Gestion des comptes et accès" },
       { name: "GPO BitLocker", description: "Déploiement sécurisé" }
     ],
-    application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai assuré la gestion complète des comptes utilisateurs dans Active Directory : création, suppression et organisation des accès, dans un environnement marqué par un fort turnover. Cette compétence m'a également été utile lors du déploiement par GPO de BitLocker à la suite d'un audit de sécurité, que j'ai configuré manuellement poste par poste par la suite. J'ai renforcé la protection physique des équipements en définissant des mots de passe administrateurs dans le BIOS. Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
     color: "border-blue-600"
   },
   {
@@ -236,11 +281,13 @@ const skills: Skill[] = [
     category: "Compétences générales",
     icon: Shield,
     description: "Connaissance des bonnes pratiques de sécurité informatique et capacité à mettre en œuvre des mesures de protection.",
+    definition: "Connaissance des bonnes pratiques de sécurité informatique et capacité à mettre en œuvre des mesures de protection.",
+    application: "A la suite d'un audit de sécurité, j'ai mobilisé cette compétence pour sécuriser le parc informatique. J'ai déployé la solution de chiffrement BitLocker via GPO, puis je suis intervenu poste par poste pour m'assurer de la bonne configuration. En complément, j'ai configuré un mot de passe administrateur dans le BIOS . Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
+    professionalSkills: "Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
     projects: [
       { name: "Audit de sécurité", description: "Évaluation des risques" },
       { name: "Déploiement BitLocker", description: "Chiffrement des données" }
     ],
-    application: "A la suite d'un audit de sécurité, j'ai mobilisé cette compétence pour sécuriser le parc informatique. J'ai déployé la solution de chiffrement BitLocker via GPO, puis je suis intervenu poste par poste pour m'assurer de la bonne configuration. En complément, j'ai configuré un mot de passe administrateur dans le BIOS . Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
     color: "border-red-600"
   },
   {
@@ -249,11 +296,13 @@ const skills: Skill[] = [
     category: "Compétences générales",
     icon: Code,
     description: "Maîtrise des outils bureautiques et des méthodes d'organisation pour optimiser la productivité personnelle.",
+    definition: "Maîtrise des outils bureautiques et des méthodes d'organisation pour optimiser la productivité personnelle.",
+    application: "J'ai mobilisé cette compétence à plusieurs reprises. Lors du projet de migration Office 365, j'ai mené un inventaire des versions installées pour standardiser les environnements bureautiques, facilitant ainsi la collaboration entre utilisateurs. Dans le projet de standardisation du parc d'imprimantes, j'ai construit un tableau de suivi précis regroupant les emplacements, les modèles et les consommables associés, afin de faciliter la gestion logistique et anticiper les ruptures.",
+    professionalSkills: "Cette compétence m'a permis de faciliter la collaboration entre utilisateurs et d'anticiper les ruptures.",
     projects: [
       { name: "Migration Office 365", description: "Transition vers le cloud" },
       { name: "Standardisation du parc d'impression", description: "Uniformisation des équipements" }
     ],
-    application: "J'ai mobilisé cette compétence à plusieurs reprises. Lors du projet de migration Office 365, j'ai mené un inventaire des versions installées pour standardiser les environnements bureautiques, facilitant ainsi la collaboration entre utilisateurs. Dans le projet de standardisation du parc d'imprimantes, j'ai construit un tableau de suivi précis regroupant les emplacements, les modèles et les consommables associés, afin de faciliter la gestion logistique et anticiper les ruptures.",
     color: "border-green-600"
   },
   {
@@ -262,11 +311,13 @@ const skills: Skill[] = [
     category: "Compétences générales",
     icon: Briefcase,
     description: "Aptitude à mener des projets logiciels en appliquant des méthodologies structurées et en coordonnant les aspects techniques et fonctionnels.",
+    definition: "Aptitude à mener des projets logiciels en appliquant des méthodologies structurées et en coordonnant les aspects techniques et fonctionnels.",
+    application: "Cette compétence à été utilisée dans le projet MAGELLAN - METEOR, j'ai participé au paramétrage fonctionnel du logiciel aux côtés des référents régionaux, en configurant des contextes adaptés aux postes de commandement pour refléter les zones météo et trafic pertinentes. Dans le projet MAGELLAN - SAGT, j'ai structuré une nomenclature de règles permettant d'uniformiser les automatisations du système de gestion du trafic. J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
+    professionalSkills: "J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
     projects: [
       { name: "MAGELLAN - METEOR", description: "Projet de modernisation" },
       { name: "MAGELLAN - SAGT", description: "Système de gestion automatisée du trafic" }
     ],
-    application: "Cette compétence à été utilisée dans le projet MAGELLAN - METEOR, j'ai participé au paramétrage fonctionnel du logiciel aux côtés des référents régionaux, en configurant des contextes adaptés aux postes de commandement pour refléter les zones météo et trafic pertinentes. Dans le projet MAGELLAN - SAGT, j'ai structuré une nomenclature de règles permettant d'uniformiser les automatisations du système de gestion du trafic. J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
     color: "border-purple-600"
   }
 ];
@@ -314,23 +365,40 @@ const SkillsPage = () => {
                 </div>
                 <div>
                   <h1 className="text-3xl md:text-4xl font-bold text-primary">{skill.title}</h1>
-                  <p className="text-muted-foreground text-lg">{skill.category}</p>
                 </div>
               </div>
               
               <div className="grid gap-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Description</CardTitle>
+                    <CardTitle>Définition</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700 leading-relaxed">{skill.description}</p>
+                    <p className="text-gray-700 leading-relaxed">{skill.definition}</p>
                   </CardContent>
                 </Card>
                 
                 <Card>
                   <CardHeader>
-                    <CardTitle>Projets associés</CardTitle>
+                    <CardTitle>Mise en application</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 leading-relaxed">{skill.application}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Bilan de compétences professionnelles</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-700 leading-relaxed">{skill.professionalSkills}</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Projets associés à cette compétence</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="grid gap-4">
@@ -341,20 +409,10 @@ const SkillsPage = () => {
                           </div>
                           <div>
                             <h4 className="font-medium text-gray-900">{project.name}</h4>
-                            <p className="text-sm text-gray-600">{project.description}</p>
                           </div>
                         </div>
                       ))}
                     </div>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Mise en application</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700 leading-relaxed">{skill.application}</p>
                   </CardContent>
                 </Card>
               </div>
