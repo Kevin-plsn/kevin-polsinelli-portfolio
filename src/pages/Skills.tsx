@@ -76,7 +76,7 @@ const SkillsPage = () => {
       title: "Esprit d'analyse",
       type: "comportementale",
       definition: "Capacité à comprendre une situation complexe, identifier ses éléments clés, détecter les incohérences et proposer des solutions pertinentes en s'appuyant sur des faits et une réflexion structurée.",
-      application: "Dans le cadre du projet SAGT chez APRR, j'ai travaillé sur la cohérence des règles de paramétrage en analysant les nomenclatures utilisées dans le système. Ce travail m'a permis d'identifier des doublons, des écarts de nommage, et de proposer une structure homogène facilitant la compréhension et la maintenance du système. Chez Skyepharma, suite à un audit de sécurité, j'ai analysé l'état du parc informatique pour définir une stratégie de chiffrement BitLocker et de protection BIOS adaptée à l'environnement.",
+      application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
       assessment: "L'esprit d'analyse me permet de traiter efficacement des situations techniques complexes, de faire ressortir les enjeux critiques, et d'élaborer des solutions adaptées. Il constitue un levier essentiel pour garantir la qualité, la cohérence et la pérennité des actions menées dans des environnements structurés.",
       relatedProjects: ["projet-1-standardisation-parc", "projet-3-audit-securite", "projet-4-informatique-industrielle", "projet-5-magellan-sagt", "projet-6-magellan-meteor"]
     },
@@ -86,7 +86,7 @@ const SkillsPage = () => {
       title: "Rigueur",
       type: "comportementale",
       definition: "Capacité et respect à appliquer les méthodes de travail précises, les procédures et contraintes techniques, tout en assurant la fiabilité et la qualité des livrables produits.",
-      application: "Chez Skyepharma, lors du déploiement de BitLocker sur l'ensemble du parc informatique, j'ai respecté une procédure stricte de configuration, d'activation et de vérification, en veillant à ne pas perturber l'environnement industriel. J'ai également sécurisé l'accès au BIOS par mot de passe sur chaque ordinateur de chaque collaborateur, en documentant chaque étape. Dans le projet METEOR chez APRR, j'ai appliqué rigoureusement les règles de configuration définies pour chaque Poste de Commandement, afin d'assurer l'harmonisation des contextes de sur l'ensemble du réseau.",
+      application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
       assessment: "La rigueur m'a permis de garantir la qualité et la fiabilité des actions menées sur des systèmes critiques. Elle renforce ma capacité à travailler dans des environnements exigeants, à produire des livrables fiables, et à limiter les erreurs en phase d'exécution. Cette approche méthodique est essentielle dans les domaines liés à la sécurité, à l'automatisation ou à la production.",
       relatedProjects: ["projet-2-migration-office", "projet-3-audit-securite", "projet-5-magellan-sagt"]
     },
@@ -126,7 +126,7 @@ const SkillsPage = () => {
       title: "Administration Windows",
       type: "technique",
       definition: "Maîtrise des fonctionnalités du système d'exploitation Windows en entreprise : gestion des comptes et des droits via Active Directory, sécurisation des postes, intégration réseau, et mise en œuvre de politiques système (GPO).",
-      application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai pris en charge la gestion complète des comptes utilisateurs dans l'Active Directory, en assurant la création, la suppression et l'organisation des accès au sein d'une structure exposée à un fort turnover. J'ai maintenu l'intégrité du domaine malgré l'absence de passation, en assurant un suivi rigoureux des comptes et des machines utilisées en production. À la suite d'un audit de sécurité, j'ai mis en place le chiffrement des postes utilisateurs avec BitLocker, en définissant les paramètres manuellement poste par poste selon les recommandations internes. J'ai également sécurisé les postes au niveau matériel en configurant un mot de passe administrateur BIOS pour limiter les accès non autorisés. Ce projet m'a permis de développer une bonne connaissance de Windows/AD qui m'a permis de m'adapter à des environnements professionnels.",
+      application: "Dans le cadre de ma mission d'informaticien industriel chez Skyepharma, j'ai assuré la gestion complète des comptes utilisateurs dans Active Directory : création, suppression et organisation des accès, dans un environnement marqué par un fort turnover. Cette compétence m'a également été utile lors du déploiement par GPO de BitLocker à la suite d'un audit de sécurité, que j'ai configuré manuellement poste par poste par la suite. J'ai renforcé la protection physique des équipements en définissant des mots de passe administrateurs dans le BIOS. Cette compétence m'a permis d'assurer la continuité de service et d'implémenter des mesures concrètes de sécurisation dans un environnement critique, sans transmission préalable.",
       assessment: "Cette expérience m'a permis de développer une autonomie totale sur la gestion des comptes utilisateurs et des postes dans un environnement complexe. J'ai appris à organiser et structurer une gestion système fiable, même sans supervision, tout en respectant les standards de sécurité et de continuité d'activité.",
       relatedProjects: ["projet-3-audit-securite", "projet-4-informatique-industrielle"]
     },
@@ -136,7 +136,7 @@ const SkillsPage = () => {
       title: "Sécurité",
       type: "technique",
       definition: "Mise en œuvre de solutions et de pratiques visant à protéger les systèmes d'exploitation contre les accès non autorisés, les pertes de données ou les vulnérabilités, en assurant la confidentialité, l'intégrité et la disponibilité des informations.",
-      application: "Chez Skyepharma, dans le cadre de l'audit de sécurité mené par une équipe externe de pentester, j'ai été chargé de mettre en œuvre plusieurs mesures correctives sur les postes de travail. J'ai mis en place BitLocker pour garantir le chiffrement des disques durs des utilisateurs, en assurant la compatibilité des machines et la bonne configuration des options de sécurité. J'ai également sécurisé les postes au niveau matériel en configurant manuellement un mot de passe administrateur dans le BIOS afin de limiter les modifications non autorisées. Cette démarche faisait suite à des recommandations précises formulées dans le rapport d'audit, et a nécessité une coordination étroite avec les utilisateurs et les services IT internes. En parallèle, j'ai participé à la migration vers Office 365, en veillant à l'uniformité des versions déployées et à la protection des données migrées.",
+      application: "A la suite d'un audit de sécurité, j'ai mobilisé cette compétence pour sécuriser le parc informatique. J'ai déployé la solution de chiffrement BitLocker via GPO, puis je suis intervenu poste par poste pour m'assurer de la bonne configuration. En complément, j'ai configuré un mot de passe administrateur dans le BIOS . Cette démarche m'a permis de concilier exigences de sécurité et contraintes de production, en assurant la conformité sans interrompre les activités.",
       assessment: "Ces projets m'ont permis de renforcer ma capacité à appliquer des mesures de sécurité concrètes et adaptées aux contraintes de terrain. J'ai développé une sensibilité aux bonnes pratiques de sécurité des systèmes d'exploitation, appris à interpréter des recommandations d'audit, et à mettre en œuvre des solutions efficaces, même en l'absence d'outils d'automatisation.",
       relatedProjects: ["projet-3-audit-securite"]
     },
@@ -146,7 +146,7 @@ const SkillsPage = () => {
       title: "Bureautique et productivité personnelle",
       type: "technique",
       definition: "Capacité à optimiser les environnements informatiques et les outils bureautiques afin de garantir une utilisation fluide, homogène et efficace des postes de travail et des ressources associées.",
-      application: "Chez Skyepharma, j'ai accompagné les équipes lors de la migration vers Office 365 en assurant une uniformisation des versions de la suite bureautique. Certaines incompatibilités empêchaient la lecture correcte des fichiers partagés, ce qui ralentissait les échanges. J'ai mené un inventaire, organisé les mises à niveau, et facilité l'adoption d'un environnement commun. En parallèle, dans le projet Standardisation du parc d'impression, j'ai pris l'initiative de centraliser la gestion des imprimantes et des toners. La diversité des modèles rendait le suivi complexe ; j'ai mis en place un tableau synthétique pour suivre les consommables, standardiser les commandes et améliorer la lisibilité globale. Chez APRR, dans le cadre du projet MAGELLAN – SAGT, j'ai identifié que les règles métiers utilisées dans le logiciel n'étaient pas nommées de façon cohérente. Pour y remédier, j'ai conçu un tableau de nomenclature claire et homogène, utilisé par toute l'équipe comme modèle. Ce travail a permis d'uniformiser les noms de règles, de réduire les erreurs de saisie et de fluidifier le paramétrage fonctionnel du système.",
+      application: "J'ai mobilisé cette compétence à plusieurs reprises. Lors du projet de migration Office 365, j'ai mené un inventaire des versions installées pour standardiser les environnements bureautiques, facilitant ainsi la collaboration entre utilisateurs. Dans le projet de standardisation du parc d'imprimantes, j'ai construit un tableau de suivi précis regroupant les emplacements, les modèles et les consommables associés, afin de faciliter la gestion logistique et anticiper les ruptures.",
       assessment: "Ce type de projet m'a permis de développer des réflexes d'analyse et d'adaptation face aux besoins bureautiques du terrain. J'ai appris à améliorer la cohérence d'un parc informatique, à favoriser la productivité des utilisateurs et à proposer des méthodes pratiques qui allègent le travail quotidien des équipes. Cette compétence me permet d'intervenir efficacement dans la structuration et la fluidité des environnements numériques internes.",
       relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office"]
     },
@@ -156,7 +156,7 @@ const SkillsPage = () => {
       title: "Conduite de projet logiciel",
       type: "technique",
       definition: "Capacité à participer à la conception, à l'adaptation et à l'évolution d'un logiciel métier en suivant une logique projet : compréhension des besoins, structuration des livrables, tests, documentation, accompagnement au changement et retours utilisateurs.",
-      application: "Chez APRR, j'ai intégré l'équipe administratrice fonctionnelle du projet MAGELLAN, qui vise à centraliser et améliorer les outils métiers utilisés dans différents services. Dans ce cadre, j'ai travaillé sur le projet MAGELLAN - METEOR, un outil d'aide à l'exploitation permettant la visualisation en temps réel des données trafic et météo. J'ai participé au paramétrage fonctionnel des vues régionales, en lien avec les référents terrain, en structurant le travail par étapes pour assurer cohérence, clarté et compatibilité avec les besoins opérationnels. J'ai également contribué au projet MAGELLAN - SAGT, qui automatise les actions déclenchées lors d'événements sur le réseau autoroutier. J'ai constaté une hétérogénéité dans le nommage des règles, freinant leur création et leur compréhension. Pour y remédier, j'ai conçu un tableau de nomenclature partagé, facilitant l'harmonisation et accélérant le travail des équipes. Ces missions ont nécessité un suivi structuré, des échanges fréquents avec les utilisateurs métiers, la rédaction de supports, ainsi qu'un travail itératif pour adapter la configuration du système.",
+      application: "Cette compétence à été utilisée dans le projet MAGELLAN - METEOR, j'ai participé au paramétrage fonctionnel du logiciel aux côtés des référents régionaux, en configurant des contextes adaptés aux postes de commandement pour refléter les zones météo et trafic pertinentes. Dans le projet MAGELLAN - SAGT, j'ai structuré une nomenclature de règles permettant d'uniformiser les automatisations du système de gestion du trafic. J'ai ainsi facilité la création de nouvelles règles par les équipes internes en proposant une documentation claire et centralisée.",
       assessment: "Ce projet m'a permis de développer une vision complète de la conduite de projet logiciel en contexte métier. J'ai appris à formaliser des besoins, à structurer une réponse fonctionnelle dans un outil, à travailler en interaction avec les utilisateurs finaux et à contribuer à l'amélioration continue d'un service. Cette compétence me prépare à évoluer vers des rôles de coordination fonctionnelle, d'assistance à maîtrise d'ouvrage ou de pilotage d'outils métiers transverses.",
       relatedProjects: ["projet-5-magellan-sagt", "projet-6-magellan-meteor"]
     }
@@ -231,14 +231,24 @@ const SkillsPage = () => {
           )}
           
           {expandedSkill ? (
-            <Button 
-              onClick={backToAllSkills} 
-              variant="outline" 
-              className="mb-6"
-            >
-              <ChevronLeft className="mr-2 h-4 w-4" />
-              Retour à toutes les compétences
-            </Button>
+            <>
+              <Button 
+                onClick={backToAllSkills} 
+                variant="outline" 
+                className="mb-6"
+              >
+                <ChevronLeft className="mr-2 h-4 w-4" />
+                Retour à toutes les compétences
+              </Button>
+              
+              <Link 
+                to="/skills"
+                onClick={backToAllSkills}
+                className="text-4xl md:text-5xl font-bold text-primary mb-6 inline-block hover:text-primary/80 transition-colors"
+              >
+                Mes compétences
+              </Link>
+            </>
           ) : (
             <div className="flex flex-wrap gap-4 mb-8 justify-center">
               <Button 
