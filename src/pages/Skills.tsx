@@ -241,13 +241,9 @@ const SkillsPage = () => {
                 Retour à toutes les compétences
               </Button>
               
-              <Link 
-                to="/skills"
-                onClick={backToAllSkills}
-                className="text-4xl md:text-5xl font-bold text-primary mb-6 inline-block hover:text-primary/80 transition-colors"
-              >
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
                 Mes compétences
-              </Link>
+              </h1>
             </>
           ) : (
             <div className="flex flex-wrap gap-4 mb-8 justify-center">
