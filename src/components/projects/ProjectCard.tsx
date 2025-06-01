@@ -2,6 +2,18 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { 
+  Computer, 
+  BrainCircuit, 
+  FileSpreadsheet, 
+  Shield, 
+  Database, 
+  Clock, 
+  Users, 
+  Lightbulb, 
+  Target, 
+  UserCog
+} from "lucide-react";
 
 interface ProjectCardProps {
   project: Project;
@@ -22,6 +34,24 @@ export interface Project {
   realization: string;
   skills: string[];
 }
+
+const getSkillIcon = (skillId: string) => {
+  const skillIcons: {[key: string]: React.ReactNode} = {
+    "administration-windows": <Computer className="h-4 w-4" />,
+    "securite": <Shield className="h-4 w-4" />,
+    "bureautique-productivite": <Database className="h-4 w-4" />,
+    "conduite-projet-logiciel": <Computer className="h-4 w-4" />,
+    "management-projet": <FileSpreadsheet className="h-4 w-4" />,
+    "communication-relationnel": <Users className="h-4 w-4" />,
+    "esprit-analyse": <BrainCircuit className="h-4 w-4" />,
+    "rigueur": <Target className="h-4 w-4" />,
+    "initiative": <Lightbulb className="h-4 w-4" />,
+    "organisation-personnelle": <Clock className="h-4 w-4" />,
+    "autonomie": <UserCog className="h-4 w-4" />
+  };
+  
+  return skillIcons[skillId] || <Computer className="h-4 w-4" />;
+};
 
 const ProjectCard = ({ 
   project, 
@@ -92,8 +122,9 @@ const ProjectCard = ({
                   <Link 
                     key={skill} 
                     to={`/skills#${skill}`} 
-                    className="inline-flex items-center rounded-md border border-input bg-background px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="inline-flex items-center gap-2 rounded-md border border-input bg-background px-2.5 py-0.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
                   >
+                    {getSkillIcon(skill)}
                     {getSkillName(skill)}
                   </Link>
                 ))}
