@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Briefcase, Calendar, GraduationCap } from "lucide-react";
 
@@ -26,7 +25,7 @@ const ExperienceSection = () => {
               <div className="flex items-start gap-2">
                 <span className="font-bold text-primary">APRR</span>
                 <span>-</span>
-                <span>Paris-Rhin-Rhône, Alternance</span>
+                <span>Autoroute Paris-Rhin-Rhône, Alternance</span>
               </div>
               <ul className="list-disc list-inside mt-2 space-y-1 text-gray-600">
                 <li>Gestion du système d'information trafic pour les autoroutes</li>
