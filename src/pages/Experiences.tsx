@@ -29,7 +29,7 @@ const ExperiencesPage = () => {
               <CardHeader className="flex items-center">
                 <div className="w-full h-40 flex justify-center items-center p-4">
                   <img 
-                    src="/lovable-uploads/dc42d57c-c697-4a46-a922-1969a273854a.png" 
+                    src="/lovable-uploads/6b74c682-7373-473f-848e-d9f7a006594d.png" 
                     alt="APRR Logo" 
                     className="max-h-full max-w-full object-contain"
                   />
