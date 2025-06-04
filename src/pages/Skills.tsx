@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -87,7 +86,7 @@ const SkillsPage = () => {
       title: "Rigueur",
       type: "comportementale",
       definition: "Capacité et respect à appliquer les méthodes de travail précises, les procédures et contraintes techniques, tout en assurant la fiabilité et la qualité des livrables produits.",
-      application: "Dans les projets Audit de sécurité, Standardisation du parc d'impression, MAGELLAN – SAGT, MAGELLAN – METEOR et Informatique industrielle, j'ai analysé des configurations techniques, identifié des incohérences, structuré des solutions concrètes et anticipé les impacts opérationnels. Cette compétence m'a permis de prendre des décisions éclairées dans des contextes où la précision était essentielle.",
+      application: "Les projets Migration Office 365,  Audit de sécurité et MAGELLAN – SAGT m'ont permis de comprendre à quel point la rigueur est essentielle pour garantir la fiabilité des déploiements, le respect des recommandations et la qualité des livrables. Cette compétence m'a permis d'aborder chaque phase avec une attention constante aux détails, en assurant des résultats stables et conformes aux attentes métier.",
       assessment: "La rigueur m'a permis de garantir la qualité et la fiabilité des actions menées sur des systèmes critiques. Elle renforce ma capacité à travailler dans des environnements exigeants, à produire des livrables fiables, et à limiter les erreurs en phase d'exécution. Cette approche méthodique est essentielle dans les domaines liés à la sécurité, à l'automatisation ou à la production.",
       relatedProjects: ["projet-2-migration-office", "projet-3-audit-securite", "projet-5-magellan-sagt"]
     },
