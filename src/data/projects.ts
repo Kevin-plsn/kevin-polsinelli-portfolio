@@ -1,3 +1,4 @@
+
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
@@ -83,7 +84,7 @@ export const projects: Project[] = [
       "Améliorer l'ergonomie de la plateforme et sa compréhension métier"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel"]
+    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet"]
   }
 ];
 
