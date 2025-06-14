@@ -18,14 +18,14 @@ const ProjectSection = () => {
             </div>
             <CardTitle>🧭 Contexte du projet</CardTitle>
           </CardHeader>
-          <CardContent className="pt-4 prose max-w-none text-gray-700">
-            <p>
+          <CardContent className="pt-4">
+            <p className="text-gray-700 mb-4">
               Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries.
             </p>
-            <p>
+            <p className="text-gray-700 mb-4">
               Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir.
             </p>
-            <p>
+            <p className="text-gray-700">
               J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.
             </p>
           </CardContent>
@@ -105,7 +105,7 @@ const ProjectSection = () => {
           </CardContent>
         </Card>
         
-        <Card className="shadow-md">
+        <Card className="mb-8 shadow-md">
           <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-primary/5">
             <div className="bg-primary/10 p-2 rounded-full">
               <Bookmark className="h-6 w-6 text-primary" />
@@ -114,7 +114,7 @@ const ProjectSection = () => {
           </CardHeader>
           <CardContent className="pt-4 space-y-8">
             <div>
-              <h4 className="text-lg font-semibold text-primary mb-4">🧠 Compétences transverses</h4>
+              <h4 className="text-lg font-semibold text-primary mb-4">🧠 Compétences comportementales</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
                   <h5 className="font-medium mb-1">Organisation personnelle</h5>
@@ -150,16 +150,16 @@ const ProjectSection = () => {
                   <h5 className="font-medium mb-1">Gestion de projet</h5>
                   <p className="text-sm text-gray-600">J'ai géré le projet de manière autonome, depuis la compréhension des logiques applicatives jusqu'à la restitution des règles aux utilisateurs. J'ai organisé le travail par phases et garanti une cohérence globale entre les objectifs fixés et les livrables produits.</p>
                 </div>
+                <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
+                  <h5 className="font-medium mb-1">Rédaction</h5>
+                  <p className="text-sm text-gray-600">J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants.</p>
+                </div>
               </div>
             </div>
             
             <div>
               <h4 className="text-lg font-semibold text-primary mb-4">💻 Savoir-faire techniques</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1">Rédaction</h5>
-                  <p className="text-sm text-gray-600">J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants.</p>
-                </div>
                 <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
                   <h5 className="font-medium mb-1">Conduite de projet logiciel</h5>
                   <p className="text-sm text-gray-600">Cette compétence a été essentielle pour structurer une démarche complète : analyse de l'existant, élaboration d'une nomenclature, validation fonctionnelle et documentation. Elle m'a permis d'aligner les règles d'automatisation aux besoins métier, tout en gardant une logique de projet structurée et évolutive.</p>
