@@ -1,121 +1,244 @@
+import { SkillCategory } from "@/types";
 
-import { Project } from "../components/projects/ProjectCard";
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  skills: SkillCategory[];
+  company: string;
+  year: string;
+  context: {
+    title: string;
+    content: string;
+  };
+  objectives: string[];
+  achievements: { title: string; description: string }[];
+  skills_detail: {
+    transverse: { name: string; description: string }[];
+    general: { name: string; description: string }[];
+    technical: { category: string; skills: string[] }[];
+  };
+  tools: { name: string; description: string }[];
+  conclusion: string;
+};
+
+export const getSkillName = (skill: SkillCategory): string => {
+  switch (skill) {
+    case SkillCategory.DEVELOPPEMENT:
+      return "Développement";
+    case SkillCategory.GESTION_DE_PROJET:
+      return "Gestion de projet";
+    case SkillCategory.DESIGN:
+      return "Design";
+    case SkillCategory.ANALYSE:
+      return "Analyse";
+    case SkillCategory.COMMUNICATION:
+      return "Communication";
+    case SkillCategory.ORGANISATION:
+      return "Organisation";
+    case SkillCategory.RIGUEUR:
+      return "Rigueur";
+    default:
+      return "Inconnu";
+  }
+};
 
 export const projects: Project[] = [
   {
-    id: "projet-1-standardisation-parc",
-    title: "Standardisation du parc d'impression",
-    image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Standardisation et sécurisation du parc d'impression avec déploiement de la solution RICOH et Streamline NX pour une gestion centralisée et sécurisée.",
-    context: "Pour améliorer la gestion du parc d'impression et renforcer la sécurité des accès utilisateurs, nous avons engagé une démarche de standardisation en collaboration avec le prestataire RICOH. L'objectif était multiple : simplifier le suivi des consommables, limiter les erreurs de commande, gagner en réactivité en cas de panne, et centraliser l'ensemble des informations liées aux imprimantes. L'outil Streamline NX a été déployé pour permettre un contrôle précis des impressions via des badges utilisateurs, assurant ainsi une meilleure traçabilité des impressions entrantes et sortantes. Ce projet visait à homogénéiser les équipements entre services, tout en professionnalisant la supervision et la sécurité documentaire au sein de l'entreprise.",
+    id: "portfolio-redesign",
+    title: "Refonte Portfolio",
+    description: "Refonte complète de mon site web portfolio pour présenter mes compétences et projets de manière plus moderne et efficace.",
+    technologies: ["React", "Tailwind CSS", "Radix UI", "Vercel"],
+    skills: [SkillCategory.DEVELOPPEMENT, SkillCategory.DESIGN, SkillCategory.GESTION_DE_PROJET],
+    company: "Personnel",
+    year: "2024",
+    context: {
+      title: "Contexte du projet",
+      content: "Ayant besoin d'un site web pour présenter mes compétences et mes projets, j'ai décidé de refondre mon portfolio en utilisant les dernières technologies web. L'objectif était de créer un site web moderne, responsive et facile à maintenir."
+    },
     objectives: [
-      "Uniformiser le parc d'imprimantes avec des modèles RICOH pour faciliter la maintenance, le support et les commandes de consommables",
-      "Réduire les erreurs de gestion en centralisant les informations techniques et logistiques via une interface commune",
-      "Mettre en place un système de suivi intelligent des niveaux d'encre et des pannes, avec alertes automatisées pour anticiper les besoins",
-      "Automatiser les commandes de toners, réduisant les ruptures et allégeant la charge de travail de l'équipe informatique",
-      "Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions",
-      "Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise"
+      "Concevoir une interface utilisateur attrayante et intuitive.",
+      "Mettre en place une architecture de code propre et maintenable.",
+      "Optimiser le site web pour une performance maximale.",
+      "Déployer le site web sur une plateforme fiable et scalable."
     ],
-    realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels. 🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé. 🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés. 🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur. 📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service. 🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT. 📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements. 👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes. Ce projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT. Sur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"]
+    achievements: [
+      {
+        title: "Conception d'une interface utilisateur moderne",
+        description: "J'ai conçu une interface utilisateur moderne et intuitive en utilisant les principes du design thinking. J'ai également veillé à ce que le site web soit responsive et accessible sur tous les appareils."
+      },
+      {
+        title: "Mise en place d'une architecture de code propre",
+        description: "J'ai mis en place une architecture de code propre et maintenable en utilisant les dernières technologies web. J'ai également veillé à ce que le code soit bien documenté et facile à comprendre."
+      },
+      {
+        title: "Optimisation du site web pour une performance maximale",
+        description: "J'ai optimisé le site web pour une performance maximale en utilisant les techniques d'optimisation web les plus récentes. J'ai également veillé à ce que le site web soit rapide et réactif."
+      }
+    ],
+    skills_detail: {
+      transverse: [
+        {
+          name: "Gestion de projet",
+          description: "J'ai géré le projet de A à Z, de la conception à la mise en production. J'ai également veillé à ce que le projet soit livré dans les délais et le budget impartis."
+        },
+        {
+          name: "Communication",
+          description: "J'ai communiqué avec les différentes parties prenantes du projet pour m'assurer que leurs besoins étaient pris en compte. J'ai également veillé à ce que le projet soit bien documenté et facile à comprendre."
+        },
+        {
+          name: "Organisation",
+          description: "J'ai organisé le projet de manière à ce qu'il soit facile à suivre et à gérer. J'ai également veillé à ce que le projet soit bien documenté et facile à comprendre."
+        }
+      ],
+      general: [
+        {
+          name: "Design",
+          description: "J'ai conçu l'interface utilisateur du site web en utilisant les principes du design thinking. J'ai également veillé à ce que le site web soit responsive et accessible sur tous les appareils."
+        },
+        {
+          name: "Développement",
+          description: "J'ai développé le site web en utilisant les dernières technologies web. J'ai également veillé à ce que le code soit bien documenté et facile à comprendre."
+        }
+      ],
+      technical: [
+        {
+          category: "Frontend",
+          skills: [
+            "React",
+            "Tailwind CSS",
+            "Radix UI"
+          ]
+        },
+        {
+          category: "Backend",
+          skills: [
+            "Node.js",
+            "Express",
+            "MongoDB"
+          ]
+        }
+      ]
+    },
+    tools: [
+      {
+        name: "VS Code",
+        description: "Editeur de code"
+      },
+      {
+        name: "Figma",
+        description: "Outil de design"
+      },
+      {
+        name: "Vercel",
+        description: "Plateforme de déploiement"
+      }
+    ],
+    conclusion: "Ce projet m'a permis de mettre en pratique mes compétences en développement web et en design. J'ai également appris à gérer un projet de A à Z et à communiquer avec les différentes parties prenantes du projet."
   },
   {
-    id: "projet-2-migration-office",
-    title: "Migration Office 365",
-    image: "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Migration de l'ensemble des postes vers Office 365 pour uniformiser les versions et améliorer la collaboration entre services.",
-    context: "Au sein de l'entreprise Skyepharma, les collaborateurs utilisaient des versions variées de Microsoft Office, souvent obsolètes ou non alignées avec les standards internes. Cette hétérogénéité générait de nombreux problèmes de compatibilité : documents qui s'ouvraient mal, fonctionnalités indisponibles, fichiers illisibles ou corrompus. Résultat : une collaboration difficile entre services, une perte de temps considérable et une sollicitation fréquente du support technique. Pour moderniser l'environnement de travail, fluidifier les échanges et renforcer la cohérence des outils numériques, l'entreprise a décidé de migrer l'ensemble des postes vers la suite Microsoft Office 365. Cette solution cloud permettait d'uniformiser les versions, de centraliser la gestion des outils (Outlook, OneDrive, Teams, etc.) et d'améliorer l'expérience utilisateur au quotidien.",
+    id: "magellan-sagt",
+    title: "MAGELLAN - SAGT",
+    description: "Amélioration du module SAGT (Système d'Aide à la Gestion du Trafic) pour automatiser les actions lors d'événements majeurs sur le réseau autoroutier.",
+    technologies: ["MAGELLAN", "Excel", "Documentation"],
+    skills: [SkillCategory.ANALYSE, SkillCategory.RIGUEUR, SkillCategory.ORGANISATION],
+    company: "APRR",
+    year: "2024",
+    context: {
+      title: "Contexte du projet",
+      content: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles."
+    },
     objectives: [
-      "Uniformiser les versions de Microsoft Office sur l'ensemble des postes pour éliminer les problèmes de compatibilité entre documents et outils",
-      "Faciliter la collaboration entre services grâce à une suite d'outils intégrés d'Office 365 (Outlook, Teams, OneDrive…)",
-      "Alléger la charge de l'assistance technique en réduisant les sollicitations liées aux incompatibilités de fichiers ou aux versions obsolètes",
-      "Moderniser l'infrastructure IT en adoptant une solution cloud évolutive et centralisée",
-      "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
+      "Reprendre l'ensemble des règles du module SAGT pour en améliorer la lisibilité et la cohérence.",
+      "Définir une nomenclature standardisée permettant de structurer les noms, catégories et formats des règles d'automatisation.",
+      "Faciliter la création de nouvelles règles par les utilisateurs internes, en réduisant les erreurs et le temps de paramétrage.",
+      "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel."
     ],
-    realization: "État des lieux du parc applicatif : J'ai mené un inventaire détaillé des versions d'Office installées sur chaque poste de travail afin d'identifier les écarts et planifier la migration. Préparation du déploiement : J'ai désinstallé les versions obsolètes d'Office, nettoyé les configurations locales et préparé les postes à l'installation de la version cloud Microsoft 365. Déploiement d'Office 365 : J'ai installé Microsoft 365 Apps sur les postes de travail et configuré les profils utilisateurs pour assurer une transition fluide vers Outlook, Teams et OneDrive. Configuration des outils collaboratifs : J'ai aidé les utilisateurs à configurer leurs espaces OneDrive, synchroniser les documents, rejoindre les équipes Teams et adopter les nouvelles pratiques de travail. Accompagnement des utilisateurs : J'ai assuré un accompagnement personnalisé pour faciliter la prise en main des nouveaux outils, répondre aux questions courantes et garantir l'autonomie des équipes. Ce projet m'a permis de conduire une transition vers une infrastructure bureautique moderne et collaborative. J'ai renforcé mes compétences techniques dans le déploiement logiciel et la gestion d'environnement cloud, tout en développant une posture d'écoute et de pédagogie auprès des utilisateurs. Grâce à cette expérience, je me sens à l'aise pour piloter des projets de modernisation informatique, alliant expertise technique et accompagnement humain.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse"]
-  },
-  {
-    id: "projet-3-audit-securite",
-    title: "Audit de sécurité",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Déploiement de BitLocker et sécurisation BIOS suite à un audit de sécurité pour protéger les postes de travail.",
-    context: "À la suite d'un audit de sécurité, plusieurs points de vulnérabilité ont été révélés sur les postes de travail, notamment l'absence de chiffrement systématique des données sensibles et un accès BIOS encore libre sur certaines machines. Pour y remédier, une démarche de sécurisation globale a été lancée. L'objectif : protéger les postes à la fois sur le plan logiciel et matériel. J'ai ainsi été chargé de déployer BitLocker via des stratégies de groupe (GPO) pour assurer le chiffrement automatique des disques, tout en renforçant l'accès physique aux machines en configurant des mots de passe d'administration au niveau du BIOS. Cette double action visait à garantir l'intégrité des données et empêcher toute intervention non autorisée sur les terminaux.",
-    objectives: [
-      "Chiffrer l'ensemble des postes utilisateurs afin de protéger les données stockées localement",
-      "Renforcer la sécurité physique en restreignant l'accès BIOS par mot de passe administrateur",
-      "Automatiser le déploiement des règles de sécurité à travers les GPO (stratégies de groupe)",
-      "Répondre aux recommandations issues de l'audit de sécurité mené en interne",
-      "Assurer la traçabilité des actions réalisées et accompagner les utilisateurs dans les changements apportés",
-      "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
+    achievements: [
+      {
+        title: "Analyse des règles existantes",
+        description: "J'ai commencé par un audit complet des règles déjà en place dans le module SAGT. Ce travail m'a permis d'identifier un manque d'uniformité dans les noms, les formats et les structures logiques employées."
+      },
+      {
+        title: "Construction d'une nomenclature normalisée",
+        description: "J'ai conçu un tableau de nomenclature regroupant toutes les catégories de règles, leurs usages types, les bonnes pratiques de rédaction, ainsi que des modèles de nommage. Cet outil est devenu une référence pour les équipes."
+      },
+      {
+        title: "Mise en place d'un support documentaire",
+        description: "J'ai intégré cette nomenclature à une documentation claire et accessible, partagée avec les référents métiers pour garantir une utilisation cohérente et partagée."
+      },
+      {
+        title: "Accompagnement des équipes opérationnelles",
+        description: "J'ai expliqué les objectifs de cette démarche aux utilisateurs du SAGT, en illustrant les bénéfices concrets pour leur quotidien (gain de temps, moins d'erreurs, plus de clarté)."
+      },
+      {
+        title: "Amélioration continue",
+        description: "Un système de retour d'expérience a été mis en place afin d'adapter la nomenclature si besoin, en fonction des retours du terrain et de l'évolution des besoins."
+      }
     ],
-    realization: "Recensement et planification : J'ai tout d'abord identifié les postes non conformes à l'aide d'un inventaire des machines, en lien avec le rapport d'audit. Déploiement de BitLocker par GPO : J'ai configuré et appliqué une stratégie de groupe pour déployer BitLocker à distance, en définissant les politiques de chiffrement, la méthode de sauvegarde des clés, et les options de démarrage sécurisé. Sécurisation du BIOS : Sur chaque machine concernée, j'ai accédé au BIOS afin de définir un mot de passe administrateur, empêchant ainsi toute modification matérielle sans autorisation. Tests et vérifications : Des tests de démarrage et de récupération ont été effectués pour s'assurer que le chiffrement n'impactait pas l'activité, et que les clés étaient correctement stockées. Sensibilisation des utilisateurs : J'ai informé les utilisateurs des changements, répondu à leurs interrogations sur le fonctionnement de BitLocker et assuré un accompagnement dans l'usage post-déploiement notamment sur le changement de leurs mot de passe. Suivi documentaire : Un fichier Excel de suivi a été élaboré, regroupant les machines sécurisées, les dates de déploiement, et l'état du chiffrement pour assurer une traçabilité rigoureuse. Ce projet m'a permis de développer une approche complète de la sécurisation des postes de travail, à la fois sur les plans logiciel et matériel. J'ai consolidé mes compétences en gestion des GPO, en administration système et en communication utilisateur. La rigueur exigée m'a appris à respecter une méthodologie stricte tout en maintenant la fluidité de l'activité opérationnelle. Cette mission m'a également sensibilisé à l'importance de la documentation dans le cadre de démarches de conformité, et m'a permis de mieux intégrer les enjeux de sécurité dans une logique métier.",
-    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse", "autonomie"]
-  },
-  {
-    id: "projet-4-informatique-industrielle",
-    title: "Informatique industrielle",
-    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Gestion complète du parc informatique industriel et audit des lignes de production dans un environnement à forte contrainte.",
-    context: "Dans un environnement industriel à forte contrainte de production, j'ai été amené à prendre en main l'intégralité du périmètre informatique en atelier, suite au départ du technicien en charge. L'entreprise faisait face à une forte rotation de personnel intérimaire, ce qui impliquait une gestion dynamique des comptes et des droits d'accès via Active Directory. En parallèle, les lignes de production reposaient sur un parc hétérogène de machines industrielles (IMA, Glatt, Siemens, Marchesini) nécessitant des interventions régulières pour assurer la continuité de fonctionnement. J'ai également réalisé des audits de ligne.",
-    objectives: [
-      "Assurer la gestion des comptes utilisateurs dans Active Directory en réponse au turnover important de personnel",
-      "Maintenir la disponibilité des équipements informatiques liés à la production (pupitres, interfaces, PC industriels)",
-      "Intervenir rapidement en cas d'incident pour ne pas perturber la chaîne de production",
-      "Réaliser un audit complet des postes en atelier pour identifier les risques, incohérences et points critiques",
-      "Collaborer efficacement avec les opérateurs et techniciens de ligne pour adapter les configurations aux besoins réels",
-      "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
+    skills_detail: {
+      transverse: [
+        {
+          name: "Organisation personnelle",
+          description: "J'ai planifié mes phases d'analyse, d'uniformisation et de documentation de façon autonome et structurée, avec des points de contrôle à chaque étape."
+        },
+        {
+          name: "Esprit d'analyse",
+          description: "Cette compétence m'a permis de décrypter un environnement complexe de règles automatisées, de repérer les incohérences, et de proposer une structuration efficace et durable."
+        },
+        {
+          name: "Adaptabilité",
+          description: "Le projet impliquait des règles très différentes d'une région à l'autre, et des pratiques métiers hétérogènes. J'ai su m'adapter rapidement aux cas spécifiques tout en proposant une solution centralisée et homogène."
+        },
+        {
+          name: "Capacité d'apprentissage",
+          description: "J'ai dû comprendre le fonctionnement d'un système métier que je ne connaissais pas. Par l'observation, les échanges avec les utilisateurs et l'analyse des données, j'ai assimilé rapidement son architecture et ses logiques internes."
+        },
+        {
+          name: "Rigueur",
+          description: "Chaque règle impactait directement le comportement du système d'information en temps réel. J'ai donc appliqué une vérification systématique, ligne par ligne, pour éviter toute erreur fonctionnelle ou incohérence dans le paramétrage."
+        }
+      ],
+      general: [
+        {
+          name: "Communication interservices",
+          description: "J'ai interagi avec plusieurs pôles métiers pour comprendre leurs attentes, recueillir les besoins et présenter les outils mis en place de façon pédagogique."
+        },
+        {
+          name: "Gestion de projet",
+          description: "J'ai géré le projet de manière autonome, depuis la compréhension des logiques applicatives jusqu'à la restitution des règles aux utilisateurs. J'ai organisé le travail par phases et garanti une cohérence globale entre les objectifs fixés et les livrables produits."
+        }
+      ],
+      technical: [
+        {
+          category: "Rédaction",
+          skills: [
+            "J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants."
+          ]
+        },
+        {
+          category: "Conduite de projet logiciel",
+          skills: [
+            "Cette compétence a été essentielle pour structurer une démarche complète : analyse de l'existant, élaboration d'une nomenclature, validation fonctionnelle et documentation. Elle m'a permis d'aligner les règles d'automatisation aux besoins métier, tout en gardant une logique de projet structurée et évolutive."
+          ]
+        }
+      ]
+    },
+    tools: [
+      {
+        name: "MAGELLAN – Module SAGT",
+        description: "logiciel métier pour la gestion automatisée des événements trafic."
+      },
+      {
+        name: "Tableaux Excel",
+        description: "pour la structuration de la nomenclature."
+      },
+      {
+        name: "Outils internes APRR",
+        description: "pour le partage documentaire et les échanges métiers (intranet, partages réseau)."
+      }
     ],
-    realization: "🔧 Gestion des comptes et audit du parc : Création, modification et suppression des comptes utilisateurs sur Active Directory selon les entrées/sorties en atelier. Étiquetage des machines, vérification des noms dans AD, nettoyage des doublons et détection des incohérences. 🏭 Interventions techniques sur lignes de production : Déblocage d'une ligne de conditionnement IMA, reconfiguration du PC industriel via AD pour rétablir la communication. Assistance sur machines Glatt et Marchesini, interventions sur les pupitres Siemens (HMI), et ajustements dans les logiciels de supervision IFIX. 🧪 Audit de ligne et continuité de service : Réalisation d'un audit de l'environnement informatique de production : recensement des postes, configurations, utilisateurs associés, criticité des machines. Création d'un tableau de suivi des postes de production pour fiabiliser les futures interventions. 🤝 Communication et coordination : Dialogue constant avec les chefs d'équipe et opérateurs pour recueillir les besoins métier et anticiper les incidents. Explication des procédures d'accès, règles de sécurité informatique et dépannage de premier niveau. Ce projet m'a permis de gagner en autonomie dans un environnement sensible, où la moindre erreur pouvait entraîner un arrêt de production. J'ai développé ma réactivité, ma rigueur et mon aisance à intervenir sur des systèmes critiques sans supervision. L'audit des machines industriels et les interventions sur ligne m'ont donné une compréhension plus fine de l'informatique industrielle, du dialogue homme-machine, et de l'importance de l'intégration entre IT et production. Cette expérience a été un accélérateur de compétences techniques et humaines dans un contexte très opérationnel.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "securite", "rigueur"]
-  },
-  {
-    id: "projet-5-magellan-sagt",
-    title: "MAGELLAN – SAGT",
-    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
-    context: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.",
-    objectives: [
-      "Reprendre l'ensemble des règles du module SAGT pour en améliorer la lisibilité et la cohérence",
-      "Définir une nomenclature standardisée permettant de structurer les noms, catégories et formats des règles d'automatisation",
-      "Faciliter la création de nouvelles règles par les utilisateurs internes, en réduisant les erreurs et le temps de paramétrage",
-      "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
-    ],
-    realization: "🔹 Analyse des règles existantes : J'ai commencé par un audit complet des règles déjà en place dans le module SAGT. Ce travail m'a permis d'identifier un manque d'uniformité dans les noms, les formats et les structures logiques employées. 🔹 Construction d'une nomenclature normalisée : J'ai conçu un tableau de nomenclature regroupant toutes les catégories de règles, leurs usages types, les bonnes pratiques de rédaction, ainsi que des modèles de nommage. Cet outil est devenu une référence pour les équipes. 🔹 Mise en place d'un support documentaire : J'ai intégré cette nomenclature à une documentation claire et accessible, partagée avec les référents métiers pour garantir une utilisation cohérente et partagée. 🔹 Accompagnement des équipes opérationnelles : J'ai expliqué les objectifs de cette démarche aux utilisateurs du SAGT, en illustrant les bénéfices concrets pour leur quotidien (gain de temps, moins d'erreurs, plus de clarté). 🔹 Amélioration continue : Un système de retour d'expérience a été mis en place afin d'adapter la nomenclature si besoin, en fonction des retours du terrain et de l'évolution des besoins. Ce projet m'a permis de me positionner comme un acteur force de proposition dans l'amélioration d'un outil stratégique pour la régulation du trafic autoroutier. En combinant structuration, écoute métier et documentation rigoureuse, j'ai contribué à simplifier un système complexe et à renforcer la qualité des services opérationnels. Cette expérience a enrichi ma vision fonctionnelle des outils, tout en renforçant mes compétences en coordination, en formalisation de bonnes pratiques et en accompagnement au changement.",
-    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "management-projet"]
-  },
-  {
-    id: "projet-6-magellan-meteor",
-    title: "MAGELLAN – METEOR",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Paramétrage de contextes de surveillance pour la visualisation temps réel de la météo et du trafic autoroutier.",
-    context: "Dans le cadre du programme MAGELLAN porté par APRR, l'outil METEOR a été mis en place pour permettre aux opérateurs autoroutiers de visualiser en temps réel les conditions météo et de trafic sur l'ensemble du réseau. Cet outil stratégique devait centraliser les informations issues de capteurs (stations météo, capteurs de comptage, etc.) pour faciliter la prise de décision en salle de contrôle. Intégré à l'équipe administratrice fonctionnelle, j'ai participé activement au paramétrage des \"contextes\" de surveillance, qui définissent les équipements et zones visibles par chaque poste de commandement. Mon rôle a été de structurer et adapter l'affichage en fonction des besoins spécifiques des différentes régions, en veillant à ce que chaque utilisateur dispose d'une interface claire, pertinente et cohérente avec son périmètre géographique.",
-    objectives: [
-      "Structurer les contextes de surveillance dans METEOR selon les zones géographiques et les priorités régionales",
-      "Assurer une visualisation claire et pertinente des équipements météo/trafic (stations, capteurs, etc.) pour chaque salle de contrôle",
-      "Renforcer la fiabilité de la prise de décision grâce à un affichage métier cohérent",
-      "Améliorer l'ergonomie de la plateforme pour simplifier l'usage au quotidien par les opérateurs",
-      "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
-    ],
-    realization: "Analyse fonctionnelle des besoins régionaux : j'ai recueilli les besoins spécifiques des différents postes de commandement en termes de zones surveillées, événements critiques et capteurs associés. Création de contextes personnalisés : j'ai configuré des vues adaptées pour chaque région, en y intégrant les bons équipements de mesure et en validant la cohérence avec le terrain. Tests et validation croisée : chaque configuration a été testée avec les utilisateurs finaux pour garantir une adéquation parfaite entre affichage et périmètre d'intervention. Mise à jour documentaire : j'ai rédigé un guide interne pour faciliter la maintenance future des contextes créés et assurer la continuité opérationnelle. Collaboration transverse : j'ai interagi avec les pôles techniques, régionaux et l'équipe MAGELLAN pour synchroniser le paramétrage avec l'évolution du réseau. Ce projet m'a permis de m'immerger dans un environnement métier spécifique, en m'adaptant à un outil critique utilisé par les équipes d'exploitation autoroutière. J'ai renforcé mes compétences en paramétrage fonctionnel, en communication interservices et en analyse terrain. En contribuant à la fiabilité de l'outil METEOR, j'ai participé activement à l'amélioration de la prise de décision opérationnelle. Cette expérience a enrichi ma capacité à transformer des besoins concrets en solutions techniques dans un contexte de gestion de réseau complexe.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie", "initiative"]
+    conclusion: "Ce projet m'a permis de me positionner comme un acteur force de proposition dans l'amélioration d'un outil stratégique pour la régulation du trafic autoroutier. En combinant structuration, écoute métier et documentation rigoureuse, j'ai contribué à simplifier un système complexe et à renforcer la qualité des services opérationnels. Cette expérience a enrichi ma vision fonctionnelle des outils, tout en renforçant mes compétences en coordination, en formalisation de bonnes pratiques et en accompagnement au changement."
   }
 ];
-
-export const getSkillName = (skillId: string) => {
-  const skillNames: {[key: string]: string} = {
-    "administration-windows": "Administration Windows",
-    "securite": "Sécurité",
-    "bureautique-productivite": "Bureautique et productivité",
-    "conduite-projet-logiciel": "Conduite de projet logiciel",
-    "management-projet": "Management de projet",
-    "communication-relationnel": "Communication et relationnel",
-    "esprit-analyse": "Esprit d'analyse",
-    "rigueur": "Rigueur",
-    "initiative": "Initiative",
-    "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie"
-  };
-  
-  return skillNames[skillId] || skillId;
-};
