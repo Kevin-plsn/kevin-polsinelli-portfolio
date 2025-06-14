@@ -53,12 +53,12 @@ const SkillsPage = () => {
     {
       id: "management-projet",
       icon: <FileSpreadsheet className="h-5 w-5" />,
-      title: "Management de projet",
+      title: "Gestion de projet",
       type: "generale",
-      definition: "Capacité à structurer, suivre et contribuer à un projet technique en respectant les étapes clés, les ressources disponibles et les attentes métiers.",
-      application: "Dans le projet MAGELLAN – METEOR, j'ai structuré mes interventions comme de véritables projet, en suivant des étapes claires définies en amont, avec coordination des acteurs, documentation et suivi des tâches. Cette compétence m'a permis d'être efficace à chaque phase, même sans être directement chef de projet.",
-      assessment: "Ce projet m'a permis de saisir l'importance d'un cadre méthodologique structuré : de l'expression des besoins au suivi des tâches, en passant par la documentation et la coordination avec les référents métier. Cette compétence renforcera ma capacité à contribuer efficacement à la réussite de futurs projets et me prépare à évoluer vers un rôle de référent technique sur logiciel.",
-      relatedProjects: ["projet-6-magellan-meteor"]
+      definition: "Capacité à structurer, planifier, piloter et finaliser un projet en respectant les objectifs, les délais, les ressources et les contraintes.",
+      application: "Cette compétence a été activement mobilisée à travers plusieurs projets techniques menés en autonomie ou en coordination avec des collaborateurs.\n\nDans le projet de standardisation du parc d'impression, j'ai mené l'ensemble du cycle projet : diagnostic initial, élaboration des critères de choix, consultation des fournisseurs, prise de décision, déploiement du matériel, configuration du portail de supervision avec le prestataire, puis documentation et suivi. Chaque étape a été structurée à l'aide de tableaux de bord et points de validation avec les équipes. Pour Office 365, j'ai organisé la transition des utilisateurs en phases, priorisé les services les plus impactés, et anticipé les contraintes. J'ai veillé à intégrer une part importante d'accompagnement utilisateurs dans le calendrier, en pilotant à la fois les aspects techniques et humains du changement. Sur SAGT, j'ai structuré une méthodologie claire pour l'analyse des règles existantes, la création de standards, la diffusion des bonnes pratiques. Cette approche projet a permis d'atteindre les objectifs sans perturber le fonctionnement de l'outil métier.",
+      assessment: "Pour moi, la gestion de projet n'est pas seulement une méthode : c'est une posture. Elle permet de garder une vision d'ensemble tout en gérant les détails opérationnels du quotidien. J'ai appris à anticiper, à structurer mes tâches en étapes claires, à gérer les imprévus sans perdre de vue l'objectif final.\n\nJ'accorde une attention particulière à la communication tout au long du projet, que ce soit avec les utilisateurs, les responsables ou les prestataires. J'utilise des supports visuels simples pour partager l'avancement et favoriser la transparence.",
+      relatedProjects: ["projet-1-standardisation-parc", "projet-2-migration-office", "projet-5-magellan-sagt"]
     },
     {
       id: "communication-relationnel",
@@ -290,7 +290,7 @@ const SkillsPage = () => {
                 
                 <Card className="mb-8">
                   <CardHeader>
-                    <CardTitle className="text-xl">Définition</CardTitle>
+                    <CardTitle className="text-xl">🔍 Définition</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-700">{skill.definition}</p>
@@ -299,25 +299,25 @@ const SkillsPage = () => {
                 
                 <Card className="mb-8">
                   <CardHeader>
-                    <CardTitle className="text-xl">Mise en application</CardTitle>
+                    <CardTitle className="text-xl">🛠 Mise en application</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700">{skill.application}</p>
+                    <p className="text-gray-700 whitespace-pre-line">{skill.application}</p>
                   </CardContent>
                 </Card>
                 
                 <Card className="mb-8">
                   <CardHeader>
-                    <CardTitle className="text-xl">Bilan de compétences professionnelles</CardTitle>
+                    <CardTitle className="text-xl">💬 Mon point de vue sur la compétence</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-700">{skill.assessment}</p>
+                    <p className="text-gray-700 whitespace-pre-line">{skill.assessment}</p>
                   </CardContent>
                 </Card>
                 
                 {skill.relatedProjects.length > 0 && (
                   <div className="mt-12">
-                    <h3 className="text-2xl font-semibold mb-6">Projets associés à cette compétence</h3>
+                    <h3 className="text-2xl font-semibold mb-6">📂 Projets associés</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {skill.relatedProjects.map(projectId => (
                         <Link 
