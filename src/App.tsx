@@ -14,7 +14,6 @@ import SytralPage from "./pages/Sytral";
 import ContactPage from "./pages/Contact";
 import ProjectsPage from "./pages/Projects";
 import SkillsPage from "./pages/Skills";
-import MagellanSagtPage from "./pages/MagellanSagt";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +33,6 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/skills" element={<SkillsPage />} />
-          <Route path="/magellan-sagt" element={<MagellanSagtPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
