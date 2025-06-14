@@ -63,17 +63,16 @@ export const projects: Project[] = [
   {
     id: "projet-5-magellan-sagt",
     title: "MAGELLAN – SAGT",
-    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
-    context: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.",
+    context: "Toujours dans le cadre du programme MAGELLAN chez APRR, le module SAGT (Système d'Aide à la Gestion des Trafic) permet d'automatiser les actions à déclencher lors d'événements sur le réseau autoroutier (accidents, bouchons, conditions météo, etc.). J'ai été sollicité pour intervenir sur l'organisation des règles utilisées par le système, qui manquaient d'uniformité et rendaient leur création complexe et chronophage pour les équipes.",
     objectives: [
-      "Reprendre l'ensemble des règles du module SAGT pour en améliorer la lisibilité et la cohérence",
-      "Définir une nomenclature standardisée permettant de structurer les noms, catégories et formats des règles d'automatisation",
-      "Faciliter la création de nouvelles règles par les utilisateurs internes, en réduisant les erreurs et le temps de paramétrage",
-      "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
+      "Homogénéiser les règles d'automatisation dans le module SAGT",
+      "Faciliter la création de nouvelles règles pour les utilisateurs internes",
+      "Améliorer la lisibilité et la cohérence du système"
     ],
-    realization: "🔹 Analyse des règles existantes : J'ai commencé par un audit complet des règles déjà en place dans le module SAGT. Ce travail m'a permis d'identifier un manque d'uniformité dans les noms, les formats et les structures logiques employées. 🔹 Construction d'une nomenclature normalisée : J'ai conçu un tableau de nomenclature regroupant toutes les catégories de règles, leurs usages types, les bonnes pratiques de rédaction, ainsi que des modèles de nommage. Cet outil est devenu une référence pour les équipes. 🔹 Mise en place d'un support documentaire : J'ai intégré cette nomenclature à une documentation claire et accessible, partagée avec les référents métiers pour garantir une utilisation cohérente et partagée. 🔹 Accompagnement des équipes opérationnelles : J'ai expliqué les objectifs de cette démarche aux utilisateurs du SAGT, en illustrant les bénéfices concrets pour leur quotidien (gain de temps, moins d'erreurs, plus de clarté). 🔹 Amélioration continue : Un système de retour d'expérience a été mis en place afin d'adapter la nomenclature si besoin, en fonction des retours du terrain et de l'évolution des besoins.",
-    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle"]
+    realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
+    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel"]
   },
   {
     id: "projet-6-magellan-meteor",
