@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -71,26 +70,14 @@ const renderStandardisationContent = () => {
         <h3 className="font-semibold text-xl mb-4 text-green-800 flex items-center gap-2">
           🎯 Objectifs
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Uniformiser le parc d'imprimantes avec des modèles RICOH pour faciliter la maintenance, le support et les commandes de consommables.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Réduire les erreurs de gestion en centralisant les informations techniques et logistiques via une interface commune.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Mettre en place un système de suivi intelligent des niveaux d'encre et des pannes, avec alertes automatisées pour anticiper les besoins.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Automatiser les commandes de toners, réduisant les ruptures et allégeant la charge de travail de l'équipe informatique.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions.</p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-sm border border-green-100">
-            <p className="text-sm text-gray-700">Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise.</p>
-          </div>
-        </div>
+        <ul className="list-disc pl-6 space-y-3 text-gray-700">
+          <li>Uniformiser le parc d'imprimantes avec des modèles RICOH pour faciliter la maintenance, le support et les commandes de consommables.</li>
+          <li>Réduire les erreurs de gestion en centralisant les informations techniques et logistiques via une interface commune.</li>
+          <li>Mettre en place un système de suivi intelligent des niveaux d'encre et des pannes, avec alertes automatisées pour anticiper les besoins.</li>
+          <li>Automatiser les commandes de toners, réduisant les ruptures et allégeant la charge de travail de l'équipe informatique.</li>
+          <li>Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions.</li>
+          <li>Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise.</li>
+        </ul>
       </div>
 
       {/* Réalisations */}
