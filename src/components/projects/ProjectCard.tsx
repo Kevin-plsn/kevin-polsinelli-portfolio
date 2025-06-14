@@ -205,7 +205,7 @@ const renderStandardisationContent = () => {
         </div>
 
         {/* Savoir-faire techniques */}
-        <div className="mb-8">
+        <div>
           <h4 className="font-semibold text-lg text-orange-700 mb-4 flex items-center gap-2">
             💻 Savoir-faire techniques
           </h4>
@@ -224,25 +224,25 @@ const renderStandardisationContent = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Outils utilisés */}
-        <div className="mb-8">
-          <h4 className="font-semibold text-lg text-orange-700 mb-4 flex items-center gap-2">
-            🛠️ Outils utilisés
-          </h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Streamline NX (RICOH)</h5>
-              <p className="text-sm text-gray-600">Supervision, impression sécurisée, authentification par badge.</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Excel</h5>
-              <p className="text-sm text-gray-600">Gestion des tableaux de suivi, documentation du parc.</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Portail de gestion RICOH</h5>
-              <p className="text-sm text-gray-600">Visualisation du parc, état des machines, alertes et consommables.</p>
-            </div>
+      {/* Outils utilisés */}
+      <div className="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg border border-cyan-200">
+        <h3 className="font-semibold text-xl mb-6 text-cyan-800 flex items-center gap-2">
+          🛠️ Outils utilisés
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-cyan-100">
+            <h5 className="font-medium text-cyan-600 mb-2">Streamline NX (RICOH)</h5>
+            <p className="text-sm text-gray-600">Supervision, impression sécurisée, authentification par badge.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-cyan-100">
+            <h5 className="font-medium text-cyan-600 mb-2">Excel</h5>
+            <p className="text-sm text-gray-600">Gestion des tableaux de suivi, documentation du parc.</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg shadow-sm border border-cyan-100">
+            <h5 className="font-medium text-cyan-600 mb-2">Portail de gestion RICOH</h5>
+            <p className="text-sm text-gray-600">Visualisation du parc, état des machines, alertes et consommables.</p>
           </div>
         </div>
       </div>
