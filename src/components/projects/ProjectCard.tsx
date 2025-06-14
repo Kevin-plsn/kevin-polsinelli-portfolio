@@ -70,14 +70,32 @@ const renderStandardisationContent = () => {
         <h3 className="font-semibold text-xl mb-4 text-green-800 flex items-center gap-2">
           🎯 Objectifs
         </h3>
-        <ul className="list-disc pl-6 space-y-3 text-gray-700">
-          <li>Uniformiser le parc d'imprimantes avec des modèles RICOH pour faciliter la maintenance, le support et les commandes de consommables.</li>
-          <li>Réduire les erreurs de gestion en centralisant les informations techniques et logistiques via une interface commune.</li>
-          <li>Mettre en place un système de suivi intelligent des niveaux d'encre et des pannes, avec alertes automatisées pour anticiper les besoins.</li>
-          <li>Automatiser les commandes de toners, réduisant les ruptures et allégeant la charge de travail de l'équipe informatique.</li>
-          <li>Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions.</li>
-          <li>Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise.</li>
-        </ul>
+        <div className="space-y-3 text-gray-700">
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Uniformiser le parc d'imprimantes avec des modèles RICOH pour faciliter la maintenance, le support et les commandes de consommables.</p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Réduire les erreurs de gestion en centralisant les informations techniques et logistiques via une interface commune.</p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Mettre en place un système de suivi intelligent des niveaux d'encre et des pannes, avec alertes automatisées pour anticiper les besoins.</p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Automatiser les commandes de toners, réduisant les ruptures et allégeant la charge de travail de l'équipe informatique.</p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions.</p>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 mt-1">•</span>
+            <p>Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise.</p>
+          </div>
+        </div>
       </div>
 
       {/* Réalisations */}
@@ -173,16 +191,22 @@ const renderStandardisationContent = () => {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Autonomie</h5>
-              <p className="text-sm text-gray-600">Projet mené de manière indépendante, de l'analyse initiale au déploiement complet.</p>
+              <Link to="/skills#autonomie" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Autonomie</h5>
+                <p className="text-sm text-gray-600">Projet mené de manière indépendante, de l'analyse initiale au déploiement complet.</p>
+              </Link>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Esprit d'analyse</h5>
-              <p className="text-sm text-gray-600">Pour repérer les points de friction dans la gestion du parc et proposer une solution cohérente.</p>
+              <Link to="/skills#esprit-analyse" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Esprit d'analyse</h5>
+                <p className="text-sm text-gray-600">Pour repérer les points de friction dans la gestion du parc et proposer une solution cohérente.</p>
+              </Link>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Organisation personnelle</h5>
-              <p className="text-sm text-gray-600">Pour planifier chaque étape : état des lieux, rendez-vous fournisseurs, déploiement.</p>
+              <Link to="/skills#organisation-personnelle" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Organisation personnelle</h5>
+                <p className="text-sm text-gray-600">Pour planifier chaque étape : état des lieux, rendez-vous fournisseurs, déploiement.</p>
+              </Link>
             </div>
           </div>
         </div>
@@ -194,12 +218,16 @@ const renderStandardisationContent = () => {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Gestion de projet</h5>
-              <p className="text-sm text-gray-600">Pilotage des différentes étapes du projet (analyse, choix fournisseur, déploiement, suivi).</p>
+              <Link to="/skills#management-projet" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Gestion de projet</h5>
+                <p className="text-sm text-gray-600">Pilotage des différentes étapes du projet (analyse, choix fournisseur, déploiement, suivi).</p>
+              </Link>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Rédaction</h5>
-              <p className="text-sm text-gray-600">Élaboration de documents de suivi clairs et structurés pour assurer la traçabilité du projet.</p>
+              <Link to="/skills#communication-relationnel" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Rédaction</h5>
+                <p className="text-sm text-gray-600">Élaboration de documents de suivi clairs et structurés pour assurer la traçabilité du projet.</p>
+              </Link>
             </div>
           </div>
         </div>
@@ -211,16 +239,22 @@ const renderStandardisationContent = () => {
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Support technique</h5>
-              <p className="text-sm text-gray-600">Installation des équipements, résolution des incidents de démarrage.</p>
+              <Link to="/skills#administration-windows" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Support technique</h5>
+                <p className="text-sm text-gray-600">Installation des équipements, résolution des incidents de démarrage.</p>
+              </Link>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Sécurité informatique</h5>
-              <p className="text-sm text-gray-600">Paramétrage de l'authentification badge avec Streamline NX.</p>
+              <Link to="/skills#securite" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Sécurité informatique</h5>
+                <p className="text-sm text-gray-600">Paramétrage de l'authentification badge avec Streamline NX.</p>
+              </Link>
             </div>
             <div className="bg-white p-4 rounded-lg shadow-sm border border-orange-100">
-              <h5 className="font-medium text-orange-600 mb-2">Conception réseau</h5>
-              <p className="text-sm text-gray-600">Intégration des imprimantes dans des VLAN dédiés pour segmenter le trafic réseau et sécuriser les flux.</p>
+              <Link to="/skills#bureautique-productivite" className="block hover:text-orange-600 transition-colors">
+                <h5 className="font-medium text-orange-600 mb-2 hover:underline">Conception réseau</h5>
+                <p className="text-sm text-gray-600">Intégration des imprimantes dans des VLAN dédiés pour segmenter le trafic réseau et sécuriser les flux.</p>
+              </Link>
             </div>
           </div>
         </div>
