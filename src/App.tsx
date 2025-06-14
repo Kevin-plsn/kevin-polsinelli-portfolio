@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -13,7 +14,6 @@ import SytralPage from "./pages/Sytral";
 import ContactPage from "./pages/Contact";
 import ProjectsPage from "./pages/Projects";
 import SkillsPage from "./pages/Skills";
-import MagellanSagtPage from "./pages/MagellanSagt";
 
 const queryClient = new QueryClient();
 
