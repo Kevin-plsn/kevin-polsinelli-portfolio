@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
     ],
     realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
-    skills: ["rigueur", "organisation-personnelle", "adaptabilite", "autonomie", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "management-projet", "support-technique"]
+    skills: ["autonomie", "organisation-personnelle", "adaptabilite", "resolution-problemes", "esprit-analyse", "capacite-apprentissage", "redaction", "management-projet", "support-technique"]
   },
   {
     id: "projet-3-audit-securite",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
     ],
     realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
-    skills: ["autonomie", "rigueur", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "administration-windows", "securite"]
+    skills: ["autonomie", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "administration-windows", "securite"]
   },
   {
     id: "projet-4-informatique-industrielle",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
     ],
     realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
-    skills: ["organisation-personnelle", "esprit-analyse", "adaptabilite", "capacite-apprentissage", "rigueur", "communication-interservices", "management-projet", "redaction", "conduite-projet-logiciel"]
+    skills: ["organisation-personnelle", "esprit-analyse", "adaptabilite", "capacite-apprentissage", "communication-interservices", "management-projet", "redaction", "conduite-projet-logiciel"]
   },
   {
     id: "projet-6-magellan-meteor",
