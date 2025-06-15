@@ -1,3 +1,4 @@
+
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
@@ -66,12 +67,12 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["autonomie", "esprit-analyse", "resolution-problemes", "adaptabilite", "organisation-personnelle", "redaction", "systemes-windows-ad", "securite-informatique", "support-technique"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
   },
   {
     id: "projet-5-magellan-sagt",
     title: "MAGELLAN – SAGT",
-    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
     context: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.",
     objectives: [
@@ -97,7 +98,7 @@ export const projects: Project[] = [
       "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
+    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
   }
 ];
 
@@ -113,18 +114,7 @@ export const getSkillName = (skillId: string) => {
     "rigueur": "Rigueur",
     "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie",
-    "adaptabilite": "Adaptabilité",
-    "resolution-problemes": "Résolution de problèmes",
-    "capacite-apprentissage": "Capacité d'apprentissage",
-    "gestion-projet": "Gestion de projet",
-    "communication-interservices": "Communication interservices",
-    "redaction": "Rédaction",
-    "support-technique": "Support technique",
-    "securite-informatique": "Sécurité informatique",
-    "systemes-windows-ad": "Systèmes Windows / Active Directory",
-    "ergonomie-ihm": "Ergonomie et interfaces homme-machine",
-    "conception-reseau": "Conception réseau"
+    "autonomie": "Autonomie"
   };
   
   return skillNames[skillId] || skillId;
