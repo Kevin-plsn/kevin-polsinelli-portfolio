@@ -17,7 +17,47 @@ export const projects: Project[] = [
       "Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise"
     ],
     realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels. 🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé. 🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés. 🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur. 📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service. 🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT. 📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements. 👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes. Ce projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT. Sur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"]
+    skills: ["autonomie", "esprit-analyse", "organisation-personnelle", "gestion-projet", "redaction", "support-technique", "securite-informatique", "conception-reseau"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Autonomie",
+          "description": "Projet mené de manière indépendante, de l'analyse initiale au déploiement complet."
+        },
+        {
+          "name": "Esprit d'analyse",
+          "description": "Pour repérer les points de friction dans la gestion du parc et proposer une solution cohérente."
+        },
+        {
+          "name": "Organisation personnelle",
+          "description": "Pour planifier chaque étape : état des lieux, rendez-vous fournisseurs, déploiement."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Gestion de projet",
+          "description": "Pilotage des différentes étapes du projet (analyse, choix fournisseur, déploiement, suivi)."
+        },
+        {
+          "name": "Rédaction",
+          "description": "Élaboration de documents de suivi clairs et structurés pour assurer la traçabilité du projet."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Support technique",
+          "description": "Installation des équipements, résolution des incidents de démarrage."
+        },
+        {
+          "name": "Sécurité informatique",
+          "description": "Paramétrage de l'authentification badge avec Streamline NX."
+        },
+        {
+          "name": "Conception réseau",
+          "description": "Intégration des imprimantes dans des VLAN dédiés pour segmenter le trafic réseau et sécuriser les flux."
+        }
+      ]
+    }
   },
   {
     id: "projet-2-migration-office",
@@ -33,7 +73,55 @@ export const projects: Project[] = [
       "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
     ],
     realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse"]
+    skills: ["rigueur", "organisation-personnelle", "adaptabilite", "autonomie", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "gestion-projet", "support-technique"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Rigueur",
+          "description": "Indispensable pour suivre une procédure claire poste par poste, éviter les erreurs de configuration et garantir un déploiement sans perte de données."
+        },
+        {
+          "name": "Organisation personnelle",
+          "description": "Planification rigoureuse du calendrier de migration par service pour limiter l'impact sur la productivité et optimiser les délais d'intervention."
+        },
+        {
+          "name": "Adaptabilité",
+          "description": "Chaque utilisateur ayant un niveau de maîtrise différent, j'ai su ajuster mon accompagnement pour répondre à tous les profils."
+        },
+        {
+          "name": "Autonomie",
+          "description": "J'ai mené le projet sans supervision directe, en prenant des initiatives face aux imprévus techniques ou humains."
+        },
+        {
+          "name": "Esprit d'analyse",
+          "description": "J'ai su identifier les priorités, comprendre les points de blocage et proposer des solutions adaptées aux situations rencontrées."
+        },
+        {
+          "name": "Résolution de problèmes",
+          "description": "Face aux erreurs de migration (licences, conflits de versions), j'ai analysé les causes et mis en place des solutions pérennes sans interrompre l'activité."
+        },
+        {
+          "name": "Capacité d'apprentissage",
+          "description": "Montée en compétences rapide sur la gestion des licences, les modules Office 365 et les outils de déploiement pour répondre aux demandes en autonomie."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Rédaction",
+          "description": "Rédaction de consignes claires et synthétiques pour l'utilisation des outils Office 365."
+        },
+        {
+          "name": "Gestion de projet",
+          "description": "Organisation du déploiement en vagues successives, priorisation des services et coordination du planning utilisateur."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Support technique",
+          "description": "Dépannage des installations, gestion des profils corrompus, résolution d'incidents liés aux versions ou à l'activation des licences."
+        }
+      ]
+    }
   },
   {
     id: "projet-3-audit-securite",
@@ -50,7 +138,47 @@ export const projects: Project[] = [
       "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
     ],
     realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
-    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse", "autonomie"]
+    skills: ["autonomie", "rigueur", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "administration-windows", "securite-informatique"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Autonomie",
+          "description": "J'ai mené le projet en totale autonomie, depuis l'analyse des failles jusqu'au déploiement des solutions, en adaptant mes méthodes selon les contraintes terrain sans supervision directe."
+        },
+        {
+          "name": "Rigueur",
+          "description": "Indispensable dans la mise en conformité des postes : chaque étape devait être validée sans erreur pour garantir la fiabilité du déploiement."
+        },
+        {
+          "name": "Esprit d'analyse",
+          "description": "J'ai analysé les résultats de l'audit de sécurité pour prioriser les failles à corriger et adapter les solutions en fonction du niveau de risque identifié."
+        },
+        {
+          "name": "Résolution de problèmes",
+          "description": "Lors du déploiement, j'ai résolu des anomalies comme l'incompatibilité BitLocker causée par un firmware TPM obsolète, en identifiant et corrigeant le problème de manière durable."
+        },
+        {
+          "name": "Capacité d'apprentissage",
+          "description": "J'ai appris à configurer BitLocker via GPO, en me documentant et en testant plusieurs scénarios jusqu'à trouver une configuration stable et généralisable."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Rédaction",
+          "description": "Création de supports de suivi (Excel) facilitant le contrôle et les audits futurs."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Système Windows / Active Directory",
+          "description": "Création et application de GPO spécifiques au chiffrement."
+        },
+        {
+          "name": "Sécurité informatique",
+          "description": "Cette compétence m'a permis de configurer et appliquer efficacement les règles de chiffrement via BitLocker et de renforcer l'environnement matériel au niveau du BIOS."
+        }
+      ]
+    }
   },
   {
     id: "projet-4-informatique-industrielle",
@@ -67,7 +195,51 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
+    skills: ["autonomie", "esprit-analyse", "resolution-problemes", "adaptabilite", "organisation-personnelle", "redaction", "administration-windows", "securite-informatique", "support-technique"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Autonomie",
+          "description": "Prise de poste sans passation, responsabilité de l'ensemble du périmètre industriel."
+        },
+        {
+          "name": "Esprit d'analyse",
+          "description": "Diagnostic rapide des pannes, compréhension des causes profondes, adaptation aux spécificités techniques de chaque ligne."
+        },
+        {
+          "name": "Résolution de problèmes",
+          "description": "Intervention sur des lignes bloquées (ex. IMA), avec des temps d'arrêt minimisés."
+        },
+        {
+          "name": "Adaptabilité",
+          "description": "Capacité à naviguer entre plusieurs technologies industrielles non documentées et à m'ajuster en temps réel."
+        },
+        {
+          "name": "Organisation personnelle",
+          "description": "Gestion simultanée de demandes urgentes, planification des audits et création de suivi structuré."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Rédaction",
+          "description": "Élaboration de tableaux de suivi et documentation claire pour les audits de ligne."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Systèmes Windows / Active Directory",
+          "description": "Gestion complète des comptes, intégration des postes au domaine, configuration spécifique pour postes industriels."
+        },
+        {
+          "name": "Sécurité informatique",
+          "description": "Renforcement des accès aux postes et aux systèmes critiques, contrôle des privilèges."
+        },
+        {
+          "name": "Support technique",
+          "description": "Dépannage en environnement sensible, interventions en autonomie sur des systèmes critiques."
+        }
+      ]
+    }
   },
   {
     id: "projet-5-magellan-sagt",
@@ -82,7 +254,51 @@ export const projects: Project[] = [
       "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
     ],
     realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
-    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "autonomie"]
+    skills: ["organisation-personnelle", "esprit-analyse", "adaptabilite", "capacite-apprentissage", "rigueur", "communication-interservices", "gestion-projet", "redaction", "conduite-projet-logiciel"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Organisation personnelle",
+          "description": "J'ai planifié mes phases d'analyse, d'uniformisation et de documentation de façon autonome et structurée, avec des points de contrôle à chaque étape."
+        },
+        {
+          "name": "Esprit d'analyse",
+          "description": "Cette compétence m'a permis de décrypter un environnement complexe de règles automatisées, de repérer les incohérences, et de proposer une structuration efficace et durable."
+        },
+        {
+          "name": "Adaptabilité",
+          "description": "Le projet impliquait des règles très différentes d'une région à l'autre, et des pratiques métiers hétérogènes. J'ai su m'adapter rapidement aux cas spécifiques tout en proposant une solution centralisée et homogène."
+        },
+        {
+          "name": "Capacité d'apprentissage",
+          "description": "J'ai dû comprendre le fonctionnement d'un système métier que je ne connaissais pas. Par l'observation, les échanges avec les utilisateurs et l'analyse des données, j'ai assimilé rapidement son architecture et ses logiques internes."
+        },
+        {
+          "name": "Rigueur",
+          "description": "Chaque règle impactait directement le comportement du système d'information en temps réel. J'ai donc appliqué une vérification systématique, ligne par ligne, pour éviter toute erreur fonctionnelle ou incohérence dans le paramétrage."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Communication interservices",
+          "description": "J'ai interagi avec plusieurs pôles métiers pour comprendre leurs attentes, recueillir les besoins et présenter les outils mis en place de façon pédagogique."
+        },
+        {
+          "name": "Gestion de projet",
+          "description": "J'ai géré le projet de manière autonome, depuis la compréhension des logiques applicatives jusqu'à la restitution des règles aux utilisateurs. J'ai organisé le travail par phases et garanti une cohérence globale entre les objectifs fixés et les livrables produits."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Rédaction",
+          "description": "J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants."
+        },
+        {
+          "name": "Conduite de projet logiciel",
+          "description": "Cette compétence a été essentielle pour structurer une démarche complète : analyse de l'existant, élaboration d'une nomenclature, validation fonctionnelle et documentation. Elle m'a permis d'aligner les règles d'automatisation aux besoins métier, tout en gardant une logique de projet structurée et évolutive."
+        }
+      ]
+    }
   },
   {
     id: "projet-6-magellan-meteor",
@@ -98,7 +314,43 @@ export const projects: Project[] = [
       "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
+    skills: ["esprit-analyse", "adaptabilite", "autonomie", "redaction", "communication-interservices", "ergonomie-ihm", "conduite-projet-logiciel"],
+    detailedSkills: {
+      "transverses": [
+        {
+          "name": "Esprit d'analyse",
+          "description": "J'ai analysé les besoins métiers régionaux, décrypté les configurations existantes, et proposé des ajustements ergonomiques concrets, en prenant en compte l'usage réel du terrain."
+        },
+        {
+          "name": "Adaptabilité",
+          "description": "L'outil évoluait rapidement, et les attentes variaient fortement selon les régions. J'ai su m'adapter aux différents contextes d'utilisation pour répondre efficacement aux exigences locales sans compromettre la cohérence globale."
+        },
+        {
+          "name": "Autonomie",
+          "description": "J'ai géré la configuration des vues métier de façon autonome, en intégrant les spécificités régionales sans assistance technique directe, tout en respectant les contraintes fonctionnelles de la solution."
+        }
+      ],
+      "generaux": [
+        {
+          "name": "Rédaction",
+          "description": "J'ai documenté les choix de configuration, expliqué les modifications apportées aux interfaces, et rédigé des supports de communication pour les utilisateurs finaux."
+        },
+        {
+          "name": "Communication interservices",
+          "description": "J'ai été l'intermédiaire entre les référents métiers, les utilisateurs terrain et les équipes techniques. J'ai recueilli les retours, reformulé les demandes, relayé les décisions techniques et expliqué les modifications apportées de manière claire et pédagogique."
+        }
+      ],
+      "techniques": [
+        {
+          "name": "Ergonomie et interfaces homme-machine",
+          "description": "J'ai ajusté les interfaces de la plateforme METEOR pour améliorer la lisibilité et la réactivité de l'outil en situation critique (affichage météo, événements trafic). Cela incluait la hiérarchisation des données, la clarté des filtres et l'adaptation aux besoins de chaque région."
+        },
+        {
+          "name": "Conduite de projet logiciel",
+          "description": "Ce projet a nécessité un pilotage méthodique des évolutions de la plateforme METEOR, en tenant compte des spécificités de chaque région. J'ai structuré les retours utilisateurs, priorisé les besoins, organisé les configurations et participé activement au suivi des livrables fonctionnels."
+        }
+      ]
+    }
   }
 ];
 
@@ -114,7 +366,17 @@ export const getSkillName = (skillId: string) => {
     "rigueur": "Rigueur",
     "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie"
+    "autonomie": "Autonomie",
+    "gestion-projet": "Gestion de projet",
+    "redaction": "Rédaction",
+    "support-technique": "Support technique",
+    "securite-informatique": "Sécurité informatique",
+    "conception-reseau": "Conception réseau",
+    "adaptabilite": "Adaptabilité",
+    "resolution-problemes": "Résolution de problèmes",
+    "capacite-apprentissage": "Capacité d'apprentissage",
+    "communication-interservices": "Communication interservices",
+    "ergonomie-ihm": "Ergonomie et interfaces homme-machine"
   };
   
   return skillNames[skillId] || skillId;
