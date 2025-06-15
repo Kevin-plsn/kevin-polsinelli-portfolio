@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
+    skills: ["autonomie", "esprit-analyse", "resolution-problemes", "adaptabilite", "organisation-personnelle", "redaction", "systemes-windows-ad", "securite-informatique", "support-technique"]
   },
   {
     id: "projet-5-magellan-sagt",
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
+    skills: ["conduite-projet-logiciel", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
   }
 ];
 
@@ -114,7 +114,19 @@ export const getSkillName = (skillId: string) => {
     "rigueur": "Rigueur",
     "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie"
+    "autonomie": "Autonomie",
+    "adaptabilite": "Adaptabilité",
+    "resolution-problemes": "Résolution de problèmes",
+    "capacite-apprentissage": "Capacité d'apprentissage",
+    "gestion-projet": "Gestion de projet",
+    "communication-interservices": "Communication interservices",
+    "redaction": "Rédaction",
+    "support-technique": "Support technique",
+    "securite-informatique": "Sécurité informatique",
+    "systemes-windows-ad": "Systèmes Windows / Active Directory",
+    "conduite-projet-logiciel": "Conduite de projet logiciel",
+    "ergonomie-ihm": "Ergonomie et interfaces homme-machine",
+    "conception-reseau": "Conception réseau"
   };
   
   return skillNames[skillId] || skillId;
