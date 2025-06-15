@@ -15,8 +15,48 @@ export const projects: Project[] = [
       "Renforcer la sécurité documentaire grâce à l'authentification par badge via Streamline NX, permettant de contrôler et tracer toutes les impressions",
       "Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise"
     ],
-    realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels. 🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé. 🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés. 🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur. 📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service. 🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT. 📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements. 👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes. Ce projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT. Sur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"]
+    realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels.\n\n🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé.\n\n🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés.\n\n🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur.\n\n📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service.\n\n🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT.\n\n📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements.\n\n👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes.\n\nCe projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT.\n\nSur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
+    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"],
+    detailedSkills: {
+      transverse: [
+        {
+          name: "Autonomie",
+          description: "Projet mené de manière indépendante, de l'analyse initiale au déploiement complet."
+        },
+        {
+          name: "Esprit d'analyse",
+          description: "Pour repérer les points de friction dans la gestion du parc et proposer une solution cohérente."
+        },
+        {
+          name: "Organisation personnelle",
+          description: "Pour planifier chaque étape : état des lieux, rendez-vous fournisseurs, déploiement."
+        }
+      ],
+      general: [
+        {
+          name: "Gestion de projet",
+          description: "Pilotage des différentes étapes du projet (analyse, choix fournisseur, déploiement, suivi)."
+        },
+        {
+          name: "Rédaction",
+          description: "Élaboration de documents de suivi clairs et structurés pour assurer la traçabilité du projet."
+        }
+      ],
+      technical: [
+        {
+          name: "Support technique",
+          description: "Installation des équipements, résolution des incidents de démarrage."
+        },
+        {
+          name: "Sécurité informatique",
+          description: "Paramétrage de l'authentification badge avec Streamline NX."
+        },
+        {
+          name: "Conception réseau",
+          description: "Intégration des imprimantes dans des VLAN dédiés pour segmenter le trafic réseau et sécuriser les flux."
+        }
+      ]
+    }
   },
   {
     id: "projet-2-migration-office",
