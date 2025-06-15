@@ -67,7 +67,51 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"],
+    detailedSkills: {
+      transverse: [
+        {
+          name: "Autonomie",
+          description: "Prise de poste sans passation, responsabilité de l'ensemble du périmètre industriel."
+        },
+        {
+          name: "Esprit d'analyse",
+          description: "Diagnostic rapide des pannes, compréhension des causes profondes, adaptation aux spécificités techniques de chaque ligne."
+        },
+        {
+          name: "Résolution de problèmes",
+          description: "Intervention sur des lignes bloquées (ex. IMA), avec des temps d'arrêt minimisés."
+        },
+        {
+          name: "Adaptabilité",
+          description: "Capacité à naviguer entre plusieurs technologies industrielles non documentées et à m'ajuster en temps réel."
+        },
+        {
+          name: "Organisation personnelle",
+          description: "Gestion simultanée de demandes urgentes, planification des audits et création de suivi structuré."
+        }
+      ],
+      general: [
+        {
+          name: "Rédaction",
+          description: "Élaboration de tableaux de suivi et documentation claire pour les audits de ligne."
+        }
+      ],
+      technical: [
+        {
+          name: "Systèmes Windows / Active Directory",
+          description: "Gestion complète des comptes, intégration des postes au domaine, configuration spécifique pour postes industriels."
+        },
+        {
+          name: "Sécurité informatique",
+          description: "Renforcement des accès aux postes et aux systèmes critiques, contrôle des privilèges."
+        },
+        {
+          name: "Support technique",
+          description: "Dépannage en environnement sensible, interventions en autonomie sur des systèmes critiques."
+        }
+      ]
+    }
   },
   {
     id: "projet-5-magellan-sagt",
