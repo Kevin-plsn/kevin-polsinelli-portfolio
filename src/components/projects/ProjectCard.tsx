@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Project } from "@/data/projects";
+import { Project } from "@/types/project";
 
 interface ProjectCardProps {
   project: Project;
