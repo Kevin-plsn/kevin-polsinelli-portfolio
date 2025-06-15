@@ -32,6 +32,11 @@ export interface Project {
   objectives: string[];
   realization: string;
   skills: string[];
+  detailedSkills?: {
+    transverses: string[];
+    generaux: string[];
+    techniques: string[];
+  };
 }
 
 const getSkillIcon = (skillId: string) => {
