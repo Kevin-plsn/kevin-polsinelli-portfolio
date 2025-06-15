@@ -1,4 +1,3 @@
-
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
@@ -124,7 +123,6 @@ export const getSkillName = (skillId: string) => {
     "support-technique": "Support technique",
     "securite-informatique": "Sécurité informatique",
     "systemes-windows-ad": "Systèmes Windows / Active Directory",
-    "conduite-projet-logiciel": "Conduite de projet logiciel",
     "ergonomie-ihm": "Ergonomie et interfaces homme-machine",
     "conception-reseau": "Conception réseau"
   };
