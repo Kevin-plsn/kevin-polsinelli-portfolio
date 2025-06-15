@@ -1,4 +1,3 @@
-
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
