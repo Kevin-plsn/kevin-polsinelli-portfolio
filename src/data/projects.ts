@@ -17,7 +17,47 @@ export const projects: Project[] = [
       "Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise"
     ],
     realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels. 🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé. 🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés. 🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur. 📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service. 🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT. 📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements. 👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes. Ce projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT. Sur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"]
+    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"],
+    detailedSkills: {
+      transverses: [
+        {
+          name: "Initiative",
+          description: "Identification proactive d'une problématique non traitée et prise en charge complète du projet sans directive spécifique."
+        },
+        {
+          name: "Esprit d'analyse",
+          description: "Audit complet du parc existant, évaluation comparative des prestataires selon des critères multiples."
+        },
+        {
+          name: "Autonomie",
+          description: "Gestion de bout en bout du projet, de l'identification du besoin à la mise en production."
+        },
+        {
+          name: "Organisation personnelle",
+          description: "Planification des phases de déploiement, création d'outils de suivi structurés."
+        }
+      ],
+      generaux: [
+        {
+          name: "Communication relationnel",
+          description: "Relation fournisseur, accompagnement au changement des utilisateurs, présentation des solutions."
+        },
+        {
+          name: "Management de projet",
+          description: "Coordination des phases de remplacement, gestion des délais et des priorités métier."
+        }
+      ],
+      techniques: [
+        {
+          name: "Sécurité informatique",
+          description: "Déploiement de solutions d'authentification par badge, traçabilité des impressions."
+        },
+        {
+          name: "Administration système",
+          description: "Configuration de solutions de supervision, intégration avec l'infrastructure existante."
+        }
+      ]
+    }
   },
   {
     id: "projet-2-migration-office",
@@ -67,7 +107,51 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "adaptabilite", "resolution-problemes"],
+    detailedSkills: {
+      transverses: [
+        {
+          name: "Autonomie",
+          description: "Prise de poste sans passation, responsabilité de l'ensemble du périmètre industriel."
+        },
+        {
+          name: "Esprit d'analyse",
+          description: "Diagnostic rapide des pannes, compréhension des causes profondes, adaptation aux spécificités techniques de chaque ligne."
+        },
+        {
+          name: "Résolution de problèmes",
+          description: "Intervention sur des lignes bloquées (ex. IMA), avec des temps d'arrêt minimisés."
+        },
+        {
+          name: "Adaptabilité",
+          description: "Capacité à naviguer entre plusieurs technologies industrielles non documentées et à m'ajuster en temps réel."
+        },
+        {
+          name: "Organisation personnelle",
+          description: "Gestion simultanée de demandes urgentes, planification des audits et création de suivi structuré."
+        }
+      ],
+      generaux: [
+        {
+          name: "Rédaction",
+          description: "Élaboration de tableaux de suivi et documentation claire pour les audits de ligne."
+        }
+      ],
+      techniques: [
+        {
+          name: "Systèmes Windows / Active Directory",
+          description: "Gestion complète des comptes, intégration des postes au domaine, configuration spécifique pour postes industriels."
+        },
+        {
+          name: "Sécurité informatique",
+          description: "Renforcement des accès aux postes et aux systèmes critiques, contrôle des privilèges."
+        },
+        {
+          name: "Support technique",
+          description: "Dépannage en environnement sensible, interventions en autonomie sur des systèmes critiques."
+        }
+      ]
+    }
   },
   {
     id: "projet-5-magellan-sagt",
@@ -114,7 +198,9 @@ export const getSkillName = (skillId: string) => {
     "rigueur": "Rigueur",
     "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie"
+    "autonomie": "Autonomie",
+    "adaptabilite": "Adaptabilité",
+    "resolution-problemes": "Résolution de problèmes"
   };
   
   return skillNames[skillId] || skillId;
