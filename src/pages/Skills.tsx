@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -19,7 +20,9 @@ import {
   UserCog,
   Settings,
   Search,
-  Cog
+  Cog,
+  Network,
+  Monitor
 } from "lucide-react";
 import { projects } from "@/data/projects";
 
@@ -195,7 +198,7 @@ const SkillsPage = () => {
     },
     {
       id: "ergonomie-ihm",
-      icon: <Computer className="h-5 w-5" />,
+      icon: <Monitor className="h-5 w-5" />,
       title: "Ergonomie et interfaces homme-machine",
       type: "technique",
       definition: "L'ergonomie des interfaces homme-machine (IHM) désigne la capacité à concevoir des interfaces logicielles intuitives, lisibles, et adaptées aux besoins et comportements des utilisateurs. Elle vise à faciliter la prise en main d'un outil, réduire les erreurs d'usage et optimiser l'expérience globale.",
@@ -205,7 +208,7 @@ const SkillsPage = () => {
     },
     {
       id: "conception-reseau",
-      icon: <Database className="h-5 w-5" />,
+      icon: <Network className="h-5 w-5" />,
       title: "Conception réseau",
       type: "technique",
       definition: "La conception réseau consiste à planifier et structurer l'architecture d'un réseau informatique, en définissant les équipements, les protocoles, les sous-réseaux (VLAN) et les règles de sécurité. L'objectif est de créer un réseau performant, sécurisé, évolutif et adapté aux besoins fonctionnels de l'entreprise.",
