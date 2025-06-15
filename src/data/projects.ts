@@ -17,7 +17,7 @@ export const projects: Project[] = [
       "Optimiser les coûts et l'empreinte environnementale grâce à du matériel moderne, plus économe et mieux intégré à l'écosystème de l'entreprise"
     ],
     realization: "📋 État des lieux initial : J'ai mené un inventaire complet des imprimantes présentes dans l'entreprise, en recensant les modèles, leurs emplacements, les consommables associés, ainsi que les problèmes fréquents rencontrés par les utilisateurs. Cela m'a permis d'identifier les sources d'inefficacité et les doublons matériels. 🤝 Comparaison et sélection du prestataire : J'ai contacté plusieurs fournisseurs et organisé des rendez-vous pour analyser leurs offres. En étudiant les critères techniques, économiques et écologiques, le choix s'est porté sur RICOH pour sa capacité à fournir un matériel homogène, performant et compatible avec un système de supervision avancé. 🔄 Remplacement progressif des imprimantes : Les anciennes imprimantes ont été progressivement remplacées par des modèles RICOH, sélectionnés pour leur durabilité, leur faible consommation énergétique, et leur compatibilité avec les systèmes d'impression sécurisés. 🖥️ Déploiement de Streamline NX : J'ai contribué à la configuration de la solution Streamline NX pour permettre une authentification par badge sur chaque imprimante. Cette fonctionnalité a permis de renforcer la sécurité des impressions, d'éviter les impressions oubliées, et de tracer chaque utilisation par utilisateur. 📊 Mise en place d'une supervision centralisée : Grâce au portail RICOH, j'ai configuré le suivi en temps réel de l'état du parc : niveaux d'encre, alertes de maintenance, historique des incidents. Cette visibilité a permis de gagner en réactivité et de limiter les interruptions de service. 🛒 Automatisation des commandes de toner : Le système mis en place permet désormais de déclencher automatiquement les commandes de consommables lorsque les seuils critiques sont atteints. Cela a réduit les ruptures et évité les interventions manuelles du support IT. 📁 Création d'un tableau de gestion structuré : J'ai conçu une documentation sous Excel regroupant les informations clés (modèles, emplacements, dates d'installation, garanties, types de toner). Ce tableau est aujourd'hui utilisé comme outil de suivi et de référence pour les interventions et les remplacements. 👥 Accompagnement au changement : Enfin, j'ai participé à la communication auprès des équipes pour expliquer le fonctionnement du nouveau système, recueillir les retours, et m'assurer de l'adoption fluide des nouvelles imprimantes. Ce projet m'a permis de conduire une démarche complète d'analyse, de structuration et de déploiement dans un contexte concret d'entreprise. Techniquement, j'ai consolidé mes compétences en gestion de parc d'impression réseau, en automatisation des processus (commandes de consommables, supervision centralisée) et en sécurité des impressions grâce à la solution Streamline NX. J'ai également appris à évaluer des prestataires selon des critères techniques et organisationnels, ce qui m'a donné une vision plus globale de la gestion IT. Sur le plan professionnel, ce projet a renforcé mon autonomie, ma capacité d'organisation et mon esprit d'analyse. J'ai su prendre l'initiative pour résoudre une problématique ignorée jusque-là, et j'ai mené toutes les phases du projet, de l'audit au suivi post-installation, en passant par la relation fournisseur. Cette expérience m'a montré l'importance de l'organisation et de la capacité à transformer un besoin latent en solution concrète, mesurable et durable.",
-    skills: ["autonomie", "esprit-analyse", "organisation-personnelle", "management-projet", "redaction", "support-technique", "securite", "conception-reseau"]
+    skills: ["bureautique-productivite", "organisation-personnelle", "initiative", "esprit-analyse", "autonomie", "securite", "management-projet"]
   },
   {
     id: "projet-2-migration-office",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
       "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
     ],
     realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
-    skills: ["rigueur", "organisation-personnelle", "adaptabilite", "autonomie", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "management-projet", "support-technique"]
+    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse"]
   },
   {
     id: "projet-3-audit-securite",
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
     ],
     realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
-    skills: ["autonomie", "rigueur", "esprit-analyse", "resolution-problemes", "capacite-apprentissage", "redaction", "administration-windows", "securite"]
+    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse", "autonomie"]
   },
   {
     id: "projet-4-informatique-industrielle",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["autonomie", "esprit-analyse", "resolution-problemes", "adaptabilite", "organisation-personnelle", "redaction", "administration-windows", "securite", "support-technique"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
   },
   {
     id: "projet-5-magellan-sagt",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
     ],
     realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
-    skills: ["organisation-personnelle", "esprit-analyse", "adaptabilite", "capacite-apprentissage", "rigueur", "communication-interservices", "management-projet", "redaction", "conduite-projet-logiciel"]
+    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "autonomie"]
   },
   {
     id: "projet-6-magellan-meteor",
@@ -98,28 +98,23 @@ export const projects: Project[] = [
       "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["esprit-analyse", "adaptabilite", "autonomie", "redaction", "communication-interservices", "ergonomie-ihm", "conduite-projet-logiciel"]
+    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
   }
 ];
 
 export const getSkillName = (skillId: string) => {
   const skillNames: {[key: string]: string} = {
     "administration-windows": "Administration Windows",
-    "securite": "Sécurité informatique",
-    "support-technique": "Support technique",
-    "conception-reseau": "Conception réseau",
-    "ergonomie-ihm": "Ergonomie et interfaces homme-machine",
+    "securite": "Sécurité",
+    "bureautique-productivite": "Bureautique et productivité",
     "conduite-projet-logiciel": "Conduite de projet logiciel",
-    "management-projet": "Gestion de projet",
-    "communication-interservices": "Communication interservices",
-    "redaction": "Rédaction",
+    "management-projet": "Management de projet",
+    "communication-relationnel": "Communication et relationnel",
     "esprit-analyse": "Esprit d'analyse",
     "rigueur": "Rigueur",
-    "autonomie": "Autonomie",
+    "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "adaptabilite": "Adaptabilité",
-    "resolution-problemes": "Résolution de problèmes",
-    "capacite-apprentissage": "Capacité d'apprentissage"
+    "autonomie": "Autonomie"
   };
   
   return skillNames[skillId] || skillId;
