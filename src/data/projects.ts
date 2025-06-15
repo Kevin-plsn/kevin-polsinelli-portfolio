@@ -1,3 +1,4 @@
+
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
@@ -22,71 +23,82 @@ export const projects: Project[] = [
     id: "projet-2-migration-office",
     title: "Migration Office 365",
     image: "https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Harmonisation des versions d'Office sur le parc informatique pour résoudre les problèmes de compatibilité et améliorer la collaboration.",
-    context: "Lors de ma mission chez Skyepharma, un manque d'homogénéité entre les versions d'Office utilisées sur les postes de travail posait de nombreux problèmes de compatibilité, notamment dans la lecture et l'édition de fichiers partagés. Cette situation impactait la collaboration entre les équipes et ralentissait les processus métiers.",
+    shortDesc: "Migration vers Microsoft Office 365 pour uniformiser les versions et améliorer la collaboration entre services chez Skyepharma.",
+    context: "Au sein de l'entreprise Skyepharma, les collaborateurs utilisaient des versions variées de Microsoft Office, souvent obsolètes ou non alignées avec les standards internes. Cette hétérogénéité générait de nombreux problèmes de compatibilité : documents qui s'ouvraient mal, fonctionnalités indisponibles, fichiers illisibles ou corrompus. Résultat : une collaboration difficile entre services, une perte de temps considérable et une sollicitation fréquente du support technique. Pour moderniser l'environnement de travail, fluidifier les échanges et renforcer la cohérence des outils numériques, l'entreprise a décidé de migrer l'ensemble des postes vers la suite Microsoft Office 365. Cette solution cloud permettait d'uniformiser les versions, de centraliser la gestion des outils (Outlook, OneDrive, Teams, etc.) et d'améliorer l'expérience utilisateur au quotidien.",
     objectives: [
-      "Uniformiser les versions d'Office pour améliorer la compatibilité entre les utilisateurs",
-      "Faciliter la transition vers la suite Office 365",
-      "Accompagner les collaborateurs dans la prise en main des nouveaux outils"
+      "Uniformiser les versions de Microsoft Office sur l'ensemble des postes pour éliminer les problèmes de compatibilité entre documents et outils",
+      "Faciliter la collaboration entre services grâce à une suite d'outils intégrés d'Office 365 (Outlook, Teams, OneDrive…)",
+      "Alléger la charge de l'assistance technique en réduisant les sollicitations liées aux incompatibilités de fichiers ou aux versions obsolètes",
+      "Moderniser l'infrastructure IT en adoptant une solution cloud évolutive et centralisée",
+      "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
     ],
     realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative"]
+    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse"]
   },
   {
     id: "projet-3-audit-securite",
     title: "Audit de sécurité",
     image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    shortDesc: "Mise en conformité des postes utilisateurs suite à un audit de sécurité par le déploiement de solutions de chiffrement et de protection d'accès.",
-    context: "À la suite d'un audit de sécurité chez Skyepharma, plusieurs failles ont été identifiées concernant la protection des postes utilisateurs. Notamment, le chiffrement des données n'était pas systématiquement appliqué, et l'accès matériel aux machines n'était pas suffisamment restreint. L'entreprise a donc engagé une démarche de mise en conformité pour renforcer la sécurité des postes de travail.",
+    shortDesc: "Mise en conformité des postes utilisateurs suite à un audit de sécurité par le déploiement de BitLocker et la sécurisation du BIOS.",
+    context: "À la suite d'un audit de sécurité, plusieurs points de vulnérabilité ont été révélés sur les postes de travail, notamment l'absence de chiffrement systématique des données sensibles et un accès BIOS encore libre sur certaines machines. Pour y remédier, une démarche de sécurisation globale a été lancée. L'objectif : protéger les postes à la fois sur le plan logiciel et matériel. J'ai ainsi été chargé de déployer BitLocker via des stratégies de groupe (GPO) pour assurer le chiffrement automatique des disques, tout en renforçant l'accès physique aux machines en configurant des mots de passe d'administration au niveau du BIOS. Cette double action visait à garantir l'intégrité des données et empêcher toute intervention non autorisée sur les terminaux.",
     objectives: [
-      "Mettre en conformité les postes selon les recommandations de l'audit",
-      "Protéger les données stockées localement via le chiffrement",
-      "Restreindre l'accès matériel aux machines (BIOS) pour éviter toute manipulation non autorisée"
+      "Chiffrer l'ensemble des postes utilisateurs afin de protéger les données stockées localement",
+      "Renforcer la sécurité physique en restreignant l'accès BIOS par mot de passe administrateur",
+      "Automatiser le déploiement des règles de sécurité à travers les GPO (stratégies de groupe)",
+      "Répondre aux recommandations issues de l'audit de sécurité mené en interne",
+      "Assurer la traçabilité des actions réalisées et accompagner les utilisateurs dans les changements apportés",
+      "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
     ],
     realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
-    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse"]
+    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse", "autonomie"]
   },
   {
     id: "projet-4-informatique-industrielle",
     title: "Informatique industrielle",
     image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Gestion autonome du parc informatique industriel et support utilisateurs dans un contexte de production sensible et de forte rotation du personnel.",
-    context: "Durant mon alternance chez Skyepharma, j'ai été amené à intervenir dans un contexte industriel exigeant, marqué par une forte présence d'intérimaires et des besoins constants d'adaptation informatique en production. J'ai dû assurer la gestion du parc informatique de production et intervenir en autonomie sur des environnements critiques sans passation, suite au départ du technicien en charge de l'informatique industrielle.",
+    context: "Dans un environnement industriel à forte contrainte de production, j'ai été amené à prendre en main l'intégralité du périmètre informatique en atelier, suite au départ du technicien en charge. L'entreprise faisait face à une forte rotation de personnel intérimaire, ce qui impliquait une gestion dynamique des comptes et des droits d'accès via Active Directory. En parallèle, les lignes de production reposaient sur un parc hétérogène de machines industrielles (IMA, Glatt, Siemens, Marchesini) nécessitant des interventions régulières pour assurer la continuité de fonctionnement. J'ai également réalisé des audits de ligne pour identifier les risques et points critiques.",
     objectives: [
-      "Maintenir à jour l'Active Directory dans un contexte de fort turnover",
-      "Garantir la continuité du service informatique en environnement de production",
-      "Répondre rapidement aux incidents sur les machines connectées à la chaîne industrielle"
+      "Assurer la gestion des comptes utilisateurs dans Active Directory en réponse au turnover important de personnel",
+      "Maintenir la disponibilité des équipements informatiques liés à la production (pupitres, interfaces, PC industriels)",
+      "Intervenir rapidement en cas d'incident pour ne pas perturber la chaîne de production",
+      "Réaliser un audit complet des postes en atelier pour identifier les risques, incohérences et points critiques",
+      "Collaborer efficacement avec les opérateurs et techniciens de ligne pour adapter les configurations aux besoins réels",
+      "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
   },
   {
     id: "projet-5-magellan-sagt",
     title: "MAGELLAN – SAGT",
     image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
-    context: "Toujours dans le cadre du programme MAGELLAN chez APRR, le module SAGT (Système d'Aide à la Gestion des Trafic) permet d'automatiser les actions à déclencher lors d'événements sur le réseau autoroutier (accidents, bouchons, conditions météo, etc.). J'ai été sollicité pour intervenir sur l'organisation des règles utilisées par le système, qui manquaient d'uniformité et rendaient leur création complexe et chronophage pour les équipes.",
+    context: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.",
     objectives: [
-      "Homogénéiser les règles d'automatisation dans le module SAGT",
-      "Faciliter la création de nouvelles règles pour les utilisateurs internes",
-      "Améliorer la lisibilité et la cohérence du système"
+      "Reprendre l'ensemble des règles du module SAGT pour en améliorer la lisibilité et la cohérence",
+      "Définir une nomenclature standardisée permettant de structurer les noms, catégories et formats des règles d'automatisation",
+      "Faciliter la création de nouvelles règles par les utilisateurs internes, en réduisant les erreurs et le temps de paramétrage",
+      "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
     ],
     realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
-    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel"]
+    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "autonomie"]
   },
   {
     id: "projet-6-magellan-meteor",
     title: "MAGELLAN – METEOR",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Paramétrage d'un système de visualisation en temps réel pour la météo et le trafic autoroutier.",
-    context: "Dans le cadre du projet MAGELLAN - METEOR chez APRR, l'outil METEOR a été conçu pour offrir une visualisation en temps réel de la météo et du trafic autoroutier. L'objectif était d'apporter aux opérateurs en poste de commandement une lecture claire des événements affectant les différentes zones du réseau. Mon rôle, au sein de l'équipe administratrice fonctionnelle, a été de contribuer au paramétrage du système pour qu'il réponde précisément aux besoins métier.",
+    context: "Dans le cadre du programme MAGELLAN porté par APRR, l'outil METEOR a été mis en place pour permettre aux opérateurs autoroutiers de visualiser en temps réel les conditions météo et de trafic sur l'ensemble du réseau. Cet outil stratégique devait centraliser les informations issues de capteurs (stations météo, capteurs de comptage, etc.) pour faciliter la prise de décision en salle de contrôle. Intégré à l'équipe administratrice fonctionnelle, j'ai participé activement au paramétrage des \"contextes\" de surveillance, qui définissent les équipements et zones visibles par chaque poste de commandement. Mon rôle a été de structurer et adapter l'affichage en fonction des besoins spécifiques des différentes régions, en veillant à ce que chaque utilisateur dispose d'une interface claire, pertinente et cohérente avec son périmètre géographique.",
     objectives: [
-      "Paramétrer les zones de surveillance météo/trafic dans les différents équipes utilisatrices du logiciel",
-      "S'assurer de la cohérence des informations affichées par rapport à la géographie du réseau APRR",
-      "Améliorer l'ergonomie de la plateforme et sa compréhension métier"
+      "Structurer les contextes de surveillance dans METEOR selon les zones géographiques et les priorités régionales",
+      "Assurer une visualisation claire et pertinente des équipements météo/trafic (stations, capteurs, etc.) pour chaque salle de contrôle",
+      "Renforcer la fiabilité de la prise de décision grâce à un affichage métier cohérent",
+      "Améliorer l'ergonomie de la plateforme pour simplifier l'usage au quotidien par les opérateurs",
+      "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet"]
+    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
   }
 ];
 
