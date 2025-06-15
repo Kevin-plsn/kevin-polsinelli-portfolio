@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bookmark, CheckCircle2, Compass, Target, Wrench } from "lucide-react";
+import { Bookmark, CheckCircle2, Compass, Target, Wrench, Users, Settings } from "lucide-react";
 
 const ProjectSection = () => {
   return (
@@ -67,91 +67,41 @@ const ProjectSection = () => {
             </div>
             <CardTitle className="text-green-700">🛠️ Réalisations</CardTitle>
           </CardHeader>
-          <CardContent className="pt-4 space-y-6">
-            <div className="space-y-4">
-              <h4 className="font-semibold text-lg text-green-700">Analyse des règles existantes</h4>
-              <p className="text-gray-700">
-                J'ai commencé par un audit complet des règles déjà en place dans le module SAGT. Ce travail m'a permis d'identifier un manque d'uniformité dans les noms, les formats et les structures logiques employées.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <h4 className="font-semibold text-lg text-green-700">Construction d'une nomenclature normalisée</h4>
-              <p className="text-gray-700">
-                J'ai conçu un tableau de nomenclature regroupant toutes les catégories de règles, leurs usages types, les bonnes pratiques de rédaction, ainsi que des modèles de nommage. Cet outil est devenu une référence pour les équipes.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <h4 className="font-semibold text-lg text-green-700">Mise en place d'un support documentaire</h4>
-              <p className="text-gray-700">
-                J'ai intégré cette nomenclature à une documentation claire et accessible, partagée avec les référents métiers pour garantir une utilisation cohérente et partagée.
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <h4 className="font-semibold text-lg text-green-700">Accompagnement des équipes opérationnelles</h4>
-              <p className="text-gray-700">
-                J'ai expliqué les objectifs de cette démarche aux utilisateurs du SAGT, en illustrant les bénéfices concrets pour leur quotidien (gain de temps, moins d'erreurs, plus de clarté).
-              </p>
-            </div>
-            
-            <div className="space-y-4">
-              <h4 className="font-semibold text-lg text-green-700">Amélioration continue</h4>
-              <p className="text-gray-700">
-                Un système de retour d'expérience a été mis en place afin d'adapter la nomenclature si besoin, en fonction des retours du terrain et de l'évolution des besoins.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-        
-        <Card className="mb-8 shadow-md">
-          <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-green-50">
-            <div className="bg-green-100 p-2 rounded-full">
-              <Bookmark className="h-6 w-6 text-green-600" />
-            </div>
-            <CardTitle className="text-green-700">✅ Compétences mobilisées</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-4 space-y-8">
-            <div>
-              <h4 className="text-lg font-semibold text-pink-600 mb-4">🧠 Aptitudes intellectuelles et comportementales</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-pink-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-pink-700">Esprit d'analyse</h5>
-                  <p className="text-sm text-gray-600">Cette compétence m'a permis de décrypter un environnement complexe de règles automatisées, de repérer les incohérences, et de proposer une structuration efficace et durable.</p>
-                </div>
-                <div className="bg-pink-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-pink-700">Autonomie</h5>
-                  <p className="text-sm text-gray-600">J'ai planifié mes phases d'analyse, d'uniformisation et de documentation de façon autonome et structurée, avec des points de contrôle à chaque étape.</p>
-                </div>
-                <div className="bg-pink-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-pink-700">Adaptabilité</h5>
-                  <p className="text-sm text-gray-600">Le projet impliquait des règles très différentes d'une région à l'autre, et des pratiques métiers hétérogènes. J'ai su m'adapter rapidement aux cas spécifiques tout en proposant une solution centralisée et homogène.</p>
-                </div>
+          <CardContent className="pt-4">
+            <div className="space-y-6">
+              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                <h4 className="font-semibold text-lg text-green-700 mb-2">Analyse des règles existantes</h4>
+                <p className="text-gray-700">
+                  J'ai commencé par un audit complet des règles déjà en place dans le module SAGT. Ce travail m'a permis d'identifier un manque d'uniformité dans les noms, les formats et les structures logiques employées.
+                </p>
               </div>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-green-600 mb-4">🧩 Savoir-faire généraux</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="bg-green-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-green-700">Gestion de projet</h5>
-                  <p className="text-sm text-gray-600">J'ai géré le projet de manière autonome, depuis la compréhension des logiques applicatives jusqu'à la restitution des règles aux utilisateurs. J'ai organisé le travail par phases et garanti une cohérence globale entre les objectifs fixés et les livrables produits.</p>
-                </div>
-                <div className="bg-green-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-green-700">Rédaction</h5>
-                  <p className="text-sm text-gray-600">J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants.</p>
-                </div>
+              
+              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                <h4 className="font-semibold text-lg text-green-700 mb-2">Construction d'une nomenclature normalisée</h4>
+                <p className="text-gray-700">
+                  J'ai conçu un tableau de nomenclature regroupant toutes les catégories de règles, leurs usages types, les bonnes pratiques de rédaction, ainsi que des modèles de nommage. Cet outil est devenu une référence pour les équipes.
+                </p>
               </div>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold text-blue-600 mb-4">💻 Savoir-faire techniques</h4>
-              <div className="grid grid-cols-1 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg shadow-sm">
-                  <h5 className="font-medium mb-1 text-blue-700">Conduite de projet logiciel</h5>
-                  <p className="text-sm text-gray-600">Cette compétence a été essentielle pour structurer une démarche complète : analyse de l'existant, élaboration d'une nomenclature, validation fonctionnelle et documentation. Elle m'a permis d'aligner les règles d'automatisation aux besoins métier, tout en gardant une logique de projet structurée et évolutive.</p>
-                </div>
+              
+              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                <h4 className="font-semibold text-lg text-green-700 mb-2">Mise en place d'un support documentaire</h4>
+                <p className="text-gray-700">
+                  J'ai intégré cette nomenclature à une documentation claire et accessible, partagée avec les référents métiers pour garantir une utilisation cohérente et partagée.
+                </p>
+              </div>
+              
+              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                <h4 className="font-semibold text-lg text-green-700 mb-2">Accompagnement des équipes opérationnelles</h4>
+                <p className="text-gray-700">
+                  J'ai expliqué les objectifs de cette démarche aux utilisateurs du SAGT, en illustrant les bénéfices concrets pour leur quotidien (gain de temps, moins d'erreurs, plus de clarté).
+                </p>
+              </div>
+              
+              <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                <h4 className="font-semibold text-lg text-green-700 mb-2">Amélioration continue</h4>
+                <p className="text-gray-700">
+                  Un système de retour d'expérience a été mis en place afin d'adapter la nomenclature si besoin, en fonction des retours du terrain et de l'évolution des besoins.
+                </p>
               </div>
             </div>
           </CardContent>
@@ -160,25 +110,77 @@ const ProjectSection = () => {
         <Card className="mb-8 shadow-md">
           <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-blue-50">
             <div className="bg-blue-100 p-2 rounded-full">
-              <Wrench className="h-6 w-6 text-blue-600" />
+              <Users className="h-6 w-6 text-blue-600" />
             </div>
-            <CardTitle className="text-blue-700">🧰 Outils utilisés</CardTitle>
+            <CardTitle className="text-blue-700">✅ Compétences mobilisées</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4 space-y-8">
+            <div>
+              <h4 className="text-lg font-semibold text-pink-600 mb-4">🧠 Compétences comportementales</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-pink-50 p-4 rounded-lg shadow-sm border border-pink-200">
+                  <h5 className="font-medium mb-2 text-pink-700">Esprit d'analyse</h5>
+                  <p className="text-sm text-gray-600">Cette compétence m'a permis de décrypter un environnement complexe de règles automatisées, de repérer les incohérences, et de proposer une structuration efficace et durable.</p>
+                </div>
+                <div className="bg-pink-50 p-4 rounded-lg shadow-sm border border-pink-200">
+                  <h5 className="font-medium mb-2 text-pink-700">Autonomie</h5>
+                  <p className="text-sm text-gray-600">J'ai planifié mes phases d'analyse, d'uniformisation et de documentation de façon autonome et structurée, avec des points de contrôle à chaque étape.</p>
+                </div>
+                <div className="bg-pink-50 p-4 rounded-lg shadow-sm border border-pink-200">
+                  <h5 className="font-medium mb-2 text-pink-700">Adaptabilité</h5>
+                  <p className="text-sm text-gray-600">Le projet impliquait des règles très différentes d'une région à l'autre, et des pratiques métiers hétérogènes. J'ai su m'adapter rapidement aux cas spécifiques tout en proposant une solution centralisée et homogène.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-green-600 mb-4">🧩 Savoir-faire généraux</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg shadow-sm border border-green-200">
+                  <h5 className="font-medium mb-2 text-green-700">Gestion de projet</h5>
+                  <p className="text-sm text-gray-600">J'ai géré le projet de manière autonome, depuis la compréhension des logiques applicatives jusqu'à la restitution des règles aux utilisateurs. J'ai organisé le travail par phases et garanti une cohérence globale entre les objectifs fixés et les livrables produits.</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg shadow-sm border border-green-200">
+                  <h5 className="font-medium mb-2 text-green-700">Rédaction</h5>
+                  <p className="text-sm text-gray-600">J'ai produit une documentation structurée, permettant aux équipes de créer, modifier ou analyser les règles métiers en toute autonomie. Cette nomenclature facilite également la formation et la montée en compétence des nouveaux arrivants.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold text-blue-600 mb-4">💻 Savoir-faire techniques</h4>
+              <div className="grid grid-cols-1 gap-4">
+                <div className="bg-blue-50 p-4 rounded-lg shadow-sm border border-blue-200">
+                  <h5 className="font-medium mb-2 text-blue-700">Conduite de projet logiciel</h5>
+                  <p className="text-sm text-gray-600">Cette compétence a été essentielle pour structurer une démarche complète : analyse de l'existant, élaboration d'une nomenclature, validation fonctionnelle et documentation. Elle m'a permis d'aligner les règles d'automatisation aux besoins métier, tout en gardant une logique de projet structurée et évolutive.</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card className="mb-8 shadow-md">
+          <CardHeader className="flex flex-row items-center gap-4 pb-2 bg-indigo-50">
+            <div className="bg-indigo-100 p-2 rounded-full">
+              <Settings className="h-6 w-6 text-indigo-600" />
+            </div>
+            <CardTitle className="text-indigo-700">🧰 Outils utilisés</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-blue-50 p-4 rounded-lg shadow-sm">
+              <div className="bg-indigo-50 p-4 rounded-lg shadow-sm border border-indigo-200">
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium text-blue-700">MAGELLAN – Module SAGT :</span> logiciel métier pour la gestion automatisée des événements trafic.
+                  <span className="font-medium text-indigo-700">MAGELLAN – Module SAGT :</span> logiciel métier pour la gestion automatisée des événements trafic.
                 </p>
               </div>
-              <div className="bg-blue-50 p-4 rounded-lg shadow-sm">
+              <div className="bg-indigo-50 p-4 rounded-lg shadow-sm border border-indigo-200">
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium text-blue-700">Tableaux Excel :</span> pour la structuration de la nomenclature.
+                  <span className="font-medium text-indigo-700">Tableaux Excel :</span> pour la structuration de la nomenclature.
                 </p>
               </div>
-              <div className="bg-blue-50 p-4 rounded-lg shadow-sm">
+              <div className="bg-indigo-50 p-4 rounded-lg shadow-sm border border-indigo-200 md:col-span-2">
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium text-blue-700">Outils internes APRR :</span> pour le partage documentaire et les échanges métiers (intranet, partages réseau).
+                  <span className="font-medium text-indigo-700">Outils internes APRR :</span> pour le partage documentaire et les échanges métiers (intranet, partages réseau).
                 </p>
               </div>
             </div>
