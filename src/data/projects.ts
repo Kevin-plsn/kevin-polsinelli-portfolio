@@ -1,4 +1,3 @@
-
 import { Project } from "../components/projects/ProjectCard";
 
 export const projects: Project[] = [
@@ -33,7 +32,7 @@ export const projects: Project[] = [
       "Améliorer l'environnement de travail avec une plateforme plus stable, cohérente et accessible, adaptée aux nouveaux usages professionnels"
     ],
     realization: "J'ai mené un inventaire des versions installées sur les différents postes afin d'identifier les écarts. Une fois les besoins établis, j'ai coordonné les mises à jour en priorisant les services les plus impactés. En parallèle, j'ai accompagné les utilisateurs dans la découverte des outils d'Office 365 (notamment Outlook, OneDrive, et Teams), en simplifiant la configuration de leurs environnements. Mon rôle a été à la fois technique et humain, en facilitant l'appropriation des outils tout en assurant un déploiement stable.",
-    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse"]
+    skills: ["bureautique-productivite", "organisation-personnelle", "communication-relationnel", "rigueur", "initiative", "autonomie", "esprit-analyse", "adaptabilite", "resolution-problemes", "capacite-apprentissage"]
   },
   {
     id: "projet-3-audit-securite",
@@ -50,7 +49,7 @@ export const projects: Project[] = [
       "Réduire le risque de fuite ou d'altération de données en cas de vol ou d'accès non autorisé"
     ],
     realization: "J'ai déployé BitLocker manuellement sur chaque poste concerné, en veillant à la bonne configuration des paramètres de chiffrement et à la sauvegarde sécurisée des clés de récupération. En complément, j'ai configuré des mots de passe d'administration dans le BIOS pour empêcher tout démarrage non autorisé ou modification critique. Ce projet a été mené dans un environnement sensible où rigueur, confidentialité et documentation étaient indispensables. L'ensemble du processus a été structuré en suivant une logique projet : recensement, déploiement progressif, tests de conformité et transmission des informations aux équipes IT.",
-    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "organisation-personnelle", "esprit-analyse", "autonomie"]
+    skills: ["securite", "administration-windows", "rigueur", "communication-relationnel", "esprit-analyse", "autonomie", "resolution-problemes", "capacite-apprentissage"]
   },
   {
     id: "projet-4-informatique-industrielle",
@@ -67,12 +66,12 @@ export const projects: Project[] = [
       "Débloquer et maintenir en condition opérationnelle des lignes pilotées par des systèmes complexes (IMA, IFIX, Siemens...)"
     ],
     realization: "J'ai assuré la création, modification et suppression des comptes dans l'Active Directory pour suivre l'évolution fréquente du personnel. En parallèle, j'ai veillé au bon fonctionnement des postes informatiques intégrés à la production, souvent en interaction directe avec les automates industriels. En totale autonomie, j'ai organisé mes interventions selon les priorités métiers, tout en maintenant un environnement stable malgré le manque de documentation initiale. Cette mission m'a appris à jongler entre réactivité, rigueur et autonomie dans un cadre à forte contrainte opérationnelle.",
-    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "rigueur"]
+    skills: ["administration-windows", "organisation-personnelle", "autonomie", "esprit-analyse", "communication-relationnel", "adaptabilite", "resolution-problemes"]
   },
   {
     id: "projet-5-magellan-sagt",
     title: "MAGELLAN – SAGT",
-    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Standardisation et optimisation des règles d'automatisation dans le système d'aide à la gestion du trafic d'APRR.",
     context: "Dans le cadre du programme MAGELLAN mené par APRR, j'ai participé à l'amélioration du module SAGT (Système d'Aide à la Gestion du Trafic), un outil essentiel qui automatise les actions à engager lors d'événements majeurs sur le réseau autoroutier, comme les accidents, les bouchons ou les intempéries. Le cœur du système repose sur un ensemble de règles qui déclenchent des scénarios en temps réel (signalisation dynamique, alertes, consignes). Cependant, ces règles étaient nombreuses, peu harmonisées, et difficiles à maintenir. J'ai donc été mobilisé pour analyser leur structure, repérer les incohérences et proposer une nomenclature claire et standardisée, afin de faciliter la création, la lisibilité et la gestion quotidienne de ces automatismes par les équipes opérationnelles.",
     objectives: [
@@ -82,12 +81,12 @@ export const projects: Project[] = [
       "Renforcer la fiabilité fonctionnelle du système en garantissant une uniformité dans les déclencheurs et scénarios gérés par le logiciel"
     ],
     realization: "En analysant les règles existantes dans le logiciel, j'ai constaté un écart important dans les formats de nommage et dans la structuration des entrées. J'ai alors pris l'initiative de concevoir un tableau de nomenclature normalisée, regroupant toutes les valeurs possibles et les bonnes pratiques à respecter pour créer de nouvelles règles. Ce document partagé a permis aux équipes de gagner en temps et en clarté lors de la configuration des automatismes. Cette action a renforcé la fiabilité fonctionnelle du système SAGT, tout en apportant un support concret aux utilisateurs du logiciel.",
-    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "autonomie"]
+    skills: ["conduite-projet-logiciel", "initiative", "esprit-analyse", "rigueur", "communication-relationnel", "organisation-personnelle", "autonomie", "adaptabilite", "capacite-apprentissage"]
   },
   {
     id: "projet-6-magellan-meteor",
     title: "MAGELLAN – METEOR",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     shortDesc: "Paramétrage d'un système de visualisation en temps réel pour la météo et le trafic autoroutier.",
     context: "Dans le cadre du programme MAGELLAN porté par APRR, l'outil METEOR a été mis en place pour permettre aux opérateurs autoroutiers de visualiser en temps réel les conditions météo et de trafic sur l'ensemble du réseau. Cet outil stratégique devait centraliser les informations issues de capteurs (stations météo, capteurs de comptage, etc.) pour faciliter la prise de décision en salle de contrôle. Intégré à l'équipe administratrice fonctionnelle, j'ai participé activement au paramétrage des \"contextes\" de surveillance, qui définissent les équipements et zones visibles par chaque poste de commandement. Mon rôle a été de structurer et adapter l'affichage en fonction des besoins spécifiques des différentes régions, en veillant à ce que chaque utilisateur dispose d'une interface claire, pertinente et cohérente avec son périmètre géographique.",
     objectives: [
@@ -98,7 +97,7 @@ export const projects: Project[] = [
       "Assurer la liaison fonctionnelle entre les besoins terrains et les configurations techniques"
     ],
     realization: "En lien avec les référents régionaux, j'ai créé des \"contextes\" personnalisés pour chaque poste de commandement, intégrant les équipements de mesure (stations météo, stations de comptage, etc.) correspondant aux zones surveillées. J'ai adapté la configuration de METEOR pour que chaque PC bénéficie d'une visualisation claire et pertinente des données trafic/météo. Mon intervention a permis une meilleure exploitation fonctionnelle du système et a contribué à une prise de décision plus rapide par les opérateurs.",
-    skills: ["conduite-projet-logiciel", "organisation-personnelle", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie"]
+    skills: ["conduite-projet-logiciel", "esprit-analyse", "communication-relationnel", "management-projet", "autonomie", "adaptabilite"]
   }
 ];
 
@@ -114,7 +113,10 @@ export const getSkillName = (skillId: string) => {
     "rigueur": "Rigueur",
     "initiative": "Initiative",
     "organisation-personnelle": "Organisation personnelle",
-    "autonomie": "Autonomie"
+    "autonomie": "Autonomie",
+    "adaptabilite": "Adaptabilité",
+    "resolution-problemes": "Résolution de problèmes",
+    "capacite-apprentissage": "Capacité d'apprentissage"
   };
   
   return skillNames[skillId] || skillId;
